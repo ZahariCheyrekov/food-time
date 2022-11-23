@@ -169,7 +169,8 @@
   }
 }
 
-// move down later
+
+
 .section__baked {
   display: flex;
   align-items: center;
@@ -191,7 +192,54 @@
   }
 }
 
-// move down later
+.section__subscription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.subscription__wrapper {
+  max-width: 500px;
+
+  .title {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  .paragraph {
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    color: $gray-color;
+  }
+}
+
+.subscription__form {
+  display: flex;
+  justify-content: space-between;
+  height: 36px;
+
+  .input {
+    width: 75%;
+    padding: 0 10px;
+
+    border: 3px solid $light-gray-color;
+    outline: none;
+  }
+
+  .button {
+    width: 20%;
+    border: none;
+
+    font-weight: 600;
+    letter-spacing: 0.4px;
+
+    color: $white-color;
+    background-color: $orange-color;
+  }
+}
+
 .footer {
   display: flex;
   align-items: center;
