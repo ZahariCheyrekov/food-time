@@ -4,6 +4,7 @@ import {
   faAngleRight,
   faCheck,
   faPlayCircle,
+  faCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookF,
@@ -21,6 +22,7 @@ export class HomeComponent {
   faAngleRight = faAngleRight;
   faCheck = faCheck;
   faPlayCircle = faPlayCircle;
+  faCircle = faCircle;
 
   faFacebookF = faFacebookF;
   faTwitter = faTwitter;
