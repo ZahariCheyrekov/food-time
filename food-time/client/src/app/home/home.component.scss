@@ -203,13 +203,43 @@
 
 
 
+.section__faq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px;
+
+  .base__title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+  }
+}
+
+.faq__wrapper {
+  max-width: $primary-width;
+  display: grid;
+  grid-template-columns: repeat(2, 560px);
+  gap: 4rem;
+
+  .title .tilde {
+    color: $orange-color;
+  }
+
+  .paragraph {
+    color: $gray-color;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+}
 
 .section__baked {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20rem;
-  height: 130px;
+  height: 160px;
 
   background-color: $pale-black-color;
   color: $white-color;
