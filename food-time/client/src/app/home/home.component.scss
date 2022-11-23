@@ -123,6 +123,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
+  position: relative;
 
   .breakfast {
     width: 620px;
@@ -136,6 +137,14 @@
     height: 620px;
     border-radius: 6px;
     object-fit: cover;
+  }
+
+  .tree__leaves {
+    position: absolute;
+    width: 300px;
+    height: 340px;
+    top: -240px;
+    right: -60px;
   }
 }
 
