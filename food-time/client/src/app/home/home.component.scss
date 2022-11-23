@@ -169,6 +169,39 @@
   }
 }
 
+.section__story {
+  position: relative;
+  text-align: center;
+  color: $white-color;
+
+  .img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .article {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .title {
+      color: $orange-color;
+      font-size: 2rem;
+    }
+
+    .paragraph {
+      margin: 30px auto;
+      width: 600px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+  }
+}
+
+
+
 
 
 .section__baked {
