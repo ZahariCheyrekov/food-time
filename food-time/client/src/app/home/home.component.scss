@@ -89,3 +89,22 @@
     box-shadow: 0px 0px 6px 0px $gray-color;
   }
 }
+
+.section__savings {
+  display: flex;
+  align-items: center;
+
+  height: 140px;
+  padding: 20px;
+
+  background-color: $orange-color;
+  color: $white-color;
+}
+
+.savings__list {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  width: 1000px;
+}
