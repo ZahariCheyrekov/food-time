@@ -203,6 +203,52 @@
 
 
 
+
+.section__testemonials {
+  background-color: $orange-color;
+  text-align: center;
+  padding: 50px;
+
+  .base__title {
+    color: $white-color;
+    font-size: 1.8rem;
+  }
+}
+
+.testemonials__article {
+  width: $primary-width;
+  margin: 30px auto;
+  padding: 40px;
+
+  background-color: $white-color;
+  border-radius: 6px;
+
+  .opinion {
+    max-width: 550px;
+    margin: 30px auto;
+  }
+
+  .name {
+    color: $orange-color;
+  }
+}
+
+.testemonials__circles {
+  color: $pale-white-color;
+
+  .test__circle {
+    cursor: pointer;
+  }
+
+  .test__circle:nth-child(2) {
+    margin: 0 4px;
+  }
+
+  .dark {
+    color: $white-color;
+  }
+}
+
 .section__faq {
   display: flex;
   align-items: center;
