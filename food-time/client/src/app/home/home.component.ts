@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {
   faShoppingBasket,
   faAngleRight,
+  faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookF,
@@ -17,6 +18,7 @@ import {
 export class HomeComponent {
   faShoppingBasket = faShoppingBasket;
   faAngleRight = faAngleRight;
+  faCheck = faCheck;
 
   faFacebookF = faFacebookF;
   faTwitter = faTwitter;
