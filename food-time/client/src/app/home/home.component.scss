@@ -94,7 +94,7 @@
   display: flex;
   align-items: center;
 
-  height: 140px;
+  height: 130px;
   padding: 20px;
 
   background-color: $orange-color;
@@ -107,4 +107,26 @@
 
   margin: 0 auto;
   width: 1000px;
+}
+
+// move down later
+.section__baked {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20rem;
+  height: 130px;
+
+  background-color: $pale-black-color;
+  color: $white-color;
+
+  .title {
+    letter-spacing: 1px;
+  }
+
+  .link {
+    background-color: $orange-color;
+    padding: 10px 24px;
+    border-radius: 2px;
+  }
 }
