@@ -3,6 +3,11 @@ import {
   faShoppingBasket,
   faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebookF,
+  faTwitter,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -12,4 +17,10 @@ import {
 export class HomeComponent {
   faShoppingBasket = faShoppingBasket;
   faAngleRight = faAngleRight;
+
+  faFacebookF = faFacebookF;
+  faTwitter = faTwitter;
+  faInstagram = faInstagram;
+
+  year = new Date().getFullYear();
 }
