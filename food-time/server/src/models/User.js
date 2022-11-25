@@ -15,6 +15,12 @@ const userSchema = mongoose.Schema({
         type: [String, 'Email should be of type string'],
         unique: [true, 'Email is already in use'],
         minLength: [6, 'Email should be at least 6 characters long'],
+        validate: (email) => {
+            const regex = /\b(?<name>[A-Za-z]+).*\@(?<domain>[A-Za-z]+)\.(?<extension>[A-Za-z]+)\b/g
+            if (!email.match(regex)) {
+                throw new Error('The email should be in format: "john@gmail.com" or "john.doe@gmail.com"');
+            }
+        },
         required: [true, 'Email is required']
     },
     password: {
