@@ -31,7 +31,14 @@ const dishSchema = mongoose.Schema({
             ref: 'User'
         }
     ],
-   
+    reviews: [
+        {
+            name: String,
+            rating: Number,
+            comment: String,
+            ref: 'User'
+        }
+    ]
 });
 
 const Dish = mongoose.model('Dish', dishSchema);
