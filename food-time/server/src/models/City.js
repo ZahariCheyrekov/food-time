@@ -2,11 +2,11 @@ import mongoose from 'mongoose';
 
 const citySchema = mongoose.Schema({
     name: {
-        type: String,
+        type: [String, 'Name must be of type string'],
         required: true
     },
     picture: {
-        type: String,
+        type: [String, 'Picture should be of type string'],
         required: true
     },
     dishes: [
