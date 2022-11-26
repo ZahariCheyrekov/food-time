@@ -2,23 +2,23 @@ import mongoose, { mongo } from 'mongoose';
 
 const dishSchema = mongoose.Schema({
     name: {
-        type: String,
+        type: [String, 'Name must be of type string'],
         required: true
     },
     ingredients: {
-        type: String,
+        type: [String, 'Ingredients must be of type string'],
         required: true
     },
     price: {
-        type: Number,
+        type: [Number, 'Price must be a number'],
         required: true
     },
     description: {
-        type: String,
+        type: [String, 'Description must be of type string'],
         required: true
     },
     preparationTime: {
-        type: String,
+        type: [String, 'Preparation time must be of type string'],
         required: true
     },
     ownerId: {
