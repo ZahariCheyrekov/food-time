@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const dishSchema = mongoose.Schema({
     name: {
         type: [String, 'Name must be of type string'],
+        minLength: [2, 'Name must be at least 2 characters long'],
         required: [true, 'Name is required']
     },
     ingredients: {
@@ -20,10 +21,12 @@ const dishSchema = mongoose.Schema({
     },
     description: {
         type: [String, 'Description must be of type string'],
+        minLength: [10, 'Description must be at least 10 characters long'],
         required: [true, 'Description is required']
     },
     preparationTime: {
         type: [String, 'Preparation time must be of type string'],
+        minLength: [2, 'Preparation time must be at least 2 characters long'],
         required: [true, 'Preparation time is required']
     },
     ownerId: {
