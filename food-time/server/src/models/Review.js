@@ -2,11 +2,11 @@ import mongoose from 'mongoose';
 
 const reviewSchema = mongoose.Schema({
     descritpion: {
-        type: String,
+        type: [String, 'Description must be of type string'],
         required: true
     },
     stars: {
-        type: Number,
+        type: [Number, 'Stars must be of type number'],
         required: true
     },
     userId: {
