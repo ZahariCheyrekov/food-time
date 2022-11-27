@@ -7,6 +7,11 @@ const reviewSchema = mongoose.Schema({
     },
     rating: {
         type: [Number, 'Rating must be of type number'],
+        validate: (rating) => {
+            if (rating <= 0 || rating > 5) {
+                throw new Error('Rating must be a number between 1 and 5')
+            }
+        },
         required: [true, 'Rating is required']
     },
     dishId: {
