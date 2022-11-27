@@ -9,6 +9,10 @@ const reviewSchema = mongoose.Schema({
         type: [Number, 'Rating must be of type number'],
         required: [true, 'Rating is required']
     },
+    dishId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Dish'
+    },
     userId: {
         type: mongoose.Types.ObjectId,
         ref: 'User'
