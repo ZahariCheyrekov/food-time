@@ -6,11 +6,6 @@ import {
   faPlayCircle,
   faCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  faFacebookF,
-  faTwitter,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -23,10 +18,4 @@ export class HomeComponent {
   faCheck = faCheck;
   faPlayCircle = faPlayCircle;
   faCircle = faCircle;
-
-  faFacebookF = faFacebookF;
-  faTwitter = faTwitter;
-  faInstagram = faInstagram;
-
-  year = new Date().getFullYear();
 }
