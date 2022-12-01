@@ -447,30 +447,3 @@
     background-color: $orange-color;
   }
 }
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  height: 240px;
-  padding: 40px;
-
-  background-color: $orange-color;
-  color: $white-color;
-
-  .footer__list {
-    margin: 26px 0;
-    font-size: 2rem;
-    justify-content: center;
-  }
-
-  .list {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .copyright {
-    font-weight: normal;
-  }
-}
