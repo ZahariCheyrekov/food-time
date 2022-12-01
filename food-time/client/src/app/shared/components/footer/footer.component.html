@@ -1,1 +1,48 @@
-<p>footer works!</p>
+<footer class="footer">
+  <section class="footer__section section">
+    <nav class="footer__nav nav">
+      <ul class="footer__nav--list list">
+        <li class="footer__list--item item">
+          <a href="/#">
+            Register
+          </a>
+        </li>
+        <li class="footer__list--item item">
+          <a href="/#">
+            Forum
+          </a>
+        </li>
+        <li class="footer__list--item item">
+          <a href="/#">
+            Affiliate
+          </a>
+        </li>
+        <li class="footer__list--item item">
+          <a href="/#">
+            FAQ
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <ul class="footer__list list">
+      <li class="footer__list--item item">
+        <a href="https://www.facebook.com/">
+          <fa-icon [icon]="faFacebookF"></fa-icon>
+        </a>
+      </li>
+      <li class="footer__list--item item">
+        <a href="https://twitter.com/">
+          <fa-icon [icon]="faTwitter"></fa-icon>
+        </a>
+      </li>
+      <li class="footer__list--item item">
+        <a href="https://www.instagram.com/">
+          <fa-icon [icon]="faInstagram"></fa-icon>
+        </a>
+      </li>
+    </ul>
+    <h4 class="footer__copyright copyright">
+      &copy; {{year}}. &nbsp; FoodTime. &nbsp; All rights reserved.
+    </h4>
+  </section>
+</footer>
