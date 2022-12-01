@@ -7,6 +7,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [NavigationComponent, FooterComponent],
   imports: [CommonModule, FontAwesomeModule],
-  exports: [FooterComponent],
+  exports: [NavigationComponent, FooterComponent],
 })
 export class SharedModule {}
