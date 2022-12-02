@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: space-between;
 
+  max-width: $primary-width;
+  margin: 0 auto;
+  padding: 20px;
+
   .title {
     margin: 0;
     font-size: 1.8rem;
