@@ -14,10 +14,24 @@
     margin: 15px 0;
   }
 
+  .label,
+  .input {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+  }
+
+  .input {
+    border: 1px solid $black-color;
+    border-radius: 0.6rem;
+
+    padding: 4px 10px;
+    outline: none;
+  }
+
   .auth__button {
     margin: 14px 0;
     padding: 0.4rem 0.8rem;
-    height: 34px;
+    height: 40px;
 
     font-size: 1rem;
     border-radius: 0.8rem;
@@ -25,25 +39,5 @@
 
     background-color: $orange-color;
     color: $white-color;
-  }
-
-  .label {
-    font-size: 1.4rem;
-    margin: 1rem 0;
-  }
-
-  .label.password {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .input,
-  .label.password .input {
-    border: 1px solid $black-color;
-    border-radius: 0.6rem;
-
-    height: 30px;
-    padding: 8px;
-    outline: none;
   }
 }
