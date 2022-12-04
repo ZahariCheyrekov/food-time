@@ -20,6 +20,25 @@ export class AuthService {
       );
   }
 
+  register(
+    name: string,
+    email: string,
+    password: string,
+    repeatPassword: string
+  ) {
+    return this.http
+      .post('http://localhost:5000/auth/register', {
+        name,
+        email,
+        password,
+        repeatPassword,
+      })
+      .pipe(
+        catchError(async (err) => console.log(err)),
+        tap((res) => res)
+      );
+  }
+
   handleError(error: HttpErrorResponse | ObservableInput<any>) {
     return new Error('err');
   }
