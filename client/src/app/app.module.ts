@@ -7,6 +7,7 @@ import { HomeComponent } from './features/pages/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     FontAwesomeModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
