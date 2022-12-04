@@ -1,0 +1,24 @@
+@import "../../../../assets/scss/variables.scss";
+
+.not__found {
+  text-align: center;
+  color: $black-color;
+
+  margin: 100px 0 0;
+  min-height: 100vh;
+  padding: 20px 30px;
+
+  .status {
+    font-size: 5.2rem;
+  }
+
+  .error {
+    font-size: 2.2rem;
+  }
+
+  .message {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-top: 15px;
+  }
+}

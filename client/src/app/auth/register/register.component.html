@@ -1,0 +1,13 @@
+<form class="register__form" method="POST" #signUp="ngForm" (ngSubmit)="onSubmit(signUp)">
+  <legend class="form__legend legend">
+    Sign Up
+  </legend>
+  <input type="text" name="firstName" class="form__input input" placeholder="John" ngModel>
+  <input type="text" name="lastName" class="form__input input" placeholder="Doe" ngModel>
+  <input type="text" name="email" class="form__input input" placeholder="johndoe@gmail.com" ngModel>
+  <input type="password" name="password" class="form__input input password" placeholder="• • • • • • • •" ngModel>
+  <input type="password" name="repeatPassword" class="form__input input password" placeholder="• • • • • • • •" ngModel>
+  <button class="form__button auth__button">
+    Sign Up
+  </button>
+</form>
