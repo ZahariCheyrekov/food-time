@@ -2,11 +2,11 @@ import mongoose from 'mongoose';
 
 const reviewSchema = mongoose.Schema({
     descritpion: {
-        type: [String, 'Description must be of type string'],
+        type: String,
         required: [true, 'Description is required']
     },
     rating: {
-        type: [Number, 'Rating must be of type number'],
+        type: Number,
         validate: (rating) => {
             if (rating <= 0 || rating > 5) {
                 throw new Error('Rating must be a number between 1 and 5')
