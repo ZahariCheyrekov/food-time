@@ -1,1 +1,17 @@
-<p>city-create works!</p>
+<form class="city__create--form" method="POST" #createCity="ngForm" (ngSubmit)="onSubmit(createCity)">
+  <legend class="form__legend legend">
+    Create City
+  </legend>
+  <input type="text" name="city" class="form__input input" placeholder="Sofia" ngModel>
+  <input type="text" name="country" class="form__input input" placeholder="Bulgaria" ngModel>
+  <ngx-dropzone (change)="onSelect($event)">
+    <ngx-dropzone-label>Drop file here</ngx-dropzone-label>
+    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
+      (removed)="onRemove(f)">
+      <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+    </ngx-dropzone-image-preview>
+  </ngx-dropzone>
+  <button class="form__button auth__button">
+    Create
+  </button>
+</form>
