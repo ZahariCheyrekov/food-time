@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { lastValueFrom } from 'rxjs';
 
-import { UploadService } from './upload.service';
+import { UploadService } from '../../core/services/upload.service';
 
 @Component({
   selector: 'app-city-create',
@@ -35,8 +36,8 @@ export class CityCreateComponent {
     data.append('upload_preset', 'angular-cloudinary');
     data.append('cloud_name', 'dhcdh9u9h');
 
-    this.uploadService.uploadImage(data).subscribe((response: any) => {
-      this.url = response.secure_url;
-    });
+    await lastValueFrom(this.uploadService.uploadImage(data)).then(
+      (res: any) => (this.url = res.secure_url)
+    );
   }
 }
