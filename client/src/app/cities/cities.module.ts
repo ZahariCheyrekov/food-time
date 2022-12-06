@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 import { CityCreateComponent } from './city-create/city-create.component';
 import { RouterModule } from '@angular/router';
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     AuthRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxDropzoneModule,
   ],
 })
 export class CitiesModule {}
