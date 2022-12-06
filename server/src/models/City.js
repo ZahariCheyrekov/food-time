@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 const citySchema = mongoose.Schema({
-    name: {
+    city: {
         type: String,
-        minLength: [2, 'Name must be at least 2 characters long'],
-        maxLength: [50, 'Name must be maximum 50 characters long'],
-        required: [true, 'Name is required']
+        minLength: [2, 'City must be at least 2 characters long'],
+        maxLength: [50, 'City must be maximum 50 characters long'],
+        required: [true, 'City is required']
     },
     picture: {
         type: String,
