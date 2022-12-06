@@ -7,6 +7,12 @@ const citySchema = mongoose.Schema({
         maxLength: [50, 'City must be maximum 50 characters long'],
         required: [true, 'City is required']
     },
+    country: {
+        type: String,
+        minLength: [2, 'Country must be at least 2 characters long'],
+        maxLength: [50, 'Country must be maximum 50 characters long'],
+        required: [true, 'Country is required']
+    },
     picture: {
         type: String,
         validate: [/^https?:\/\//, 'Picture url must start with "http://" or "https://"'],
