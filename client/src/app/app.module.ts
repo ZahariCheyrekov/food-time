@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CityCreateComponent } from './city-create/city-create.component';
+import { CityCreateComponent } from './cities/city-create/city-create.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CityCreateComponent],
