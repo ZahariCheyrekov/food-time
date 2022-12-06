@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
 import { UploadService } from '../../core/services/upload.service';
@@ -13,7 +14,7 @@ export class CityCreateComponent {
   files: File[] = [];
   url: any;
 
-  constructor(private uploadService: UploadService) {}
+  constructor(private uploadService: UploadService, private router: Router) {}
 
   onSelect(event: any) {
     console.log(event);
@@ -37,7 +38,9 @@ export class CityCreateComponent {
     data.append('cloud_name', 'dhcdh9u9h');
 
     await lastValueFrom(this.uploadService.uploadImage(data)).then(
-      (res: any) => (this.url = res.secure_url)
+      (res: any) => {
+        this.url = res.secure_url;
+      }
     );
   }
 }
