@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'cities',
+    loadChildren: () => import('./cities/cities.module').then((m) => m.CitiesModule),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
