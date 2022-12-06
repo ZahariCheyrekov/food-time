@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
+import { CityService } from '../../core/services/city.service';
 import { UploadService } from '../../core/services/upload.service';
 
 @Component({
@@ -14,7 +15,11 @@ export class CityCreateComponent {
   files: File[] = [];
   url: any;
 
-  constructor(private uploadService: UploadService, private router: Router) {}
+  constructor(
+    private uploadService: UploadService,
+    private cityService: CityService,
+    private router: Router
+  ) {}
 
   onSelect(event: any) {
     console.log(event);
@@ -42,5 +47,14 @@ export class CityCreateComponent {
         this.url = res.secure_url;
       }
     );
+
+    const city = form.value.city;
+    const country = form.value.country;
+
+    this.cityService
+      .createCity({ city, country, picture: this.url })
+      .subscribe(() => {
+        this.router.navigate(['/']);
+      });
   }
 }
