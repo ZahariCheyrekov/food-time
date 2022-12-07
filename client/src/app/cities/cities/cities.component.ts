@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICity } from 'src/app/core/interfaces/ICity';
 
 import { CityService } from '../../core/services/city.service';
 
@@ -8,11 +9,13 @@ import { CityService } from '../../core/services/city.service';
   styleUrls: ['./cities.component.scss'],
 })
 export class CitiesComponent implements OnInit {
-  cities: any = [];
+  cities: ICity[] = [];
 
   constructor(private cityService: CityService) {}
 
   async ngOnInit(): Promise<void> {
-    this.cityService.getCities().subscribe((res) => this.cities.push(res));
+    this.cityService.getCities().subscribe((res: any) => {
+      this.cities.push(res);
+    });
   }
 }
