@@ -10,4 +10,3 @@ router.use('/cities', cityController);
 
 
 export default router;
-
