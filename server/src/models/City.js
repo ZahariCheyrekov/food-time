@@ -21,7 +21,7 @@ const citySchema = mongoose.Schema({
     dishes: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Dish'
+            ref: 'Meal'
         }
     ]
 });
