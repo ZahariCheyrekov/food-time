@@ -22,7 +22,15 @@
     .picture {
       width: 100%;
       height: 100%;
+
+      border-radius: 4px;
       object-fit: cover;
+      transition: all ease-in-out 0.2s;
+    }
+
+    .picture:hover {
+      scale: 1.02;
+      cursor: pointer;
     }
   }
 }
