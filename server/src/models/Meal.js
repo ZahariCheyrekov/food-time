@@ -29,13 +29,13 @@ const mealSchema = mongoose.Schema({
         minLength: [2, 'Preparation time must be at least 2 characters long'],
         required: [true, 'Preparation time is required']
     },
-    ownerId: {
-        type: mongoose.Types.ObjectId,
-        ref: 'User'
-    },
     picture: {
         type: String,
         required: [true, 'Meal picture is required']
+    },
+    ownerId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User'
     },
     likes: [
         {
