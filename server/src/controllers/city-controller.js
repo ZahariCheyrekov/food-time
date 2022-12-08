@@ -1,6 +1,7 @@
 import express from 'express';
 
 import * as cityService from '../services/city-service.js';
+import * as mealService from '../services/meal-service.js';
 
 const router = express.Router();
 
@@ -21,7 +22,9 @@ router.get('/:id', async (req, res) => {
 
     try {
         const city = await cityService.getCity(id);
-        res.status(200).json(city);
+        const meals = await mealService.getCityMeals(city.meals);
+
+        res.status(200).json({ city, meals });
 
     } catch (error) {
         console.log(error);
