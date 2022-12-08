@@ -11,6 +11,10 @@ export class CityService {
     return this.http.get('http://localhost:5000/cities');
   }
 
+  getCity(id: string | null) {
+    return this.http.get(`http://localhost:5000/cities/${id}`);
+  }
+
   createCity(data: Object) {
     return this.http.post('http://localhost:5000/cities', data);
   }
