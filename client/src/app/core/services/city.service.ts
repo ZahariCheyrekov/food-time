@@ -18,4 +18,8 @@ export class CityService {
   createCity(data: Object) {
     return this.http.post('http://localhost:5000/cities', data);
   }
+
+  createMeal(data: Object, cityId: string | null) {
+    return this.http.post(`http://localhost:5000/cities/${cityId}`, data);
+  }
 }
