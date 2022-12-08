@@ -9,9 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CitiesComponent } from './cities/cities.component';
 import { CityDetailsComponent } from './city-details/city-details.component';
+import { CityCreateMealComponent } from './city-create-meal/city-create-meal.component';
 
 @NgModule({
-  declarations: [CityCreateComponent, CitiesComponent, CityDetailsComponent],
+  declarations: [
+    CityCreateComponent,
+    CitiesComponent,
+    CityDetailsComponent,
+    CityCreateMealComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
