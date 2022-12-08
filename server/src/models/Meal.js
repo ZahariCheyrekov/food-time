@@ -36,8 +36,7 @@ const mealSchema = mongoose.Schema({
     likes: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'User',
-            default: []
+            ref: 'User'
         }
     ],
     reviews: [
@@ -45,8 +44,7 @@ const mealSchema = mongoose.Schema({
             name: String,
             rating: Number,
             comment: String,
-            ref: 'User',
-            default: []
+            ref: 'User'
         }
     ]
 });

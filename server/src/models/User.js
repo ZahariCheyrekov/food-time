@@ -29,22 +29,19 @@ const userSchema = mongoose.Schema({
     createdMeals: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Meal',
-            default: []
+            ref: 'Meal'
         }
     ],
     likedMeals: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Meal',
-            default: []
+            ref: 'Meal'
         }
     ],
     reviews: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Review',
-            default: []
+            ref: 'Review'
         }
     ]
 });
