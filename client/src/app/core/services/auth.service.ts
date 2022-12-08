@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, ObservableInput, tap, throwError } from 'rxjs';
+import { catchError, ObservableInput, tap } from 'rxjs';
+
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  url = environment.app.default_url;
+
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string) {
     return this.http
-      .post('http://localhost:5000/auth/login', {
+      .post(`${this.url}/auth/login`, {
         email,
         password,
       })
@@ -27,7 +31,7 @@ export class AuthService {
     repeatPassword: string
   ) {
     return this.http
-      .post('http://localhost:5000/auth/register', {
+      .post(`${this.url}/auth/register`, {
         name,
         email,
         password,
