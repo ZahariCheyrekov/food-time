@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['../auth-form.component.scss'],
+  styleUrls: ['../../../assets/scss/form.scss'],
 })
 export class LoginComponent implements OnInit {
   isLoading = false;

@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['../auth-form.component.scss'],
+  styleUrls: ['../../../assets/scss/form.scss'],
 })
 export class RegisterComponent implements OnInit {
   isLoading = false;
