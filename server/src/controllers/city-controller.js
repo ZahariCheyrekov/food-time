@@ -16,6 +16,19 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const city = await cityService.getCity(id);
+        res.status(200).json(city);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
 router.post('/', async (req, res) => {
     const { city, country, picture } = req.body;
 
