@@ -41,9 +41,7 @@ const mealSchema = mongoose.Schema({
     ],
     reviews: [
         {
-            name: String,
-            rating: Number,
-            comment: String,
+            type: mongoose.Types.ObjectId,
             ref: 'User'
         }
     ]
