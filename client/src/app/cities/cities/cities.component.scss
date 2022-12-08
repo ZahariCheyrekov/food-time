@@ -1,0 +1,28 @@
+@import "../../../assets/scss/variables.scss";
+
+.main__cities {
+  margin: 60px;
+}
+
+.cities__section {
+  max-width: $primary-width;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section__cities--list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.8rem;
+
+  .list__item {
+    width: 350px;
+    height: 350px;
+
+    .picture {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
