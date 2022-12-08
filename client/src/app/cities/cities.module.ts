@@ -8,9 +8,10 @@ import { AuthRoutingModule } from './cities-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CitiesComponent } from './cities/cities.component';
+import { CityDetailsComponent } from './city-details/city-details.component';
 
 @NgModule({
-  declarations: [CityCreateComponent, CitiesComponent],
+  declarations: [CityCreateComponent, CitiesComponent, CityDetailsComponent],
   imports: [
     CommonModule,
     RouterModule,
