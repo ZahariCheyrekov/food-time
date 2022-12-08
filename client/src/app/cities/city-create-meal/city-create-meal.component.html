@@ -1,0 +1,15 @@
+<form class="create__meal--form" method="POST">
+  <legend class=" form__legend legend">
+    Create Meal
+  </legend>
+  <input type="text" name="name" class="form__input input" placeholder="Caprese Salad" ngModel />
+  <input type="text" name="ingredients" class="form__input input"
+    placeholder="Mozzarella, basil, olive oil, peper, sea salt" ngModel />
+  <input type="number" name="price" class="form__input input" placeholder="30" ngModel />
+  <textarea type="text" name="description" class="form__input input"  ngModel placeholder="{{dummyDescription}}">
+  </textarea>
+  <input type="text" name="preparationTime" class="form__input input" placeholder="10-15 minutes" ngModel />
+  <button class="form__button auth__button">
+    Create
+  </button>
+</form>
