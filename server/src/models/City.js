@@ -18,10 +18,11 @@ const citySchema = mongoose.Schema({
         validate: [/^https?:\/\//, 'Picture url must start with "http://" or "https://"'],
         required: [true, 'Picture is required']
     },
-    dishes: [
+    meals: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Meal'
+            ref: 'Meal',
+            default: []
         }
     ]
 });

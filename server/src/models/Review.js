@@ -14,9 +14,9 @@ const reviewSchema = mongoose.Schema({
         },
         required: [true, 'Rating is required']
     },
-    dishId: {
+    mealId: {
         type: mongoose.Types.ObjectId,
-        ref: 'Dish'
+        ref: 'Meal'
     },
     userId: {
         type: mongoose.Types.ObjectId,

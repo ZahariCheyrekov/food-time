@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const dishSchema = mongoose.Schema({
+const mealSchema = mongoose.Schema({
     name: {
         type: String,
         minLength: [2, 'Name must be at least 2 characters long'],
@@ -36,7 +36,8 @@ const dishSchema = mongoose.Schema({
     likes: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'User'
+            ref: 'User',
+            default: []
         }
     ],
     reviews: [
@@ -44,10 +45,11 @@ const dishSchema = mongoose.Schema({
             name: String,
             rating: Number,
             comment: String,
-            ref: 'User'
+            ref: 'User',
+            default: []
         }
     ]
 });
 
-const Dish = mongoose.model('Dish', dishSchema);
-export default Dish;
+const Meal = mongoose.model('Meal', mealSchema);
+export default Meal;

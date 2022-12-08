@@ -26,22 +26,25 @@ const userSchema = mongoose.Schema({
     picture: {
         type: String,
     },
-    createdDishes: [
+    createdMeals: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Dish'
+            ref: 'Meal',
+            default: []
         }
     ],
-    likedDishes: [
+    likedMeals: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Dish'
+            ref: 'Meal',
+            default: []
         }
     ],
     reviews: [
         {
             type: mongoose.Types.ObjectId,
-            ref: 'Review'
+            ref: 'Review',
+            default: []
         }
     ]
 });
