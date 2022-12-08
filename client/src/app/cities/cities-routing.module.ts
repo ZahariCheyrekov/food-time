@@ -14,12 +14,12 @@ const routes: Routes = [
         component: CitiesComponent,
       },
       {
-        path: ':id',
-        component: CityDetailsComponent,
-      },
-      {
         path: 'create',
         component: CityCreateComponent,
+      },
+      {
+        path: ':id',
+        component: CityDetailsComponent,
       },
     ],
   },
