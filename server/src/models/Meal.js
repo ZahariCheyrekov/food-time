@@ -33,6 +33,10 @@ const mealSchema = mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: 'User'
     },
+    picture: {
+        type: String,
+        required: [true, 'Meal picture is required']
+    },
     likes: [
         {
             type: mongoose.Types.ObjectId,
