@@ -13,9 +13,14 @@ export class CitiesComponent implements OnInit {
 
   constructor(private cityService: CityService) {}
 
-  async ngOnInit(): Promise<void> {
+  ngOnInit() {
+    this.getCities();
+  }
+
+  getCities() {
     this.cityService.getCities().subscribe((res: any) => {
-      this.cities.push(res);
+      this.cities = res;
+      console.log(res);
     });
   }
 }
