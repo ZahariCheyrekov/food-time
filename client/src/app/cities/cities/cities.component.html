@@ -1,1 +1,9 @@
-<p>cities works!</p>
+<main class="main__cities">
+  <section class="main__cities--section cities__section">
+    <ul class="section__cities--list cities__list">
+      <li class="cities__list--item list__item" *ngFor="let city of cities">
+        <img class="list__item--picture picture" src="{{city.picture}}" alt="{{city.city}}" />
+      </li>
+    </ul>
+  </section>
+</main>
