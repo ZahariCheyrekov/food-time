@@ -1,25 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class CityService {
+  url = environment.app.default_url;
+
   constructor(private http: HttpClient) {}
 
   getCities() {
-    return this.http.get('http://localhost:5000/cities');
+    return this.http.get(`${this.url}/cities`);
   }
 
   getCity(id: string | null) {
-    return this.http.get(`http://localhost:5000/cities/${id}`);
+    return this.http.get(`${this.url}/cities/${id}`);
   }
 
   createCity(data: Object) {
-    return this.http.post('http://localhost:5000/cities', data);
+    return this.http.post(`${this.url}/cities`, data);
   }
 
   createMeal(data: Object, cityId: string | null) {
-    return this.http.post(`http://localhost:5000/cities/${cityId}`, data);
+    return this.http.post(`${this.url}/cities/${cityId}`, data);
   }
 }
