@@ -51,5 +51,14 @@ const mealSchema = mongoose.Schema({
     ]
 });
 
+mealSchema.pre('findByIdAndUpdate', function (next) {
+    setRunValidators();
+    next();
+});
+
+function setRunValidators() {
+    this.setOptions({ runValidators: true });
+}
+
 const Meal = mongoose.model('Meal', mealSchema);
 export default Meal;
