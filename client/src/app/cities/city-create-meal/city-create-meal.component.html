@@ -9,7 +9,7 @@
   <textarea type="text" name="description" class="form__input input" ngModel placeholder="{{dummyDescription}}">
   </textarea>
   <input type="text" name="preparationTime" class="form__input input" placeholder="10-15 minutes" ngModel />
-  <ngx-dropzone (change)="onSelect($event)">
+  <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
     <ngx-dropzone-label>Drop meal file here</ngx-dropzone-label>
     <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
       (removed)="onRemove(f)">

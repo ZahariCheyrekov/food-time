@@ -4,7 +4,7 @@
   </legend>
   <input type="text" name="city" class="form__input input" placeholder="Sofia" ngModel>
   <input type="text" name="country" class="form__input input" placeholder="Bulgaria" ngModel>
-  <ngx-dropzone (change)="onSelect($event)">
+  <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
     <ngx-dropzone-label>Drop file here</ngx-dropzone-label>
     <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
       (removed)="onRemove(f)">

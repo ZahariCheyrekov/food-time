@@ -7,6 +7,13 @@
   <input type="text" name="email" class="form__input input" placeholder="johndoe@gmail.com" ngModel>
   <input type="password" name="password" class="form__input input password" placeholder="• • • • • • • •" ngModel>
   <input type="password" name="repeatPassword" class="form__input input password" placeholder="• • • • • • • •" ngModel>
+  <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
+    <ngx-dropzone-label>Drop profile picture here</ngx-dropzone-label>
+    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
+      (removed)="onRemove(f)">
+      <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+    </ngx-dropzone-image-preview>
+  </ngx-dropzone>
   <button class="form__button auth__button">
     Sign Up
   </button>
