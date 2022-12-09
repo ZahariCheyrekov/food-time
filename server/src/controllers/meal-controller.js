@@ -4,7 +4,7 @@ import * as mealService from '../services/meal-service.js';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
     const {
         name,
         ingredients,
@@ -12,13 +12,14 @@ router.post('/', async (req, res) => {
         description,
         preparationTime,
         picture,
-        ownerId }
-        = req.body;
+        ownerId,
+        cityId
+    } = req.body;
 
     try {
         const meal = await mealService.createMeal({
             name, ingredients, price, description, preparationTime, picture, ownerId
-        }, ownerId);
+        }, ownerId, cityId);
         res.status(201).json(meal);
 
     } catch (error) {
