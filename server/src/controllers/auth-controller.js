@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    const { name, email, password, repeatPassword } = req.body;
+    const { name, email, password, repeatPassword, picture } = req.body;
 
     try {
         const existingUser = await authService.getUserByEmail(email);
@@ -55,7 +55,7 @@ router.post('/register', async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, SALT);
 
-        const result = await authService.createUser({ name, email, password: hashedPassword });
+        const result = await authService.createUser({ name, email, password: hashedPassword, picture });
 
         const token = jwt.sign({ email: result.email, id: result._id }, process.env.SECRET, { expiresIn: TOKEN_EXPIRATION_TIME });
 
