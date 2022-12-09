@@ -30,6 +30,7 @@ router.post('/login', async (req, res) => {
             _id: existingUser._id,
             name: existingUser.name,
             email: existingUser.email,
+            picture: existingUser.picture
         }
 
         res.status(200).json({ user, token });
@@ -63,6 +64,7 @@ router.post('/register', async (req, res) => {
             _id: result._id,
             name: result.name,
             email: result.email,
+            picture: result.picture
         }
 
         res.status(200).json({ user, token });
