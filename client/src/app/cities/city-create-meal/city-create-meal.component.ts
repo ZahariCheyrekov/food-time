@@ -78,6 +78,7 @@ export class CityCreateMealComponent {
           preparationTime,
           picture: this.url,
           ownerId: this.owenrId,
+          cityId: this.cityId,
         },
         this.cityId
       )
