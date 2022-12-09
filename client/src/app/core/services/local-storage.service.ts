@@ -14,4 +14,11 @@ export class LocalStorageService {
   saveUser(user: IUser | void) {
     localStorage.setItem(this.userItem, JSON.stringify(user));
   }
+
+  getUser(): IUser {
+    const user: IUser = JSON.parse(
+      localStorage.getItem(this.userItem) as string
+    );
+    return user;
+  }
 }
