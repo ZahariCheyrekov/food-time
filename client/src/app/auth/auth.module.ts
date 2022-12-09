@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
@@ -16,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
     AuthRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxDropzoneModule
   ],
 })
 export class AuthModule {}
