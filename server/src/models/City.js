@@ -26,5 +26,14 @@ const citySchema = mongoose.Schema({
     ]
 });
 
+citySchema.pre('findByIdAndUpdate', function (next) {
+    setRunValidators();
+    next();
+});
+
+function setRunValidators() {
+    this.setOptions({ runValidators: true });
+}
+
 const City = mongoose.model('City', citySchema);
 export default City;
