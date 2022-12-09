@@ -25,6 +25,7 @@ const userSchema = mongoose.Schema({
     },
     picture: {
         type: String,
+        required: [true, 'User profile picture is required']
     },
     createdMeals: [
         {
