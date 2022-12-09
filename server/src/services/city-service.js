@@ -12,3 +12,10 @@ export const getCities = () => {
 export const createCity = (data) => {
     return City.create(data);
 }
+
+export const createCityMeal = (cityId, mealId) => {
+    return City.findByIdAndUpdate(
+        { _id: cityId },
+        { $push: { meals: mealId } },
+    );
+}
