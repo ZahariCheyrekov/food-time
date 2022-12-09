@@ -34,7 +34,8 @@ export class AuthService {
     name: string,
     email: string,
     password: string,
-    repeatPassword: string
+    repeatPassword: string,
+    picture: string
   ) {
     return this.http
       .post(`${this.url}/auth/register`, {
@@ -42,6 +43,7 @@ export class AuthService {
         email,
         password,
         repeatPassword,
+        picture,
       })
       .pipe(
         catchError(async (err) => console.log(err)),
