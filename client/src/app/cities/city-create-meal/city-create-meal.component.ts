@@ -3,8 +3,9 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
-import { CityService } from '../../core/services/city.service';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { UploadService } from '../../core/services/upload.service';
+import { CityService } from '../../core/services/city.service';
 
 @Component({
   selector: 'app-city-create-meal',
@@ -15,6 +16,7 @@ export class CityCreateMealComponent {
   url: any;
   files: File[] = [];
   cityId: string | null = '';
+  owenrId: string = '';
   dummyDescription = ` Caprese salad  is a simple Italian salad, made of sliced fresh mozzarella,
   tomatoes, and sweet basil, seasoned with salt, and olive oil. It is usually
   arranged on a plate in restaurant practice. Like pizza Margherita, it
@@ -22,6 +24,7 @@ export class CityCreateMealComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private localStorageService: LocalStorageService,
     private uploadService: UploadService,
     private cityService: CityService,
     private router: Router
@@ -29,6 +32,7 @@ export class CityCreateMealComponent {
 
   ngOnInit() {
     this.cityId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.owenrId = this.localStorageService.getUser().user._id;
   }
 
   onSelect(event: any) {
@@ -64,7 +68,6 @@ export class CityCreateMealComponent {
     const description = form.value.description;
     const preparationTime = form.value.preparationTime;
 
-    // TODO: add owner id
     this.cityService
       .createMeal(
         {
@@ -74,6 +77,7 @@ export class CityCreateMealComponent {
           description,
           preparationTime,
           picture: this.url,
+          ownerId: this.owenrId,
         },
         this.cityId
       )
