@@ -22,9 +22,7 @@ export class LoginComponent implements OnInit {
 
     console.log(form.value);
 
-    this.authService
-      .login(email, password)
-      .subscribe((res) => console.log(res));
+    this.authService.login(email, password).subscribe((res) => res);
 
     form.reset();
   }
