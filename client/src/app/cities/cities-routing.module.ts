@@ -19,11 +19,11 @@ const routes: Routes = [
         component: CityCreateComponent,
       },
       {
-        path: ':id',
+        path: ':id/meals',
         component: CityDetailsComponent,
       },
       {
-        path: ':id/create',
+        path: ':id/meals/create',
         component: CityCreateMealComponent,
       },
     ],
