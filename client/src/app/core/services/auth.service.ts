@@ -4,6 +4,7 @@ import { catchError, ObservableInput, tap } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { LocalStorageService } from './local-storage.service';
+import { IUser } from '../interfaces/IUser';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post(`${this.url}/auth/login`, {
+      .post<IUser>(`${this.url}/auth/login`, {
         email,
         password,
       })
@@ -38,7 +39,7 @@ export class AuthService {
     picture: string
   ) {
     return this.http
-      .post(`${this.url}/auth/register`, {
+      .post<IUser>(`${this.url}/auth/register`, {
         name,
         email,
         password,
