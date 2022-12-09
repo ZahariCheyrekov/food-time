@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { lastValueFrom } from 'rxjs';
 
 import { AuthService } from 'src/app/core/services/auth.service';
+import { UploadService } from 'src/app/core/services/upload.service';
 
 @Component({
   selector: 'app-register',
@@ -9,13 +11,44 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['../../../assets/scss/form.scss'],
 })
 export class RegisterComponent implements OnInit {
+  url: any;
+  files: File[] = [];
   isLoading = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private uploadService: UploadService
+  ) {}
 
   ngOnInit(): void {}
 
-  onSubmit(form: NgForm) {
+  onSelect(event: any) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event: any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+
+  async onSubmit(form: NgForm) {
+    if (!this.files[0]) {
+      return;
+    }
+
+    const fileData = this.files[0];
+    const data = new FormData();
+    data.append('file', fileData);
+    data.append('upload_preset', 'angular-cloudinary');
+    data.append('cloud_name', 'dhcdh9u9h');
+
+    await lastValueFrom(this.uploadService.uploadImage(data)).then(
+      (res: any) => {
+        this.url = res.secure_url;
+      }
+    );
+
     const name = `${form.value.firstName} ${form.value.lastName}`;
     const email = form.value.email;
     const password = form.value.password;
@@ -24,7 +57,7 @@ export class RegisterComponent implements OnInit {
     console.log(form.value);
 
     this.authService
-      .register(name, email, password, repeatPassword)
+      .register(name, email, password, repeatPassword, this.url)
       .subscribe((res) => console.log(res));
 
     form.reset();
