@@ -10,6 +10,7 @@ import { CityService } from 'src/app/core/services/city.service';
 })
 export class CityDetailsComponent implements OnInit {
   cityId: string | null = '';
+  city = {};
   meals = [];
 
   constructor(
@@ -23,6 +24,9 @@ export class CityDetailsComponent implements OnInit {
   }
 
   getCity() {
-    this.cityService.getCity(this.cityId).subscribe((res) => console.log(res));
+    this.cityService.getCity(this.cityId).subscribe((res: any) => {
+      this.city = res.city;
+      this.meals = res.meals;
+    });
   }
 }
