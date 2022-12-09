@@ -24,6 +24,6 @@ export class CityService {
   }
 
   createMeal(data: Object, cityId: string | null) {
-    return this.http.post(`${this.url}/cities/${cityId}`, data);
+    return this.http.post(`${this.url}/cities/${cityId}/meals`, data);
   }
 }
