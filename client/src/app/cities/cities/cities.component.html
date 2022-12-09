@@ -3,12 +3,12 @@
     <ul class="section__cities--list cities__list">
       <li class="cities__list--item list__item" *ngFor="let city of cities">
         <img class="list__item--picture picture" src="{{city.picture}}" alt="{{city.city}}" />
-        <a routerLink="/cities/{{city._id}}">
+        <a routerLink="/cities/{{city._id}}/meals">
           <article class="liste__item--article article">
             <h2 class="list__item--info info">
               {{city.city}}, {{city.country}}
             </h2>
-            <a routerLink="/cities/{{city._id}}" class="list__item--link link">
+            <a routerLink="/cities/{{city._id}}/meals" class="list__item--link link">
               Explore Food
             </a>
           </article>
