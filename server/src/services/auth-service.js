@@ -7,3 +7,10 @@ export const getUserByEmail = (email) => {
 export const createUser = (data) => {
     return User.create(data);
 }
+
+export const createUserMeal = (ownerId, mealId) => {
+    return User.findByIdAndUpdate(
+        { _id: ownerId },
+        { $push: { createdMeals: mealId } },
+    );
+}
