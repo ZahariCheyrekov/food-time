@@ -45,7 +45,9 @@ export class AuthService {
       })
       .pipe(
         catchError(async (err) => console.log(err)),
-        tap((res) => res)
+        tap((res) => {
+          this.localStorageService.saveUser(res);
+        })
       );
   }
 
