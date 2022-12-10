@@ -6,26 +6,28 @@
         {{city.city}}, {{city.country}}
       </h2>
     </article>
-    <ul class="meals__section--items list__items">
+    <ul class="meals__slist--items list__items">
       <li class="meals__list--item list__item" *ngFor="let meal of meals">
         <article class="meal__article--item meal">
           <h3 class="meal__name name">
             {{meal.name}}
           </h3>
           <p class="meal__paragraph--ingredients ingredients">
-            Ingredients: {{meal.ingredients}}
+            <strong>Ingredients:</strong> {{meal.ingredients}}
           </p>
           <time class="meal__time--prep prep">
-            Preparation time: {{meal.preparationTime}}
+            <strong>Preparation time:</strong> {{meal.preparationTime}}
           </time>
           <summary class="meal__paragraph--description description">
-            Description: {{meal.description}}
+            <strong>Description:</strong> {{meal.description}}
           </summary>
           <span class="meal__span--price price">
-            {{meal.price}} лв.
+            <strong>
+              {{meal.price}} лв.
+            </strong>
           </span>
         </article>
-        <img class="meal__img" src="{{meal.picture}}" alt="{{meal.name}}" />
+        <img class="meal__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
       </li>
     </ul>
   </section>
