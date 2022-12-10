@@ -12,6 +12,7 @@
 
 .city__article {
   position: relative;
+  margin-bottom: 60px;
 
   .img {
     position: relative;
@@ -31,5 +32,24 @@
     border-radius: 10px;
     color: $white-color;
     text-shadow: 6px 0px 14px $black-color;
+  }
+}
+
+.meals__list--item {
+  margin: 20px 0;
+  padding: 20px;
+
+  display: flex;
+  gap: 2rem;
+
+  border-radius: 10px;
+  border: 1px solid $gray-border-color;
+
+  .img {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 6px;
+    object-fit: cover;
   }
 }
