@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ICity } from 'src/app/core/interfaces/ICity';
 
+import { ICity } from 'src/app/core/interfaces/ICity';
+import { IMeal } from 'src/app/core/interfaces/IMeal';
 import { CityService } from 'src/app/core/services/city.service';
 
 @Component({
@@ -12,7 +13,7 @@ import { CityService } from 'src/app/core/services/city.service';
 export class CityDetailsComponent implements OnInit {
   cityId: string | null = '';
   city = {} as ICity;
-  meals = [];
+  meals: IMeal[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
