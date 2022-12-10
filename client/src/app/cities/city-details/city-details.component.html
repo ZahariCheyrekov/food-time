@@ -1,10 +1,30 @@
 <main class="main__city">
   <section class="city__section">
     <article class="city__article">
-      <img src="{{city.picture}}" alt="{{city.city}}" class="city__img img">
+      <img src="{{city.picture}}" alt="{{city.city}}" class="city__img img" />
       <h2 class="city__destination destination">
         {{city.city}}, {{city.country}}
       </h2>
     </article>
+    <ul class="meals__section--items list__items">
+      <li class="meals__list--item list__item" *ngFor="let meal of meals">
+        <article class="meal__article--item meal">
+          <h3>{{meal.name}}</h3>
+          <p class="meal__paragraph--ingredients ingredients">
+            {{meal.ingredients}}
+          </p>
+          <span class="meal__span--price price">
+            {{meal.price}}
+          </span>
+          <summary class="meal__paragraph--description description">
+            {{meal.description}}
+          </summary>
+          <time class="meal__time--prep prep">
+            {{meal.preparationTime}}
+          </time>
+        </article>
+        <img class="meal__img" src="{{meal.picture}}" alt="{{meal.name}}" />
+      </li>
+    </ul>
   </section>
 </main>
