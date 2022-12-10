@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
-  declarations: [NotFoundComponent, AboutComponent],
+  declarations: [AboutComponent, NotFoundComponent],
   imports: [CommonModule],
 })
 export class FeaturesModule {}
