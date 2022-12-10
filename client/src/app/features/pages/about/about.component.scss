@@ -1,0 +1,27 @@
+@import "../../../../assets/scss/variables.scss";
+
+.main__about {
+  margin: 60px;
+}
+
+.about__section {
+  max-width: $primary-width;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about__section--content {
+  .title {
+    margin-bottom: 30px;
+  }
+
+  .info {
+    line-height: 1.6;
+    text-indent: 2rem;
+    font-style: italic;
+  }
+
+  :nth-child(2) {
+    margin-bottom: 1rem;
+  }
+}
