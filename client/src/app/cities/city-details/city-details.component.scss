@@ -39,12 +39,40 @@
   margin: 20px 0;
   padding: 20px;
 
-  display: flex;
-  gap: 2rem;
-
+  line-height: 1.4;
   border-radius: 10px;
   border: 1px solid $gray-border-color;
   transition: all ease-in-out 0.3s;
+
+  a {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .name {
+    margin-bottom: 12px;
+  }
+
+  .ingredients,
+  .description {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+  }
+
+  .ingredients {
+    margin-bottom: 6px;
+    -webkit-line-clamp: 2;
+  }
+
+  .description {
+    margin-top: 6px;
+    -webkit-line-clamp: 3;
+  }
+
+  .price {
+    margin-top: 12px;
+  }
 
   .img {
     width: 200px;
