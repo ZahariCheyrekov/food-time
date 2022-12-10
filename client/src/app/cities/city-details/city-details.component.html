@@ -9,19 +9,21 @@
     <ul class="meals__section--items list__items">
       <li class="meals__list--item list__item" *ngFor="let meal of meals">
         <article class="meal__article--item meal">
-          <h3>{{meal.name}}</h3>
+          <h3 class="meal__name name">
+            {{meal.name}}
+          </h3>
           <p class="meal__paragraph--ingredients ingredients">
-            {{meal.ingredients}}
+            Ingredients: {{meal.ingredients}}
           </p>
-          <span class="meal__span--price price">
-            {{meal.price}}
-          </span>
-          <summary class="meal__paragraph--description description">
-            {{meal.description}}
-          </summary>
           <time class="meal__time--prep prep">
-            {{meal.preparationTime}}
+            Preparation time: {{meal.preparationTime}}
           </time>
+          <summary class="meal__paragraph--description description">
+            Description: {{meal.description}}
+          </summary>
+          <span class="meal__span--price price">
+            {{meal.price}} лв.
+          </span>
         </article>
         <img class="meal__img" src="{{meal.picture}}" alt="{{meal.name}}" />
       </li>
