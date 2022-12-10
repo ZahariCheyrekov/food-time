@@ -50,24 +50,24 @@
   }
 
   .name {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
   .ingredients,
   .description {
-    -webkit-box-orient: vertical;
     display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
   }
 
   .ingredients {
     margin-bottom: 6px;
-    -webkit-line-clamp: 2;
+    padding-right: 40px;
   }
 
   .description {
     margin-top: 6px;
-    -webkit-line-clamp: 3;
   }
 
   .price {
