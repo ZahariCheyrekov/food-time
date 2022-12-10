@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ICity } from 'src/app/core/interfaces/ICity';
 
 import { CityService } from 'src/app/core/services/city.service';
 
@@ -10,7 +11,7 @@ import { CityService } from 'src/app/core/services/city.service';
 })
 export class CityDetailsComponent implements OnInit {
   cityId: string | null = '';
-  city = {};
+  city = {} as ICity;
   meals = [];
 
   constructor(
