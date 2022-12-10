@@ -44,6 +44,7 @@
 
   border-radius: 10px;
   border: 1px solid $gray-border-color;
+  transition: all ease-in-out 0.3s;
 
   .img {
     width: 200px;
@@ -51,5 +52,11 @@
 
     border-radius: 6px;
     object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    background-color: $light-gray-color;
+    cursor: pointer;
   }
 }
