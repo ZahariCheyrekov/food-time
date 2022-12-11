@@ -3,21 +3,31 @@
     <section class="meal__section">
       <img src="{{meal.picture}}" alt="{{meal.name}}" class="meal__img img" />
       <article class=" meal__article--info meal__info">
-        <h2 class="meal__title title">
+        <h2 class="meal__name name">
           {{meal.name}}
         </h2>
         <p class="meal__paragraph--prep prep">
-          <strong>Preparation time:</strong> {{meal.preparationTime}}
+          <strong>Preparation time:</strong>
+          &nbsp;
+          <em>
+            {{meal.preparationTime}}
+          </em>
         </p>
         <p class="meal__paragraph--ingredients ingredients">
-          <strong>Ingredients:</strong> {{meal.ingredients}}
+          <strong>Ingredients:</strong>
+          &nbsp;
+          <em>
+            {{meal.ingredients}}
+          </em>
         </p>
-        <h3 class="meal__title--likes likes">
-          {{mealLikes}}
-        </h3>
-        <h3 class="meal__title--price price">
-          {{meal.price}} лв.
-        </h3>
+        <span class="meal__likes__price likes__price">
+          <h2 class="meal__title--likes likes">
+            {{mealLikes}} likes
+          </h2>
+          <h2 class="meal__title--price price">
+            {{meal.price}} лв.
+          </h2>
+        </span>
       </article>
     </section>
     <summary class="meal__summary summary">
