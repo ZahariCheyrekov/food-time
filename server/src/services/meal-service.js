@@ -4,6 +4,10 @@ import * as authService from './auth-service.js';
 import * as cityService from './city-service.js';
 
 
+export const getMeal = (mealId) => {
+    return Meal.findById(mealId);
+}
+
 export const getCityMeals = (mealIds) => {
     return Meal.find({ _id: { $in: mealIds } });
 }
