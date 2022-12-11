@@ -4,7 +4,20 @@ import * as mealService from '../services/meal-service.js';
 
 const router = express.Router();
 
-router.post('/create', async (req, res) => {
+router.get('/:id/meals/:mealId', async (req, res) => {
+    const { mealId } = req.params;
+
+    try {
+        const meal = await mealService.getMeal(mealId);
+        res.status(200).json(meal);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
+router.post('/:id/meals/create', async (req, res) => {
     const {
         name,
         ingredients,
@@ -26,6 +39,6 @@ router.post('/create', async (req, res) => {
         console.log(error);
         res.status(500).json({ message: 'Something went wrong.' });
     }
-})
+});
 
 export default router;
