@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MealService {
+  url = environment.app.default_url;
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  getMeal(cityId: string, mealId: string) {
+    return this.http.get(`${this.url}/cities/${cityId}/meals/${mealId}`);
+  }
 }
