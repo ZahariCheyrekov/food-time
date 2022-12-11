@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { IMeal } from 'src/app/core/interfaces/IMeal';
 import { MealService } from 'src/app/core/services/meal.service';
@@ -16,6 +16,7 @@ export class CityMealDetailsComponent implements OnInit {
   mealLikes = 0;
 
   constructor(
+    private router: Router,
     private activatedRoute: ActivatedRoute,
     private mealService: MealService
   ) {}
@@ -32,5 +33,9 @@ export class CityMealDetailsComponent implements OnInit {
       this.meal = res;
       this.mealLikes = res.likes.length;
     });
+  }
+
+  onEdit() {
+    this.router.navigate([`/cities/${this.cityId}/meals/${this.mealId}/edit`]);
   }
 }
