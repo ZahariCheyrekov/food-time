@@ -2,7 +2,8 @@
 
 .login__form,
 .register__form,
-.create__meal--form {
+.create__meal--form,
+.edit__meal--form {
   margin: 100px auto;
   max-width: 450px;
 
@@ -19,6 +20,10 @@
   .input {
     font-size: 1.4rem;
     margin: 1rem 0;
+  }
+
+  textarea {
+    resize: vertical;
   }
 
   .input {
