@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { IMeal } from 'src/app/core/interfaces/IMeal';
+import { MealService } from 'src/app/core/services/meal.service';
 
 @Component({
   selector: 'app-city-meal-details',
@@ -13,7 +14,10 @@ export class CityMealDetailsComponent implements OnInit {
   mealId: string = '';
   cityId: string = '';
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private mealService: MealService
+  ) {}
 
   ngOnInit() {
     this.cityId = this.activatedRoute.snapshot.paramMap.get('id') as string;
@@ -23,6 +27,8 @@ export class CityMealDetailsComponent implements OnInit {
   }
 
   fetchMeal() {
-
+    this.mealService
+      .getMeal(this.cityId, this.mealId)
+      .subscribe((res: any) => (this.meal = res));
   }
 }
