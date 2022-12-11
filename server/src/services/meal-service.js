@@ -21,3 +21,7 @@ export const createMeal = async (mealData, ownerId, cityId) => {
 
     return meal;
 }
+
+export const editMeal = (mealId, mealData) => {
+    return Meal.findByIdAndUpdate(mealId, mealData);
+}
