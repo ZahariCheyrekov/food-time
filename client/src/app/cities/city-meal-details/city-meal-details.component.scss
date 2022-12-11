@@ -1,0 +1,37 @@
+@import "../../../assets/scss/variables.scss";
+
+.meal__main {
+  margin: 40px;
+}
+
+.meal__main--wrapper {
+  max-width: $primary-width;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.meal__section {
+  display: flex;
+  margin-bottom: 50px;
+
+  .img {
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+  }
+
+  .meal__info {
+    padding-left: 40px;
+
+    :not(:first-child) {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.meal__summary {
+  text-indent: 1.4rem;
+  line-height: 1.6;
+  font-style: italic;
+}
