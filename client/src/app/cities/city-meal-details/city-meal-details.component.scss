@@ -20,14 +20,39 @@
     border-radius: 10px;
   }
 
-  .meal__info {
-    padding-left: 40px;
+  .name {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
 
-    :not(:first-child) {
-      margin: 10px 0;
+  .meal__info {
+    position: relative;
+    margin-left: 40px;
+
+    :not(:first-child, :last-child) {
+      margin: 26px 0;
       font-size: 1.2rem;
     }
+
+    .ingredients {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 9;
+      overflow: hidden;
+    }
   }
+}
+
+.meal__likes__price {
+  position: absolute;
+  display: flex;
+  width: 100%;
+
+  bottom: 0;
+  left: 0;
+
+  align-items: center;
+  justify-content: space-between;
 }
 
 .meal__summary {
