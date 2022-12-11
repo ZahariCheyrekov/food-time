@@ -5,7 +5,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { CityCreateComponent } from './city-create/city-create.component';
 import { RouterModule } from '@angular/router';
 import { AuthRoutingModule } from './cities-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CitiesComponent } from './cities/cities.component';
 import { CityDetailsComponent } from './city-details/city-details.component';
@@ -29,6 +29,7 @@ import { CityMealEditComponent } from './city-meal-edit/city-meal-edit.component
     FormsModule,
     HttpClientModule,
     NgxDropzoneModule,
+    ReactiveFormsModule,
   ],
 })
 export class CitiesModule {}
