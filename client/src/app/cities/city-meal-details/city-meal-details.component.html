@@ -21,6 +21,12 @@
           </em>
         </p>
         <span class="meal__likes__price likes__price">
+          <button class="meal__button--edit edit__button button" (click)="onEdit()">
+            Edit
+          </button>
+          <button class="meal__button--delete delete__button button">
+            Delete
+          </button>
           <h2 class="meal__title--likes likes">
             {{mealLikes}} likes
           </h2>
