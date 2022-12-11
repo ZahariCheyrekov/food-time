@@ -22,4 +22,8 @@ export class MealService {
       mealData
     );
   }
+
+  deleteMeal(mealId: string, cityId: string) {
+    return this.http.delete(`${this.url}/cities/${cityId}/meals/${mealId}/delete`);
+  }
 }
