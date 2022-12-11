@@ -38,4 +38,12 @@ export class CityMealDetailsComponent implements OnInit {
   onEdit() {
     this.router.navigate([`/cities/${this.cityId}/meals/${this.mealId}/edit`]);
   }
+
+  onDelete() {
+    this.mealService
+      .deleteMeal(this.mealId, this.cityId)
+      .subscribe((res) => {
+
+      });
+  }
 }
