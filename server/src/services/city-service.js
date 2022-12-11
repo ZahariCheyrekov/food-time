@@ -19,3 +19,10 @@ export const createCityMeal = (cityId, mealId) => {
         { $push: { meals: mealId } },
     );
 }
+
+export const removeCityMeal = (cityId, mealId) => {
+    return City.findByIdAndUpdate(
+        { _id: cityId },
+        { $pull: { meals: mealId } },
+    );
+}
