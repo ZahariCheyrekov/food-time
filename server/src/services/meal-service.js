@@ -25,3 +25,11 @@ export const createMeal = async (mealData, ownerId, cityId) => {
 export const editMeal = (mealId, mealData) => {
     return Meal.findByIdAndUpdate(mealId, mealData);
 }
+
+export const deleteMeal = async (mealId, cityId) => {
+    const { ownerId } = await Meal.findByIdAndDelete(mealId);
+
+    await authService.removeUserMeal(ownerId, mealId);
+
+    //TODO: Delete reviews with mealId
+}
