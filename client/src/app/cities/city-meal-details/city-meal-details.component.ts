@@ -40,10 +40,8 @@ export class CityMealDetailsComponent implements OnInit {
   }
 
   onDelete() {
-    this.mealService
-      .deleteMeal(this.mealId, this.cityId)
-      .subscribe((res) => {
-
-      });
+    this.mealService.deleteMeal(this.mealId, this.cityId).subscribe(() => {
+      this.router.navigate([`/cities/${this.cityId}/meals`]);
+    });
   }
 }
