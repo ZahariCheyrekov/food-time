@@ -41,4 +41,33 @@ router.post('/:id/meals/create', async (req, res) => {
     }
 });
 
+router.post('/:id/meals/:mealId/edit', async (req, res) => {
+    const { mealId } = req.params;
+    const {
+        name,
+        ingredients,
+        price,
+        description,
+        preparationTime,
+        picture
+    } = req.body;
+
+    try {
+        const editedMeal = await mealService.editMeal(mealId, {
+            name,
+            ingredients,
+            price,
+            description,
+            preparationTime,
+            picture
+        });
+console.log(editedMeal)
+        res.status(200).json(editedMeal);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
 export default router;
