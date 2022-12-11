@@ -1,1 +1,15 @@
-<p>city-meal-edit works!</p>
+<form class="edit__meal--form" method="POST">
+  <legend class=" form__legend legend">
+    Edit Meal
+  </legend>
+  <input type="text" name="name" class="form__input input" value="{{meal.name}}" ngModel />
+  <textarea type="text" name="ingredients" class="form__input input" value="{{meal.ingredients}}" ngModel></textarea>
+  <input type="number" name="price" class="form__input input" value="{{meal.price}}" ngModel />
+  <textarea type="text" name="description" class="form__input input" value="{{meal.description}}" ngModel>
+  </textarea>
+  <input type="text" name="preparationTime" class="form__input input" value="{{meal.preparationTime}}" ngModel />
+  <input type="text" name="picture" class="form__input input" value="{{meal.picture}}" ngModel />
+  <button class="form__button auth__button">
+    Edit Meal
+  </button>
+</form>
