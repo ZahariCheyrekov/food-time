@@ -1,8 +1,27 @@
 <main class="meal__main">
-  <section class="meal__section">
-    <img src="" alt="" />
-    <article class="meal__article--info meal__info">
-
-    </article>
-  </section>
+  <div class="meal__main--wrapper meal__wrapper wrapper">
+    <section class="meal__section">
+      <img src="{{meal.picture}}" alt="{{meal.name}}" class="meal__img img" />
+      <article class=" meal__article--info meal__info">
+        <h2 class="meal__title title">
+          {{meal.name}}
+        </h2>
+        <p class="meal__paragraph--prep prep">
+          <strong>Preparation time:</strong> {{meal.preparationTime}}
+        </p>
+        <p class="meal__paragraph--ingredients ingredients">
+          <strong>Ingredients:</strong> {{meal.ingredients}}
+        </p>
+        <h3 class="meal__title--likes likes">
+          {{meal.likes.length}}
+        </h3>
+        <h3 class="meal__title--price price">
+          {{meal.price}}
+        </h3>
+      </article>
+    </section>
+    <summary class="meal__summary summary">
+      {{meal.description}}
+    </summary>
+  </div>
 </main>
