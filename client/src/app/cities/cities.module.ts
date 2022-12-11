@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CitiesComponent } from './cities/cities.component';
 import { CityDetailsComponent } from './city-details/city-details.component';
 import { CityCreateMealComponent } from './city-create-meal/city-create-meal.component';
+import { CityMealDetailsComponent } from './city-meal-details/city-meal-details.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CityCreateMealComponent } from './city-create-meal/city-create-meal.com
     CitiesComponent,
     CityDetailsComponent,
     CityCreateMealComponent,
+    CityMealDetailsComponent,
   ],
   imports: [
     CommonModule,
