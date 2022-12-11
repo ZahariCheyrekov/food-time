@@ -9,7 +9,6 @@ const router = express.Router();
 
 router.use('/auth', authController);
 router.use('/cities', cityController);
-router.use('/cities/:id/meals', mealController);
-
+router.use('/cities', mealController);
 
 export default router;
