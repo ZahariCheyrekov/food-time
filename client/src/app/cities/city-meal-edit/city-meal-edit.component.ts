@@ -38,7 +38,9 @@ export class CityMealEditComponent implements OnInit {
   }
 
   onEditMeal() {
-    this.mealService.editMeal(this.cityId, this.mealId, this.formGroup);
+    this.mealService
+      .editMeal(this.cityId, this.mealId, this.formGroup.value)
+      .subscribe((res) => res);
   }
 
   private initForm(meal?: IMeal) {
