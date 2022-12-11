@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { IMeal } from 'src/app/core/interfaces/IMeal';
 import { MealService } from 'src/app/core/services/meal.service';
@@ -19,7 +19,8 @@ export class CityMealEditComponent implements OnInit {
   constructor(
     private mealService: MealService,
     private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -40,7 +41,9 @@ export class CityMealEditComponent implements OnInit {
   onEditMeal() {
     this.mealService
       .editMeal(this.cityId, this.mealId, this.formGroup.value)
-      .subscribe((res) => res);
+      .subscribe(() => {
+        this.router.navigate([`/cities/${this.cityId}/meals/${this.mealId}`]);
+      });
   }
 
   private initForm(meal?: IMeal) {
