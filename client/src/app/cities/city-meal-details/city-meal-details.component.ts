@@ -13,6 +13,7 @@ export class CityMealDetailsComponent implements OnInit {
   meal = {} as IMeal;
   mealId: string = '';
   cityId: string = '';
+  mealLikes = 0;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,8 +28,9 @@ export class CityMealDetailsComponent implements OnInit {
   }
 
   fetchMeal() {
-    this.mealService
-      .getMeal(this.cityId, this.mealId)
-      .subscribe((res: any) => (this.meal = res));
+    this.mealService.getMeal(this.cityId, this.mealId).subscribe((res: any) => {
+      this.meal = res;
+      this.mealLikes = res.likes.length;
+    });
   }
 }
