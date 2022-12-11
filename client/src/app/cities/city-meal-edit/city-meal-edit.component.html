@@ -1,15 +1,15 @@
-<form class="edit__meal--form" method="POST">
+<form class="edit__meal--form" method="POST" [formGroup]="formGroup" (ngSubmit)="onEditMeal()">
   <legend class=" form__legend legend">
     Edit Meal
   </legend>
-  <input type="text" name="name" class="form__input input" value="{{meal.name}}" ngModel />
-  <textarea type="text" name="ingredients" class="form__input input" value="{{meal.ingredients}}" ngModel></textarea>
-  <input type="number" name="price" class="form__input input" value="{{meal.price}}" ngModel />
-  <textarea type="text" name="description" class="form__input input" value="{{meal.description}}" ngModel>
+  <input type="text" name="name" class="form__input input" formControlName="name" />
+  <textarea type="text" name="ingredients" class="form__input input" formControlName="ingredients"></textarea>
+  <input type="number" name="price" class="form__input input" formControlName="price" />
+  <textarea type="text" name="description" class="form__input input" formControlName="description">
   </textarea>
-  <input type="text" name="preparationTime" class="form__input input" value="{{meal.preparationTime}}" ngModel />
-  <input type="text" name="picture" class="form__input input" value="{{meal.picture}}" ngModel />
-  <button class="form__button auth__button">
+  <input type="text" name="preparationTime" class="form__input input" formControlName="preparationTime" />
+  <input type="text" name="picture" class="form__input input" formControlName="picture" />
+  <button class=" form__button auth__button">
     Edit Meal
   </button>
 </form>
