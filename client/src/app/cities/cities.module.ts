@@ -11,6 +11,7 @@ import { CitiesComponent } from './cities/cities.component';
 import { CityDetailsComponent } from './city-details/city-details.component';
 import { CityCreateMealComponent } from './city-create-meal/city-create-meal.component';
 import { CityMealDetailsComponent } from './city-meal-details/city-meal-details.component';
+import { CityMealEditComponent } from './city-meal-edit/city-meal-edit.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CityMealDetailsComponent } from './city-meal-details/city-meal-details.
     CityDetailsComponent,
     CityCreateMealComponent,
     CityMealDetailsComponent,
+    CityMealEditComponent,
   ],
   imports: [
     CommonModule,
