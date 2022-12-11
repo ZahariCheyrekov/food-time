@@ -61,7 +61,6 @@ router.post('/:id/meals/:mealId/edit', async (req, res) => {
             preparationTime,
             picture
         });
-console.log(editedMeal)
         res.status(200).json(editedMeal);
 
     } catch (error) {
