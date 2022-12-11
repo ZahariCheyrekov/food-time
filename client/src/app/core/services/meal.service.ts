@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
+import { IMeal } from '../interfaces/IMeal';
 
 @Injectable({
   providedIn: 'root',
@@ -13,5 +14,12 @@ export class MealService {
 
   getMeal(cityId: string, mealId: string) {
     return this.http.get(`${this.url}/cities/${cityId}/meals/${mealId}`);
+  }
+
+  editMeal(cityId: string, mealId: string, mealData: IMeal) {
+    return this.http.post(
+      `${this.url}/cities/${cityId}/meals/${mealId}/edit`,
+      mealData
+    );
   }
 }
