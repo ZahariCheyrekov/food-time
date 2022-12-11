@@ -6,6 +6,7 @@ import { CityDetailsComponent } from './city-details/city-details.component';
 import { CityCreateComponent } from './city-create/city-create.component';
 import { CityCreateMealComponent } from './city-create-meal/city-create-meal.component';
 import { CityMealDetailsComponent } from './city-meal-details/city-meal-details.component';
+import { CityMealEditComponent } from './city-meal-edit/city-meal-edit.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
       {
         path: ':id/meals/:mealId',
         component: CityMealDetailsComponent,
+      },
+      {
+        path: ':id/meals/:mealId/edit',
+        component: CityMealEditComponent,
       },
     ],
   },
