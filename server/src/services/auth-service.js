@@ -14,3 +14,10 @@ export const createUserMeal = (ownerId, mealId) => {
         { $push: { createdMeals: mealId } },
     );
 }
+
+export const removeUserMeal = (ownerId, mealId) => {
+    return User.findByIdAndUpdate(
+        { _id: ownerId },
+        { $pull: { createdMeals: mealId } },
+    );
+}
