@@ -69,4 +69,17 @@ router.post('/:id/meals/:mealId/edit', async (req, res) => {
     }
 });
 
+router.delete('/:id/meals/:mealId/delete', async (req, res) => {
+    const { id: cityId, mealId } = req.params;
+
+    try {
+        await mealService.deleteMeal(mealId, cityId);
+        res.status(200).json({ mealId: 'deleted' });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
 export default router;
