@@ -28,10 +28,10 @@
   .meal__info {
     position: relative;
     margin-left: 40px;
+    font-size: 1.2rem;
 
-    :not(:first-child, :last-child) {
+    .prep {
       margin: 26px 0;
-      font-size: 1.2rem;
     }
 
     .ingredients {
@@ -39,6 +39,7 @@
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 9;
       overflow: hidden;
+      margin: 26px 0;
     }
   }
 }
@@ -53,6 +54,23 @@
 
   align-items: center;
   justify-content: space-between;
+
+  .button {
+    font-size: 1.6rem;
+    padding: 2px 12px;
+
+    border: none;
+    border-radius: 4px;
+    color: $white-color;
+  }
+
+  .edit__button {
+    background-color: $orange-color;
+  }
+
+  .delete__button {
+    background-color: red;
+  }
 }
 
 .meal__summary {
