@@ -21,4 +21,8 @@ export class LocalStorageService {
     );
     return user;
   }
+
+  getUserId(): string {
+    return this.getUser().user._id;
+  }
 }
