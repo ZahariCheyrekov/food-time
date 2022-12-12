@@ -23,7 +23,15 @@ export class MealService {
     );
   }
 
+  likeMeal(cityId: string, mealId: string, userId: string) {
+    return this.http.post(`${this.url}/cities/${cityId}/meals/${mealId}/like`, {
+      userId,
+    });
+  }
+
   deleteMeal(mealId: string, cityId: string) {
-    return this.http.delete(`${this.url}/cities/${cityId}/meals/${mealId}/delete`);
+    return this.http.delete(
+      `${this.url}/cities/${cityId}/meals/${mealId}/delete`
+    );
   }
 }
