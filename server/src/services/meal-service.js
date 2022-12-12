@@ -34,6 +34,13 @@ export const likeMeal = (mealId, userId) => {
     );
 }
 
+export const removeLike = (mealId, userId) => {
+    return Meal.findByIdAndUpdate(
+        { _id: mealId },
+        { $pull: userId }
+    );
+}
+
 export const deleteMeal = async (mealId, cityId) => {
     const { ownerId, reviews } = await Meal.findByIdAndDelete(mealId);
 
