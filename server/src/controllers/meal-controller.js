@@ -69,6 +69,30 @@ router.post('/:id/meals/:mealId/edit', async (req, res) => {
     }
 });
 
+router.post('/:id/meals/:mealId/like', async (req, res) => {
+    const { mealId } = req.params;
+    const { userId } = req.body;
+
+    try {
+        const meal = await mealService.getMeal(mealId);
+
+        const isLiked = meal.likes.some(like => String(like) == userId);
+
+        if (isLiked) {
+            await mealService.removeLike(mealId, userId);
+            res.status(200).json({ disliked: userId });
+
+        } else {
+            await mealService.likeMeal(mealId, userId);
+            res.status(200).json({ liked: userId });
+        }
+
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
 router.delete('/:id/meals/:mealId/delete', async (req, res) => {
     const { id: cityId, mealId } = req.params;
 
