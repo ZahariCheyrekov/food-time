@@ -30,14 +30,14 @@ export const editMeal = (mealId, mealData) => {
 export const likeMeal = (mealId, userId) => {
     return Meal.findByIdAndUpdate(
         { _id: mealId },
-        { $push: userId }
+        { $push: { likes: userId } }
     );
 }
 
 export const removeLike = (mealId, userId) => {
     return Meal.findByIdAndUpdate(
         { _id: mealId },
-        { $pull: userId }
+        { $pull: { likes: userId } }
     );
 }
 
