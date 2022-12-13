@@ -20,10 +20,10 @@ router.get('/:id/meals/:mealId/reviews', async (req, res) => {
 
 router.post('/:id/meals/:mealId/review', async (req, res) => {
     const { mealId } = req.params;
-    const { userId, name, description } = req.body;
+    const { userId, name, picture, description } = req.body;
 
     try {
-        const review = reviewService.createReview(mealId, userId, name, description);
+        const review = reviewService.createReview(mealId, userId, name, picture, description);
         res.status(201).json(review);
 
     } catch (error) {
