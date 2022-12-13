@@ -1,26 +1,20 @@
 import mongoose from 'mongoose';
 
 const reviewSchema = mongoose.Schema({
-    descritpion: {
+    description: {
         type: String,
         required: [true, 'Description is required']
-    },
-    rating: {
-        type: Number,
-        validate: (rating) => {
-            if (rating <= 0 || rating > 5) {
-                throw new Error('Rating must be a number between 1 and 5')
-            }
-        },
-        required: [true, 'Rating is required']
     },
     mealId: {
         type: mongoose.Types.ObjectId,
         ref: 'Meal'
     },
-    userId: {
-        type: mongoose.Types.ObjectId,
-        ref: 'User'
+    reviewOwner: {
+        name: String,
+        postedBy: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
     }
 });
 
