@@ -39,5 +39,21 @@
     <summary class="meal__summary summary">
       {{meal.description}}
     </summary>
+    <section class="meal__section--reviews section__reviews reviews">
+      <h2 class="reviews__title title">
+        Reviews
+      </h2>
+      <ul class="reviews__list">
+        <li class="reviews__list--item review__item">
+          gewrehg
+        </li>
+      </ul>
+      <form method="POST" #sendReview="ngForm" (ngSubmit)="onReview(sendReview)">
+        <textarea type="text" name="description" placeholder="Enter your review here" ngModel></textarea>
+        <button class="review__button--send button__send">
+          Send
+        </button>
+      </form>
+    </section>
   </div>
 </main>
