@@ -10,6 +10,12 @@ export class ReviewService {
 
   constructor(private http: HttpClient) {}
 
+  getMealReviews(cityId: string, mealId: string) {
+    return this.http.get(
+      `${this.url}/cities/${cityId}/meals/${mealId}/reviews`
+    );
+  }
+
   createReview(
     cityId: string,
     mealId: string,
