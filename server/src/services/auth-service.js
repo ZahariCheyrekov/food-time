@@ -21,3 +21,10 @@ export const removeUserMeal = (ownerId, mealId) => {
         { $pull: { createdMeals: mealId } },
     );
 }
+
+export const createUserReview = (ownerId, reviewId) => {
+    return User.findByIdAndUpdate(
+        { _id: ownerId },
+        { $push: { reviews: reviewId } },
+    );
+}
