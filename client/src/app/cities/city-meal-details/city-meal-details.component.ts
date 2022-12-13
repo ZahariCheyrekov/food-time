@@ -34,15 +34,22 @@ export class CityMealDetailsComponent {
 
     this.userId = this.localStorageService.getUserId();
     this.fetchMeal();
+    this.fetchMealReviews();
   }
 
   fetchMeal() {
     this.mealService.getMeal(this.cityId, this.mealId).subscribe((res: any) => {
       this.meal = res;
-      this.reviews = res.reviews;
       this.mealLikes = res.likes.length;
-      console.log(this.reviews);
     });
+  }
+
+  fetchMealReviews() {
+    this.reviewService
+      .getMealReviews(this.cityId, this.mealId)
+      .subscribe((res: any) => {
+        this.reviews = res;
+      });
   }
 
   onEdit() {
