@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CityCreateComponent } from './city-create/city-create.component';
-import { RouterModule } from '@angular/router';
 import { AuthRoutingModule } from './cities-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { CitiesComponent } from './cities/cities.component';
 import { CityDetailsComponent } from './city-details/city-details.component';
 import { CityCreateMealComponent } from './city-create-meal/city-create-meal.component';
