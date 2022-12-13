@@ -4,6 +4,7 @@ export interface IReview {
   mealId: string;
   reviewOwner: {
     name: string;
+    picture: string;
     postedBy: string;
   };
 }
