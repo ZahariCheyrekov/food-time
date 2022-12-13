@@ -45,10 +45,14 @@
       </h2>
       <ul class="reviews__list">
         <li class="reviews__list--item review__item" *ngFor="let review of reviews">
-          <h4 class="review__list__item--creator item__creator creator">
-            {{review.reviewOwner.name}}
-          </h4>
-          <p class="review__list__item--paragraph item__paragraph paragraph">
+          <article class="review__article--item article__item">
+            <img class="review__img--user img__user" src="{{review.reviewOwner.picture}}"
+              alt="{{review.reviewOwner.name}}" />
+            <h4 class="review__list__item--creator item__creator creator">
+              {{review.reviewOwner.name}}
+            </h4>
+          </article>
+          <p class="review__list__paragraph--content paragraph__content content">
             {{review.description}}
           </p>
         </li>
