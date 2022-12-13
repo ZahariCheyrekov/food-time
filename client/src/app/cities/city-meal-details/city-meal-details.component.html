@@ -57,8 +57,9 @@
           </p>
         </li>
       </ul>
-      <form method="POST" #sendReview="ngForm" (ngSubmit)="onReview(sendReview)">
-        <textarea type="text" name="description" placeholder="Enter your review here" ngModel></textarea>
+      <form method="POST" class="review__form" #sendReview="ngForm" (ngSubmit)="onReview(sendReview)">
+        <textarea type="text" name="description" placeholder="Enter your review here"
+          class="review__form--textarea textarea" ngModel></textarea>
         <button class="review__button--send button__send">
           Send
         </button>
