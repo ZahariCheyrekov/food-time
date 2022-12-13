@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { IMeal } from 'src/app/core/interfaces/IMeal';
 import { MealService } from 'src/app/core/services/meal.service';
+import { ReviewService } from 'src/app/core/services/review.service';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
 @Component({
@@ -10,17 +12,19 @@ import { LocalStorageService } from 'src/app/core/services/local-storage.service
   templateUrl: './city-meal-details.component.html',
   styleUrls: ['./city-meal-details.component.scss'],
 })
-export class CityMealDetailsComponent implements OnInit {
+export class CityMealDetailsComponent {
   meal = {} as IMeal;
   mealId: string = '';
   cityId: string = '';
   userId: string = '';
+  reviews = [];
   mealLikes = 0;
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private mealService: MealService,
+    private reviewService: ReviewService,
     private localStorageService: LocalStorageService
   ) {}
 
@@ -35,7 +39,9 @@ export class CityMealDetailsComponent implements OnInit {
   fetchMeal() {
     this.mealService.getMeal(this.cityId, this.mealId).subscribe((res: any) => {
       this.meal = res;
+      this.reviews = res.reviews;
       this.mealLikes = res.likes.length;
+      console.log(this.reviews);
     });
   }
 
@@ -52,6 +58,15 @@ export class CityMealDetailsComponent implements OnInit {
   onLikeMeal() {
     this.mealService
       .likeMeal(this.cityId, this.mealId, this.userId)
+      .subscribe(() => {});
+  }
+
+  onReview(form: NgForm) {
+    const { description } = form.value;
+    const name = this.localStorageService.getUsername();
+
+    this.reviewService
+      .createReview(this.cityId, this.mealId, this.userId, name, description)
       .subscribe(() => {});
   }
 }
