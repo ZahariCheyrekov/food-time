@@ -44,6 +44,12 @@ const userSchema = mongoose.Schema({
             type: mongoose.Types.ObjectId,
             ref: 'Review'
         }
+    ],
+    cart: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Meal'
+        }
     ]
 });
 
