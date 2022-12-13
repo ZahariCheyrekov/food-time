@@ -8,6 +8,13 @@ export const createUser = (data) => {
     return User.create(data);
 }
 
+export const buyMeal = (userId, mealId) => {
+    return User.findByIdAndUpdate(
+        { _id: userId },
+        { $push: { cart: mealId } },
+    );
+}
+
 export const createUserMeal = (ownerId, mealId) => {
     return User.findByIdAndUpdate(
         { _id: ownerId },
