@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { IMeal } from 'src/app/core/interfaces/IMeal';
+import { IReview } from 'src/app/core/interfaces/IReview';
 import { MealService } from 'src/app/core/services/meal.service';
 import { ReviewService } from 'src/app/core/services/review.service';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
@@ -17,7 +18,7 @@ export class CityMealDetailsComponent {
   mealId: string = '';
   cityId: string = '';
   userId: string = '';
-  reviews = [];
+  reviews: IReview[] = [];
   mealLikes = 0;
 
   constructor(
