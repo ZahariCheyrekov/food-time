@@ -63,6 +63,12 @@ export class CityMealDetailsComponent {
     });
   }
 
+  onBuy() {
+    this.mealService
+      .buyMeal(this.cityId, this.mealId, this.userId)
+      .subscribe(() => {});
+  }
+
   onLikeMeal() {
     this.mealService
       .likeMeal(this.cityId, this.mealId, this.userId)
