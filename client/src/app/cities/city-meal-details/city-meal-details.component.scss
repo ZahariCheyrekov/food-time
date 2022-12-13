@@ -113,3 +113,30 @@
     border-bottom: 1px solid $gray-border-color;
   }
 }
+
+.review__form {
+  display: flex;
+  margin-top: 60px;
+
+  .textarea {
+    height: 50px;
+    min-height: 50px;
+
+    padding: 6px;
+    font-size: 1rem;
+
+    outline: none;
+    resize: vertical;
+    flex-basis: 75%;
+  }
+
+  .button__send {
+    flex-basis: 25%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+    border: none;
+    background-color: $orange-color;
+    color: $white-color;
+  }
+}
