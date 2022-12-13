@@ -29,6 +29,12 @@ export class MealService {
     });
   }
 
+  buyMeal(cityId: string, mealId: string, userId: string) {
+    return this.http.post(`${this.url}/cities/${cityId}/meals/${mealId}/buy`, {
+      userId,
+    });
+  }
+
   deleteMeal(mealId: string, cityId: string) {
     return this.http.delete(
       `${this.url}/cities/${cityId}/meals/${mealId}/delete`
