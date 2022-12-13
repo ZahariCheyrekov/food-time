@@ -15,6 +15,13 @@ export const buyMeal = (userId, mealId) => {
     );
 }
 
+export const removeMealFromCart = (userId, mealId) => {
+    return User.findByIdAndUpdate(
+        { _id: userId },
+        { $pull: { cart: mealId } },
+    );
+}
+
 export const createUserMeal = (ownerId, mealId) => {
     return User.findByIdAndUpdate(
         { _id: ownerId },
