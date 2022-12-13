@@ -29,4 +29,8 @@ export class LocalStorageService {
   getUsername(): string {
     return this.getUser().user.name;
   }
+
+  getUserPicture(): string {
+    return this.getUser().user.picture;
+  }
 }
