@@ -44,8 +44,13 @@
         Reviews
       </h2>
       <ul class="reviews__list">
-        <li class="reviews__list--item review__item">
-          gewrehg
+        <li class="reviews__list--item review__item" *ngFor="let review of reviews">
+          <h4 class="review__list__item--creator item__creator creator">
+            {{review.reviewOwner.name}}
+          </h4>
+          <p class="review__list__item--paragraph item__paragraph paragraph">
+            {{review.description}}
+          </p>
         </li>
       </ul>
       <form method="POST" #sendReview="ngForm" (ngSubmit)="onReview(sendReview)">
