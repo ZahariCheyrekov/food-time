@@ -8,11 +8,12 @@ export const getMealReviews = (mealId) => {
     return Review.find({ mealId });
 }
 
-export const createReview = async (mealId, userId, name, description) => {
+export const createReview = async (mealId, userId, name, picture, description) => {
     const review = await Review.create({
         description, mealId,
         reviewOwner: {
             name,
+            picture,
             postedBy: userId
         }
     });
