@@ -21,10 +21,6 @@ const reviewSchema = mongoose.Schema({
     userId: {
         type: mongoose.Types.ObjectId,
         ref: 'User'
-    },
-    picture: {
-        type: String,
-        ref: 'User'
     }
 });
 
