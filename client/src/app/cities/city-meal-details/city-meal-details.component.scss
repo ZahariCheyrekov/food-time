@@ -26,6 +26,7 @@
   }
 
   .meal__info {
+    width: 100%;
     position: relative;
     margin-left: 40px;
     font-size: 1.2rem;
@@ -134,7 +135,7 @@
     flex-basis: 25%;
     font-size: 1.2rem;
     font-weight: bold;
-    
+
     border: none;
     background-color: $orange-color;
     color: $white-color;
