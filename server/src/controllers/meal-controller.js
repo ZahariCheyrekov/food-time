@@ -1,6 +1,8 @@
 import express from 'express';
 
 import * as mealService from '../services/meal-service.js';
+import * as authService from '../services/auth-service.js';
+
 
 const router = express.Router();
 
@@ -86,6 +88,20 @@ router.post('/:id/meals/:mealId/like', async (req, res) => {
             await mealService.likeMeal(mealId, userId);
             res.status(200).json({ liked: userId });
         }
+
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
+router.post('/:id/meals/:mealId/buy', async (req, res) => {
+    const { mealId } = req.params;
+    const { userId } = req.body;
+
+    try {
+        await authService.buyMeal(userId, mealId);
+        res.status(200).json({ purchased: mealId, by: userId });
 
     } catch (error) {
         console.log(error.message);
