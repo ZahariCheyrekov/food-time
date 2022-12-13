@@ -72,9 +72,17 @@ export class CityMealDetailsComponent {
   onReview(form: NgForm) {
     const { description } = form.value;
     const name = this.localStorageService.getUsername();
+    const picture = this.localStorageService.getUserPicture();
 
     this.reviewService
-      .createReview(this.cityId, this.mealId, this.userId, name, description)
+      .createReview(
+        this.cityId,
+        this.mealId,
+        this.userId,
+        name,
+        picture,
+        description
+      )
       .subscribe(() => {});
   }
 }
