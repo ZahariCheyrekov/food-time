@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 import * as authService from '../services/auth-service.js';
+import * as mealService from '../services/meal-service.js';
 import { SALT, TOKEN_EXPIRATION_TIME } from '../constants/app-constants.js';
 
 
@@ -81,6 +82,19 @@ router.get('/:userId', async (req, res) => {
     try {
         const user = await authService.getUserById(userId);
         res.status(200).json(user);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
+router.get('/:userId/meals', async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const meals = await mealService.getUserMeals(userId);
+        res.status(200).json(meals);
 
     } catch (error) {
         console.log(error);
