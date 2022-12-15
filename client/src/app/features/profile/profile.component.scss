@@ -1,0 +1,86 @@
+@import "../../../assets/scss/variables.scss";
+
+.profile.main {
+  margin: 40px;
+}
+
+.profile__section {
+  max-width: $primary-width;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.meals__list--item {
+  margin: 20px 0;
+  padding: 20px;
+
+  line-height: 1.4;
+  border-radius: 10px;
+  border: 1px solid $gray-border-color;
+  transition: all ease-in-out 0.3s;
+
+  a {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .name {
+    margin-bottom: 16px;
+  }
+
+  .ingredients,
+  .description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .ingredients {
+    margin-bottom: 6px;
+    padding-right: 40px;
+  }
+
+  .description {
+    margin-top: 6px;
+  }
+
+  .price {
+    margin-top: 12px;
+  }
+
+  .img {
+    width: 200px;
+    height: 200px;
+
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    background-color: $light-gray-color;
+    cursor: pointer;
+  }
+}
+
+.meal__article--item {
+  position: relative;
+
+  .add {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 2.2rem;
+    cursor: grab;
+
+    border: none;
+    border-radius: 50%;
+    background-color: $orange-color;
+    color: $white-color;
+  }
+}
