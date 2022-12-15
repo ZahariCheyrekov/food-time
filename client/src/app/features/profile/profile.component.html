@@ -12,7 +12,36 @@
             </summary>
         </article>
         <section class="profile__section--meals section__meals">
-
+            <ul class="meals__slist--items list__items">
+                <li class="meals__list--item list__item" *ngFor="let meal of meals">
+                    <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}">
+                        <article class="meal__article--item meal">
+                            <h3 class="meal__name name">
+                                {{meal.name}}
+                            </h3>
+                            <p class="meal__paragraph--ingredients ingredients">
+                                <strong>Ingredients:</strong> {{meal.ingredients}}
+                            </p>
+                            <time class="meal__time--prep prep">
+                                <strong>Preparation time:</strong> {{meal.preparationTime}}
+                            </time>
+                            <summary class="meal__paragraph--description description">
+                                <strong>Description:</strong> {{meal.description}}
+                            </summary>
+                            <p class="meal__paragraph--price price">
+                                <strong>
+                                    {{meal.price}} лв.
+                                </strong>
+                            </p>
+                            <button class="meal__button--add add">
+                                +
+                            </button>
+                        </article>
+                        <img class="meal__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
+                    </a>
+                </li>
+            </ul>
         </section>
+
     </section>
 </main>
