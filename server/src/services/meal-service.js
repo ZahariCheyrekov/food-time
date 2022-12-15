@@ -9,6 +9,10 @@ export const getMeal = (mealId) => {
     return Meal.findById(mealId);
 }
 
+export const getUserMeals = (userId) => {
+    return Meal.find({ userId });
+}
+
 export const getCityMeals = (mealIds) => {
     return Meal.find({ _id: { $in: mealIds } });
 }
