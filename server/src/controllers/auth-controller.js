@@ -75,4 +75,17 @@ router.post('/register', async (req, res) => {
     }
 });
 
+router.get('/:userId', async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const user = await authService.getUserById(userId);
+        res.status(200).json(user);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
 export default router;
