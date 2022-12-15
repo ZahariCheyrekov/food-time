@@ -81,7 +81,10 @@ router.get('/:userId', async (req, res) => {
 
     try {
         const user = await authService.getUserById(userId);
-        res.status(200).json(user);
+        const meals = await mealService.getUserMeals(userId);
+        const likedMeals = await mealService.getUserLikedMeals(userId);
+
+        res.status(200).json({ user, meals, likedMeals });
 
     } catch (error) {
         console.log(error);
