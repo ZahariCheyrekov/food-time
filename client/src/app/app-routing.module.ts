@@ -4,6 +4,7 @@ import { AboutComponent } from './features/pages/about/about.component';
 
 import { HomeComponent } from './features/pages/home/home.component';
 import { NotFoundComponent } from './features/pages/not-found/not-found.component';
+import { ProfileComponent } from './features/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'cities',
     loadChildren: () =>
       import('./cities/cities.module').then((m) => m.CitiesModule),
+  },
+  {
+    path: 'profile/:userId',
+    component: ProfileComponent,
   },
   {
     path: '**',
