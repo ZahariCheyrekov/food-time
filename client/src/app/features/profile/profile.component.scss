@@ -10,6 +10,23 @@
   padding: 20px;
 }
 
+.article__user {
+  display: flex;
+  margin: 40px 0 80px;
+
+  .img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .summary {
+    width: 100%;
+    padding-left: 50px;
+  }
+}
+
 .meals__list--item {
   margin: 20px 0;
   padding: 20px;
