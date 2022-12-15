@@ -33,7 +33,7 @@ router.post('/:id/meals/create', async (req, res) => {
 
     try {
         const meal = await mealService.createMeal({
-            name, ingredients, price, description, preparationTime, picture, ownerId
+            name, ingredients, price, description, preparationTime, picture, ownerId, cityId
         }, ownerId, cityId);
         res.status(201).json(meal);
 
