@@ -12,5 +12,6 @@ router.use('/auth', authController);
 router.use('/cities', cityController);
 router.use('/cities', mealController);
 router.use('/cities', reviewController);
+router.use('/profile', authController);
 
 export default router;
