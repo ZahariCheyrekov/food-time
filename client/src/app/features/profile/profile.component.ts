@@ -9,7 +9,10 @@ import { UserService } from 'src/app/core/services/user.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
+  styleUrls: [
+    './profile.component.scss',
+    '../../../assets/scss/meal-list.scss',
+  ],
 })
 export class ProfileComponent {
   userId = '';
