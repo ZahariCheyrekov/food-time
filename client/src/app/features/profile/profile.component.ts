@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 
+import { IMeal } from 'src/app/core/interfaces/IMeal';
 import { IUserProfile } from 'src/app/core/interfaces/IUser';
 import { UserService } from 'src/app/core/services/user.service';
 
@@ -12,6 +14,8 @@ import { UserService } from 'src/app/core/services/user.service';
 export class ProfileComponent {
   userId = '';
   user = {} as IUserProfile;
+  meals: IMeal[] = [];
+  likedMeals: IMeal[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,10 +27,13 @@ export class ProfileComponent {
     this.fetchUser();
   }
 
-  fetchUser() {
-    this.userService.getUser(this.userId).subscribe((res: any) => {
-      this.user = res;
-      console.log(res);
-    });
+  async fetchUser() {
+    await lastValueFrom(this.userService.getUser(this.userId)).then(
+      (res: any) => {
+        this.user = res.user;
+        this.meals = res.meals;
+        this.likedMeals = res.likedMeals;
+      }
+    );
   }
 }
