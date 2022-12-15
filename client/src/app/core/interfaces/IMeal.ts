@@ -1,5 +1,6 @@
 export interface IMeal {
   _id: string;
+  cityId: string;
   name: string;
   ingredients: string;
   price: number;
