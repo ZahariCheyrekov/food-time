@@ -33,6 +33,10 @@ const mealSchema = mongoose.Schema({
         type: String,
         required: [true, 'Meal picture is required']
     },
+    cityId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'City'
+    },
     ownerId: {
         type: mongoose.Types.ObjectId,
         ref: 'User'
