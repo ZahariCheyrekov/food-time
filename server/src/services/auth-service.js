@@ -12,7 +12,22 @@ export const createUser = (data) => {
     return User.create(data);
 }
 
+export const buyMeal = async (userId, mealId) => {
+    const user = await getUserById(userId);
 
+    const existingMeal = user.cart.findIndex(item => item.mealId == mealId);
+
+    if (existingMeal !== -1) {
+        user.cart[existingMeal].quantity++;
+
+    } else {
+        user.cart.push({ quantity: 1, mealId });
+    }
+
+    await User.findByIdAndUpdate(userId, user);
+
+    return user;
+}
 
 export const removeMealFromCart = (userId, mealId) => {
     return User.findByIdAndUpdate(
