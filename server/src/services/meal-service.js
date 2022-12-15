@@ -13,6 +13,10 @@ export const getUserMeals = (userId) => {
     return Meal.find({ userId });
 }
 
+export const getUserLikedMeals = (userId) => {
+    return Meal.find({ likes: userId });
+}
+
 export const getCityMeals = (mealIds) => {
     return Meal.find({ _id: { $in: mealIds } });
 }
