@@ -14,4 +14,8 @@ export class UserService {
   getUser(userId: string) {
     return this.http.get(`${this.url}/profile/${userId}`);
   }
+
+  getUserMeals(userId: string, mealIds: Array<string>) {
+    return this.http.get(`${this.url}/profile/${userId}/meals`);
+  }
 }
