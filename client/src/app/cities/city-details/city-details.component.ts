@@ -8,7 +8,10 @@ import { CityService } from 'src/app/core/services/city.service';
 @Component({
   selector: 'app-city-details',
   templateUrl: './city-details.component.html',
-  styleUrls: ['./city-details.component.scss'],
+  styleUrls: [
+    './city-details.component.scss',
+    '../../../assets/scss/meal-list.scss',
+  ],
 })
 export class CityDetailsComponent implements OnInit {
   cityId: string | null = '';
