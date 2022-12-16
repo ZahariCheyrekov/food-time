@@ -29,6 +29,25 @@ export const buyMeal = async (userId, mealId) => {
     return user;
 }
 
+export const removeMeal = async (userId, mealId) => {
+    const user = await getUserById(userId);
+
+    const existingMealId = user.cart.findIndex(item => item.mealId == mealId);
+
+    if (existingMealId !== -1) {
+        if (user.cart[existingMealId].quantity <= 1) {
+            user.cart.splice(existingMealId, 1);
+        } else {
+            user.cart[existingMealId].quantity--;
+        }
+    } else {
+        user.cart.push({ quantity: 1, mealId });
+    }
+
+    await User.findByIdAndUpdate(userId, user);
+    return user;
+}
+
 export const removeMealFromCart = (userId, mealId) => {
     return User.findByIdAndUpdate(
         { _id: userId },
