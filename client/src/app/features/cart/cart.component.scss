@@ -1,0 +1,35 @@
+@import "../../../assets/scss/variables.scss";
+
+.cart__main {
+  margin: 40px;
+}
+
+.cart__section {
+  max-width: $primary-width;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.list__item {
+  display: flex;
+  margin: 20px 0;
+  padding: 10px;
+
+  background-color: $light-gray-color;
+  border-radius: 4px;
+
+  .img {
+    width: 140px;
+    height: 140px;
+
+    border-radius: 4px;
+    margin-right: 30px;
+    object-fit: cover;
+  }
+
+  .name {
+    margin-bottom: 60px;
+  }
+}
+
+
