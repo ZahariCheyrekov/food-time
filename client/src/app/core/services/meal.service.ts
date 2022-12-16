@@ -35,6 +35,12 @@ export class MealService {
     });
   }
 
+  removeMeal(cityId: string, mealId: string, userId: string) {
+    return this.http.delete(
+      `${this.url}/cities/${cityId}/meals/${mealId}/remove/${userId}`
+    );
+  }
+
   deleteMeal(mealId: string, cityId: string) {
     return this.http.delete(
       `${this.url}/cities/${cityId}/meals/${mealId}/delete`
