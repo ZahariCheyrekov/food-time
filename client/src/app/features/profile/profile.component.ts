@@ -5,6 +5,7 @@ import { lastValueFrom } from 'rxjs';
 import { IMeal } from 'src/app/core/interfaces/IMeal';
 import { IUserProfile } from 'src/app/core/interfaces/IUser';
 import { UserService } from 'src/app/core/services/user.service';
+import { MealService } from 'src/app/core/services/meal.service';
 
 @Component({
   selector: 'app-profile',
@@ -22,7 +23,8 @@ export class ProfileComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private mealService: MealService
   ) {}
 
   ngOnInit() {
@@ -38,5 +40,11 @@ export class ProfileComponent {
         this.likedMeals = res.likedMeals;
       }
     );
+  }
+
+  onBuy(mealId: string, cityId: string) {
+    console.log(mealId);
+
+    this.mealService.buyMeal(cityId, mealId, this.userId).subscribe(() => {});
   }
 }
