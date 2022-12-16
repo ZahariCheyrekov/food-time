@@ -109,6 +109,19 @@ router.post('/:id/meals/:mealId/buy', async (req, res) => {
     }
 });
 
+router.delete('/:id/meals/:mealId/remove/:userId', async (req, res) => {
+    const { mealId, userId } = req.params;
+
+    try {
+        await authService.removeMeal(userId, mealId);
+        res.status(200).json({ removed: mealId, by: userId });
+
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
 router.delete('/:id/meals/:mealId/delete', async (req, res) => {
     const { id: cityId, mealId } = req.params;
 
