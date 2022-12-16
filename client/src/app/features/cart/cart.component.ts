@@ -25,7 +25,6 @@ export class CartComponent {
 
   ngOnInit() {
     this.userId = this.localStorageService.getUserId();
-
     this.fetchUserMeals();
   }
 
@@ -35,8 +34,6 @@ export class CartComponent {
       this.cart = res.cart;
 
       this.calculateTotalPrice();
-
-      console.log(this.cart);
     });
   }
 
@@ -48,10 +45,15 @@ export class CartComponent {
     }
 
     this.totalPrice = Number(total.toFixed(2));
-    console.log(this.totalPrice, total);
   }
 
   onBuy(cityId: string, mealId: string) {
     this.mealService.buyMeal(cityId, mealId, this.userId).subscribe(() => {});
+  }
+
+  onRemove(cityId: string, mealId: string) {
+    this.mealService
+      .removeMeal(cityId, mealId, this.userId)
+      .subscribe(() => {});
   }
 }
