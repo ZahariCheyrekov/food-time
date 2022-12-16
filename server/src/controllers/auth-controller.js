@@ -109,12 +109,12 @@ router.get('/:userId/cart', async (req, res) => {
     const { userId } = req.params;
 
     try {
-        const user = await authService.getUserById(userId);
+        const { cart } = await authService.getUserById(userId);
 
-        const mealIds = user.cart.map(item => item.mealId);
+        const mealIds = cart.map(item => item.mealId);
         const cartMeals = await mealService.getCartMeals(mealIds);
 
-        res.status(200).json(cartMeals);
+        res.status(200).json({ cart, cartMeals });
 
     } catch (error) {
         console.log(error);
