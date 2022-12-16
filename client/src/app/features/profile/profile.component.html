@@ -35,14 +35,15 @@
                                 {{meal.price}} лв.
                             </strong>
                         </p>
-                        <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}">
+                        <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}"
+                            class="meal__link--details link__details">
                             Details
                         </a>
-                        <button class="meal__button--add add">
+                        <button class="meal__button--add add" (click)="onBuy(meal._id, meal.cityId)">
                             +
                         </button>
                     </article>
-                    <img class="meal__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
+                    <img class=" meal__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
                 </li>
             </ul>
         </section>
@@ -73,7 +74,7 @@
                         <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}">
                             Details
                         </a>
-                        <button class="meal__button--add add" (click)="onBuy(meal._id)">
+                        <button class="meal__button--add add" (click)="onBuy(meal._id, meal.cityId)">
                             +
                         </button>
                     </article>
