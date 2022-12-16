@@ -9,9 +9,10 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './features/profile/profile.component';
+import { CartComponent } from './features/cart/cart.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProfileComponent],
+  declarations: [AppComponent, HomeComponent, ProfileComponent, CartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
