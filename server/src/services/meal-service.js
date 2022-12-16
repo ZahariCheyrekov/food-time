@@ -17,8 +17,15 @@ export const getUserLikedMeals = (userId) => {
     return Meal.find({ likes: userId });
 }
 
-export const getCartMeals = (mealIds) => {
-    return Meal.find({ _id: { $in: mealIds } });
+export const getCartMeals = async (mealIds) => {
+    const meals = [];
+
+    for (const id of mealIds) {
+        const meal = await getMeal(id);
+        meals.push(meal);
+    }
+
+    return meals;
 }
 
 export const getCityMeals = (mealIds) => {
