@@ -3,7 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ICity } from 'src/app/core/interfaces/ICity';
 import { IMeal } from 'src/app/core/interfaces/IMeal';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { CityService } from 'src/app/core/services/city.service';
+import { MealService } from 'src/app/core/services/meal.service';
 
 @Component({
   selector: 'app-city-details',
@@ -15,16 +17,21 @@ import { CityService } from 'src/app/core/services/city.service';
 })
 export class CityDetailsComponent implements OnInit {
   cityId: string | null = '';
+  userId = '';
   city = {} as ICity;
   meals: IMeal[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private cityService: CityService
+    private localStorageService: LocalStorageService,
+    private cityService: CityService,
+    private mealService: MealService
   ) {}
 
   ngOnInit() {
     this.cityId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.userId = this.localStorageService.getUserId();
+
     this.getCity();
   }
 
@@ -33,5 +40,11 @@ export class CityDetailsComponent implements OnInit {
       this.city = res.city;
       this.meals = res.meals;
     });
+  }
+
+  onBuy(mealId: string, cityId: string) {
+    console.log(mealId);
+
+    this.mealService.buyMeal(cityId, mealId, this.userId).subscribe(() => {});
   }
 }
