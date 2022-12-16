@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './features/pages/about/about.component';
 
 import { HomeComponent } from './features/pages/home/home.component';
-import { NotFoundComponent } from './features/pages/not-found/not-found.component';
+import { AboutComponent } from './features/pages/about/about.component';
 import { ProfileComponent } from './features/profile/profile.component';
+import { CartComponent } from './features/cart/cart.component';
+import { NotFoundComponent } from './features/pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'profile/:userId',
     component: ProfileComponent,
+  },
+  {
+    path: 'profile/:userId/cart',
+    component: CartComponent,
   },
   {
     path: '**',
