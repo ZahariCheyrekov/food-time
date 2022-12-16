@@ -15,7 +15,7 @@
   margin: 20px 0;
   padding: 10px;
 
-  background-color: $light-gray-color;
+  background-color:#efefef;
   border-radius: 4px;
 
   .img {
@@ -27,16 +27,69 @@
     object-fit: cover;
   }
 
+  .article__info {
+    flex-basis: 78%;
+  }
+
   .name {
-    margin-bottom: 60px;
+    margin-bottom: 54px;
+  }
+
+  .subtotal {
+    margin-top: 10px;
+  }
+
+  .article__quantity {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
+    flex-basis: 5%;
+
+    .button {
+      font-size: 1.6rem;
+      background-color: $white-color;
+      border-radius: 2px;
+      border: 1px solid $black-color;
+
+      &:hover{
+        background-color: $gray-border-color;
+      }
+    }
+
+    .quantity {
+      font-size: 1.4rem;
+      padding: 10px 0;
+
+      background-color: $orange-color;
+      color: $white-color;
+    }
   }
 }
 
 .article__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   margin: 50px 0;
   padding: 20px;
+  font-size: 1.4rem;
 
   border-radius: 4px;
   background-color: $orange-color;
   color: $white-color;
+
+  .button__buy {
+    background-color: $white-color;
+    font-size: 1.4rem;
+
+    border: none;
+    border-radius: 2px;
+    padding: 10px 34px;
+
+    &:hover {
+      background-color: $light-gray-color;
+    }
+  }
 }
