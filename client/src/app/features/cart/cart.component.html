@@ -14,12 +14,26 @@
                         Subtotal: {{(cart[i].quantity * meal.price).toFixed(2)}} лв.
                     </h3>
                 </article>
+                <article class="cart__article--quantity article__quantity">
+                    <button class="cart__button--remove button__remove button">
+                        -
+                    </button>
+                    <span class="cart__span--meal__quantity quantity">
+                        {{cart[i].quantity}}
+                    </span>
+                    <button class="cart__button--add button__add button" (click)="onBuy(meal.cityId, meal._id)">
+                        +
+                    </button>
+                </article>
             </li>
         </ul>
         <article class="cart__article--total article__total">
             <h3 class="cart__title--total total">
                 Total price: &nbsp;{{totalPrice}} лв.
             </h3>
+            <button class="cart__button--buy button__buy">
+                Buy
+            </button>
         </article>
     </section>
 </main>
