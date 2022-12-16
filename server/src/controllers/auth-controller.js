@@ -105,4 +105,21 @@ router.get('/:userId/meals', async (req, res) => {
     }
 });
 
+router.get('/:userId/cart', async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const user = await authService.getUserById(userId);
+
+        const mealIds = user.cart.map(item => item.mealId);
+        const cartMeals = await mealService.getCartMeals(mealIds);
+
+        res.status(200).json(cartMeals);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
 export default router;
