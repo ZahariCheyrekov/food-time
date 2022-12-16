@@ -1,1 +1,25 @@
-<p>cart works!</p>
+<main class="cart__main">
+    <section class="cart__section" *ngIf="isLoading">
+        <ul class="cart__list list">
+            <li class="cart__list--item list__item" *ngFor="let meal of meals; let i=index">
+                <img class="cart__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
+                <article class="cart__article--info article__info">
+                    <h2 class="cart__title--name name">
+                        Meal: {{meal.name}}
+                    </h2>
+                    <h3 class="cart__title--price price">
+                        Price: {{(meal.price).toFixed(2)}} лв.
+                    </h3>
+                    <h3 class="cart__title--subtotal subtotal">
+                        Subtotal: {{(cart[i].quantity * meal.price).toFixed(2)}} лв.
+                    </h3>
+                </article>
+            </li>
+        </ul>
+        <article class="cart__article--total article__total">
+            <h3 class="cart__title--total total">
+                Total price: &nbsp;{{totalPrice}} лв.
+            </h3>
+        </article>
+    </section>
+</main>
