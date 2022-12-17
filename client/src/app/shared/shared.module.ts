@@ -4,10 +4,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
-import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
-  declarations: [NavigationComponent, FooterComponent, SpinnerComponent],
+  declarations: [NavigationComponent, FooterComponent],
   imports: [CommonModule, FontAwesomeModule, RouterModule],
   exports: [NavigationComponent, FooterComponent],
 })

@@ -1,3 +1,7 @@
+<div *ngIf="!isLoading">
+  <app-spinner></app-spinner>
+</div>
+
 <main class="main__cities" *ngIf="isLoading">
   <section class="main__cities--section cities__section">
     <ul class="section__cities--list cities__list">

@@ -12,6 +12,7 @@ import { CityDetailsComponent } from './city-details/city-details.component';
 import { CityCreateMealComponent } from './city-create-meal/city-create-meal.component';
 import { CityMealDetailsComponent } from './city-meal-details/city-meal-details.component';
 import { CityMealEditComponent } from './city-meal-edit/city-meal-edit.component';
+import { SpinnerComponent } from '../shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CityMealEditComponent } from './city-meal-edit/city-meal-edit.component
     CityCreateMealComponent,
     CityMealDetailsComponent,
     CityMealEditComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
