@@ -49,16 +49,36 @@ export class CartComponent {
   }
 
   onBuy(cityId: string, mealId: string) {
+    const mealIndex = this.cart.findIndex((item: any) => item.mealId == mealId);
+    this.cart[mealIndex].quantity++;
+
+    this.calculateTotalPrice();
+
     this.mealService.buyMeal(cityId, mealId, this.userId).subscribe(() => {});
   }
 
   onRemove(cityId: string, mealId: string) {
+    const mealIndex = this.cart.findIndex((item: any) => item.mealId == mealId);
+
+    if (this.cart[mealIndex].quantity <= 1) {
+      this.cart.splice(mealIndex, 1);
+      this.meals.splice(mealIndex, 1);
+    } else {
+      this.cart[mealIndex].quantity--;
+    }
+
+    this.calculateTotalPrice();
+
     this.mealService
       .removeMeal(cityId, mealId, this.userId)
       .subscribe(() => {});
   }
 
   onBuyCartItems() {
+    this.cart = [];
+    this.meals = [];
+    this.totalPrice = 0;
+
     this.userService.clearCart(this.userId).subscribe(() => {});
   }
 }
