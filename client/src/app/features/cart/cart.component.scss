@@ -15,7 +15,7 @@
   margin: 20px 0;
   padding: 10px;
 
-  background-color:#efefef;
+  background-color: #efefef;
   border-radius: 4px;
 
   .img {
@@ -28,7 +28,7 @@
   }
 
   .article__info {
-    flex-basis: 78%;
+    flex-basis: 74%;
   }
 
   .name {
@@ -44,7 +44,7 @@
     flex-direction: column;
     align-self: center;
     text-align: center;
-    flex-basis: 5%;
+    width: 50px;
 
     .button {
       font-size: 1.6rem;
@@ -52,7 +52,7 @@
       border-radius: 2px;
       border: 1px solid $black-color;
 
-      &:hover{
+      &:hover {
         background-color: $gray-border-color;
       }
     }
@@ -90,6 +90,47 @@
 
     &:hover {
       background-color: $light-gray-color;
+    }
+  }
+}
+
+@media only screen and (max-width: $small-device-width) {
+  .list__item {
+    .article__info {
+      flex-basis: 65%;
+    }
+
+    .article__quantity {
+      width: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .cart__section {
+    padding: 0;
+  }
+
+  .list__item {
+    flex-direction: column;
+    padding: 20px;
+
+    .name {
+      margin: 14px 0 20px;
+    }
+
+    .article__quantity {
+      width: 100%;
+      flex-direction: row;
+      margin-top: 20px;
+
+      .button {
+        width: 30%;
+      }
+
+      .quantity {
+        width: 100%;
+      }
     }
   }
 }
