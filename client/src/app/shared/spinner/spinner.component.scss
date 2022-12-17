@@ -1,0 +1,30 @@
+@import "../../../assets/scss/variables.scss";
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner::after {
+  content: "";
+
+  width: 5.4rem;
+  height: 5.4rem;
+
+  border-radius: 50%;
+  border: 12px solid $gray-border-color;
+  border-bottom-color: $black-color;
+
+  animation: spinning 1s ease-in-out infinite;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
