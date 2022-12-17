@@ -83,7 +83,7 @@ export class CityCreateMealComponent {
         this.cityId
       )
       .subscribe(() => {
-        this.router.navigate(['/']);
+        this.router.navigate([`/cities/${this.cityId}/meals`]);
       });
   }
 }
