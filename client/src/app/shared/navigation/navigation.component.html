@@ -21,7 +21,7 @@
       </a>
     </li>
     <li class="header__list--item list__item item">
-      <a class="list__item--link link" routerLink="/cities/create">
+      <a class="list__item--link link" routerLink="/cities/create" *ngIf="localStorageService.isAuthenticated()">
         Create City
       </a>
     </li>
@@ -30,17 +30,20 @@
         Sign In
       </a>
     </li>
-    <li class="header__list--item list__item item">
+    <li class="header__list--item list__item item" *ngIf="localStorageService.isAuthenticated()">
       <a class="list__item--link link" routerLink="/profile/{{userId}}">
         My Profile
       </a>
     </li>
-    <li class="header__list--item list__item item">
+    <li class="header__list--item list__item item logout" *ngIf="localStorageService.isAuthenticated()" (click)="onLogout()">
+      Logout
+    </li>
+    <li class="header__list--item list__item item" *ngIf="localStorageService.isAuthenticated()">
       <a class="list__item--link link cart" routerLink="/profile/{{userId}}/cart">
         <fa-icon [icon]="faCartPlus"></fa-icon>
       </a>
     </li>
-    <li class="header__list--item item__phone">
+    <li class="header__list--item item__phone" *ngIf="!localStorageService.isAuthenticated()">
       1800 789 123
     </li>
   </ul>

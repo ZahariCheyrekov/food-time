@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
+import { AuthService } from 'src/app/core/services/auth.service';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
 @Component({
@@ -12,9 +13,17 @@ export class NavigationComponent implements OnInit {
   userId = '';
   faCartPlus = faCartPlus;
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(public localStorageService: LocalStorageService) {}
 
   ngOnInit() {
-    this.userId = this.localStorageService.getUserId();
+    try {
+      this.userId = this.localStorageService.getUserId();
+    } catch (error: any) {
+      console.log(error.message);
+    }
+  }
+
+  onLogout() {
+    this.localStorageService.removeUser();
   }
 }
