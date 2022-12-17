@@ -9,7 +9,7 @@ import { CityService } from '../../core/services/city.service';
   styleUrls: ['./cities.component.scss'],
 })
 export class CitiesComponent implements OnInit {
-  isLoading = false;
+  isLoading = true;
   cities: ICity[] = [];
 
   constructor(private cityService: CityService) {}
@@ -21,6 +21,7 @@ export class CitiesComponent implements OnInit {
   getCities() {
     this.cityService.getCities().subscribe((res: any) => {
       this.cities = res;
+      this.isLoading = false;
       console.log(res);
     });
   }
