@@ -22,6 +22,10 @@ export class LocalStorageService {
     return user;
   }
 
+  removeUser() {
+    localStorage.removeItem(this.userItem);
+  }
+
   getUserId(): string {
     return this.getUser().user._id;
   }
@@ -32,5 +36,9 @@ export class LocalStorageService {
 
   getUserPicture(): string {
     return this.getUser().user.picture;
+  }
+
+  isAuthenticated() {
+    return this.getUser() !== null;
   }
 }
