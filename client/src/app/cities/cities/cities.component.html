@@ -1,4 +1,4 @@
-<main class="main__cities">
+<main class="main__cities" *ngIf="isLoading">
   <section class="main__cities--section cities__section">
     <ul class="section__cities--list cities__list">
       <li class="cities__list--item list__item" *ngFor="let city of cities">
