@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AuthRoutingModule } from './auth-routing.module';
@@ -17,7 +17,9 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     AuthRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 })
 export class AuthModule {}
