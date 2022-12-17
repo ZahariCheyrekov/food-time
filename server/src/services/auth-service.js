@@ -75,3 +75,12 @@ export const createUserReview = (ownerId, reviewId) => {
         { $push: { reviews: reviewId } },
     );
 }
+
+export const clearCart = async (userId) => {
+    const user = await getUserById(userId);
+    user.cart = [];
+
+    await User.findByIdAndUpdate(userId, user);
+
+    return user;
+}
