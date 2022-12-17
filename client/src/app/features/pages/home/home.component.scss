@@ -203,7 +203,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: $primary-width;
+  max-width: $primary-width;
 
   .item {
     img {
@@ -354,7 +354,9 @@
   align-items: center;
   justify-content: center;
   gap: 20rem;
+
   height: 160px;
+  padding: 30px;
 
   background-color: $pale-black-color;
   color: $white-color;
@@ -426,3 +428,44 @@
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .header {
+    padding: 40px;
+  }
+
+  .header__section {
+    flex-direction: column;
+
+    .article {
+      width: 100%;
+    }
+
+    .header__img {
+      display: none;
+    }
+  }
+
+  .section__benefits {
+    padding: 40px;
+
+    .article__breakfast,
+    .article__burger {
+      flex-direction: column;
+
+      .img,
+      .aside {
+        width: 100%;
+      }
+    }
+  }
+
+  .foods__wrappers {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .faq__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
