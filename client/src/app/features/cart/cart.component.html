@@ -1,5 +1,9 @@
-<main class="cart__main">
-    <section class="cart__section" *ngIf="isLoading">
+<div *ngIf="isLoading">
+    <app-spinner></app-spinner>
+</div>
+
+<main class="cart__main" *ngIf="!isLoading">
+    <section class="cart__section">
         <ul class="cart__list list">
             <li class="cart__list--item list__item" *ngFor="let meal of meals; let i=index">
                 <img class="cart__img img" src="{{meal.picture}}" alt="{{meal.name}}" />

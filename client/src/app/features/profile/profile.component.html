@@ -1,4 +1,8 @@
-<main class="profile__main">
+<div *ngIf="isLoading">
+    <app-spinner></app-spinner>
+</div>
+
+<main class="profile__main" *ngIf="!isLoading">
     <section class="profile__section">
         <article class="profile__article--user article__user">
             <img class="profile__img img" src="{{user.picture}}" alt="{{user.name}}" />
@@ -9,6 +13,9 @@
                 <h4 class="profile__title--email email">
                     {{user.email}}
                 </h4>
+                <a routerLink="/profile/{{user._id}}/cart" class="cart__link">
+                    My Cart
+                </a>
             </summary>
         </article>
         <section class="profile__section--meals section__meals">

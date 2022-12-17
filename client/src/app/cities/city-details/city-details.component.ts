@@ -16,6 +16,7 @@ import { MealService } from 'src/app/core/services/meal.service';
   ],
 })
 export class CityDetailsComponent implements OnInit {
+  isLoading = true;
   cityId: string | null = '';
   userId = '';
   city = {} as ICity;
@@ -39,12 +40,11 @@ export class CityDetailsComponent implements OnInit {
     this.cityService.getCity(this.cityId).subscribe((res: any) => {
       this.city = res.city;
       this.meals = res.meals;
+      this.isLoading = false;
     });
   }
 
   onBuy(mealId: string, cityId: string) {
-    console.log(mealId);
-
     this.mealService.buyMeal(cityId, mealId, this.userId).subscribe(() => {});
   }
 }

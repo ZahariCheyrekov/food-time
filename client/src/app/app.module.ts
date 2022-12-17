@@ -10,13 +10,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './features/profile/profile.component';
 import { CartComponent } from './features/cart/cart.component';
+import { FeaturesModule } from './features/features.module';
+import { CitiesModule } from './cities/cities.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProfileComponent, CartComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ProfileComponent,
+    CartComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    FeaturesModule,
+    CitiesModule,
     FontAwesomeModule,
     FormsModule,
     HttpClientModule,

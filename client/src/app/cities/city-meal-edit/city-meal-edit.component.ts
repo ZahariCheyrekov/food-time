@@ -11,6 +11,7 @@ import { MealService } from 'src/app/core/services/meal.service';
   styleUrls: ['../../../assets/scss/form.scss'],
 })
 export class CityMealEditComponent implements OnInit {
+  isLoading = true;
   meal = {} as IMeal;
   mealId: string = '';
   cityId: string = '';
@@ -34,6 +35,7 @@ export class CityMealEditComponent implements OnInit {
   fetchMeal() {
     this.mealService.getMeal(this.cityId, this.mealId).subscribe((res: any) => {
       this.meal = res;
+      this.isLoading = false;
       this.initForm(res);
     });
   }

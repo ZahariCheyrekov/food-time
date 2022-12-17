@@ -14,6 +14,7 @@ import { LocalStorageService } from 'src/app/core/services/local-storage.service
   styleUrls: ['./city-meal-details.component.scss'],
 })
 export class CityMealDetailsComponent {
+  isLoading = true;
   meal = {} as IMeal;
   mealId: string = '';
   cityId: string = '';
@@ -50,6 +51,7 @@ export class CityMealDetailsComponent {
       .getMealReviews(this.cityId, this.mealId)
       .subscribe((res: any) => {
         this.reviews = res;
+        this.isLoading = false;
       });
   }
 

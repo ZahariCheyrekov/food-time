@@ -4,10 +4,11 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
-  declarations: [NavigationComponent, FooterComponent],
+  declarations: [NavigationComponent, FooterComponent, SpinnerComponent],
   imports: [CommonModule, FontAwesomeModule, RouterModule],
-  exports: [NavigationComponent, FooterComponent],
+  exports: [NavigationComponent, FooterComponent, SpinnerComponent],
 })
 export class SharedModule {}

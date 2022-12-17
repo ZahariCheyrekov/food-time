@@ -16,6 +16,7 @@ import { MealService } from 'src/app/core/services/meal.service';
   ],
 })
 export class ProfileComponent {
+  isLoading = true;
   userId = '';
   user = {} as IUserProfile;
   meals: IMeal[] = [];
@@ -38,13 +39,12 @@ export class ProfileComponent {
         this.user = res.user;
         this.meals = res.meals;
         this.likedMeals = res.likedMeals;
+        this.isLoading = false;
       }
     );
   }
 
   onBuy(mealId: string, cityId: string) {
-    console.log(mealId);
-
     this.mealService.buyMeal(cityId, mealId, this.userId).subscribe(() => {});
   }
 }

@@ -1,4 +1,8 @@
-<main class="main__city">
+<div *ngIf="isLoading">
+  <app-spinner></app-spinner>
+</div>
+
+<main class="main__city" *ngIf="!isLoading">
   <section class="city__section">
     <article class="city__article">
       <img src="{{city.picture}}" alt="{{city.city}}" class="city__img img" />

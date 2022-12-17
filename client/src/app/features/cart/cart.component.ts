@@ -33,6 +33,7 @@ export class CartComponent {
       this.meals = res.cartMeals;
       this.cart = res.cart;
 
+      this.isLoading = false;
       this.calculateTotalPrice();
     });
   }

@@ -1,4 +1,8 @@
-<form class="edit__meal--form" method="POST" [formGroup]="formGroup" (ngSubmit)="onEditMeal()">
+<div *ngIf="isLoading">
+  <app-spinner></app-spinner>
+</div>
+
+<form class="edit__meal--form" method="POST" [formGroup]="formGroup" (ngSubmit)="onEditMeal()" *ngIf="!isLoading">
   <legend class=" form__legend legend">
     Edit Meal
   </legend>

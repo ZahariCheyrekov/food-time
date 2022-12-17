@@ -33,6 +33,19 @@
   .email {
     font-weight: 400;
     margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .cart__link {
+    background-color: $orange-color;
+    color: $white-color;
+    
+    padding: 6px 20px;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      background-color: $brown-color;
+    }
   }
 }
 

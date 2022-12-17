@@ -1,4 +1,8 @@
-<main class="meal__main">
+<div *ngIf="isLoading">
+  <app-spinner></app-spinner>
+</div>
+
+<main class="meal__main" *ngIf="!isLoading">
   <div class="meal__main--wrapper meal__wrapper wrapper">
     <section class="meal__section">
       <img src="{{meal.picture}}" alt="{{meal.name}}" class="meal__img img" />
