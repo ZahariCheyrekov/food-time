@@ -186,7 +186,9 @@
 .foods__article {
   text-align: center;
   max-width: 820px;
+
   margin: 40px auto 50px;
+  padding: 20px;
 
   .base__title {
     font-size: 2rem;
@@ -451,21 +453,101 @@
     .article__breakfast,
     .article__burger {
       flex-direction: column;
+      width: 100%;
 
-      .img,
+      .breakfast,
+      .burger,
       .aside {
         width: 100%;
       }
     }
   }
 
+  .foods__item {
+    margin-bottom: 50px;
+  }
+
+  .section__baked {
+    gap: 1rem;
+  }
+
   .foods__wrappers {
     align-items: center;
     flex-direction: column;
+    padding: 20px;
+
+    .item {
+      img {
+        width: 100%;
+      }
+    }
   }
 
   .faq__wrapper {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .section__story {
+    .article {
+      padding: 12px;
+
+      .paragraph {
+        display: none;
+      }
+
+      .title {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .section__subscription {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .savings__list--item {
+    font-size: 0.9rem;
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  .section__story {
+    .article {
+      font-size: 1rem;
+
+      .title {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .section__baked {
+    .title {
+      font-size: 1.2rem;
+    }
+  }
+
+  .section__subscription {
+    height: unset;
+
+    .subscription__form {
+      flex-direction: column;
+      margin-bottom: 30px 0;
+      height: unset;
+
+      .input,
+      .button {
+        height: 40px;
+        width: 100%;
+      }
+    }
   }
 }
