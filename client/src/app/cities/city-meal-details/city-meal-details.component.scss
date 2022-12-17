@@ -142,3 +142,25 @@
     color: $white-color;
   }
 }
+
+@media only screen and (max-width: 1050px) {
+  .meal__section {
+    flex-direction: column;
+
+    .img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .meal__info {
+      width: unset;
+      margin: 40px 0 0;
+    }
+
+    .likes__price {
+      position: relative;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+}
