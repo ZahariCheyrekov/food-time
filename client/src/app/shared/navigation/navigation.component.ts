@@ -10,12 +10,11 @@ import { LocalStorageService } from 'src/app/core/services/local-storage.service
 })
 export class NavigationComponent implements OnInit {
   userId = '';
+  faCartPlus = faCartPlus;
 
   constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
     this.userId = this.localStorageService.getUserId();
   }
-
-  faCartPlus = faCartPlus;
 }
