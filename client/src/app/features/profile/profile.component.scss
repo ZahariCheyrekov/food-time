@@ -35,3 +35,29 @@
     margin-top: 10px;
   }
 }
+
+@media only screen and (max-width: $small-device-width) {
+  .profile__section {
+    padding: 30px;
+  }
+
+  .article__user {
+    flex-direction: column;
+
+    .summary {
+      margin: 20px 0;
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: $smaller-device-width) {
+  .article__user {
+    .summary {
+      width: 200px;
+      .email {
+        width: 100px;
+      }
+    }
+  }
+}
