@@ -52,12 +52,11 @@
 }
 
 @media only screen and (max-width: $smaller-device-width) {
-  .article__user {
-    .summary {
-      width: 200px;
-      .email {
-        width: 100px;
-      }
+  .article__user .summary {
+    width: 200px;
+
+    .email {
+      overflow-wrap: break-word;
     }
   }
 }
