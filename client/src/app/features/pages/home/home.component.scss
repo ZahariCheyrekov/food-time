@@ -285,7 +285,7 @@
 }
 
 .testemonials__article {
-  width: $primary-width;
+  max-width: $primary-width;
   margin: 30px auto;
   padding: 40px;
 
@@ -417,3 +417,12 @@
     background-color: $orange-color;
   }
 }
+
+@media only screen and (max-width: 1305px) {
+  .benefits__article {
+    .tree__leaves {
+      display: none;
+    }
+  }
+}
+
