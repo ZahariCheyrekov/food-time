@@ -40,3 +40,9 @@
     color: $white-color;
   }
 }
+
+@media only screen and (max-width: 720px) {
+  .city__create--form {
+    padding: 20px;
+  }
+}
