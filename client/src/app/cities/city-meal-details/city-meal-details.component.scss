@@ -164,3 +164,13 @@
     }
   }
 }
+
+@media only screen and (max-width: $smaller-device-width) {
+  .review__form {
+    flex-direction: column;
+
+    .button__send {
+      padding: 8px 0;
+    }
+  }
+}
