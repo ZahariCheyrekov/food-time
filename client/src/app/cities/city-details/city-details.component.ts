@@ -31,7 +31,12 @@ export class CityDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.cityId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.userId = this.localStorageService.getUserId();
+
+    try {
+      this.userId = this.localStorageService.getUserId();
+    } catch (error) {
+      console.log(error);
+    }
 
     this.getCity();
   }

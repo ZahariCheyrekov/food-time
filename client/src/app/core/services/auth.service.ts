@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, ObservableInput, tap } from 'rxjs';
+import { BehaviorSubject, catchError, ObservableInput, tap } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { LocalStorageService } from './local-storage.service';
@@ -10,6 +10,7 @@ import { IUser } from '../interfaces/IUser';
   providedIn: 'root',
 })
 export class AuthService {
+  loggedIn = new BehaviorSubject<boolean>(false);
   url = environment.app.default_url;
 
   constructor(
@@ -27,6 +28,9 @@ export class AuthService {
         catchError(async (err) => console.log(err)),
         tap((res) => {
           this.localStorageService.saveUser(res);
+        }),
+        tap(() => {
+          this.loggedIn.next(true);
         })
       );
   }
@@ -50,6 +54,9 @@ export class AuthService {
         catchError(async (err) => console.log(err)),
         tap((res) => {
           this.localStorageService.saveUser(res);
+        }),
+        tap(() => {
+          this.loggedIn.next(true);
         })
       );
   }

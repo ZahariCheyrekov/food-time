@@ -22,7 +22,6 @@ export class CitiesComponent implements OnInit {
     this.cityService.getCities().subscribe((res: any) => {
       this.cities = res;
       this.isLoading = false;
-      console.log(res);
     });
   }
 }

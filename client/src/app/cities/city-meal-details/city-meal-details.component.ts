@@ -34,7 +34,12 @@ export class CityMealDetailsComponent {
     this.cityId = this.activatedRoute.snapshot.paramMap.get('id') as string;
     this.mealId = this.activatedRoute.snapshot.paramMap.get('mealId') as string;
 
-    this.userId = this.localStorageService.getUserId();
+    try {
+      this.userId = this.localStorageService.getUserId();
+    } catch (error) {
+      console.log(error);
+    }
+
     this.fetchMeal();
     this.fetchMealReviews();
   }
