@@ -54,7 +54,7 @@ export class CityCreateComponent {
     this.cityService
       .createCity({ city, country, picture: this.url })
       .subscribe(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/cities']);
       });
   }
 }

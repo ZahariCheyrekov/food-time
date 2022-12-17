@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -17,18 +18,17 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private uploadService: UploadService
+    private uploadService: UploadService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
 
   onSelect(event: any) {
-    console.log(event);
     this.files.push(...event.addedFiles);
   }
 
   onRemove(event: any) {
-    console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
 
@@ -54,12 +54,10 @@ export class RegisterComponent implements OnInit {
     const password = form.value.password;
     const repeatPassword = form.value.repeatPassword;
 
-    console.log(form.value);
-
     this.authService
       .register(name, email, password, repeatPassword, this.url)
       .subscribe((res) => console.log(res));
 
-    form.reset();
+    this.router.navigate(['/cities']);
   }
 }
