@@ -134,3 +134,18 @@
     }
   }
 }
+
+@media only screen and (max-width: $smaller-device-width) {
+  .article__total {
+    flex-direction: column;
+
+    .total {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .button__buy {
+      width: 100%;
+    }
+  }
+}
