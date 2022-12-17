@@ -26,3 +26,18 @@
     font-weight: normal;
   }
 }
+
+@media only screen and (max-width: 720px) {
+  .footer {
+    height: unset;
+    text-align: center;
+
+    .footer__nav--list {
+      font-size: 1.2rem;
+    }
+    
+    .list {
+      flex-direction: column;
+    }
+  }
+}
