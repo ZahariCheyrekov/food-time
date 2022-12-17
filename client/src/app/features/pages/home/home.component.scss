@@ -430,7 +430,7 @@
   }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: $large-devices-width) {
   .header {
     padding: 40px;
   }
@@ -489,7 +489,7 @@
   }
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: $small-devices-width) {
   .section__story {
     .article {
       padding: 12px;
@@ -510,7 +510,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: $smaller-devices-width) {
   .savings__list--item {
     font-size: 0.9rem;
 
