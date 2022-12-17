@@ -10,7 +10,8 @@
         {{city.city}}, {{city.country}}
       </h2>
     </article>
-    <a routerLink="/cities/{{city._id}}/meals/create" class="city__link--create__meal link__create" *ngIf="userId">
+    <a routerLink="/cities/{{city._id}}/meals/create" class="city__link--create__meal link__create"
+      *ngIf="localStorageService.isAuthenticated()">
       Create Meal
     </a>
     <h2 *ngIf="meals.length == 0" class="city__titel--no__meals no__meals">
@@ -39,7 +40,8 @@
           <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}" class="meal__link--details link__details">
             Details
           </a>
-          <button class="meal__button--add add" (click)="onBuy(meal._id, meal.cityId)" *ngIf="userId">
+          <button class="meal__button--add add" (click)="onBuy(meal._id, meal.cityId)"
+            *ngIf="localStorageService.isAuthenticated()">
             +
           </button>
         </article>

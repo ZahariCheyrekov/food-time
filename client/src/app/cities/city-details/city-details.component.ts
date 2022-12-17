@@ -24,7 +24,7 @@ export class CityDetailsComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private localStorageService: LocalStorageService,
+    public localStorageService: LocalStorageService,
     private cityService: CityService,
     private mealService: MealService
   ) {}

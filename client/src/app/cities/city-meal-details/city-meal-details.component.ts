@@ -27,7 +27,7 @@ export class CityMealDetailsComponent {
     private activatedRoute: ActivatedRoute,
     private mealService: MealService,
     private reviewService: ReviewService,
-    private localStorageService: LocalStorageService
+    public localStorageService: LocalStorageService
   ) {}
 
   ngOnInit() {

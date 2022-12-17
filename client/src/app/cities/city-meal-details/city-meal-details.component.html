@@ -25,16 +25,20 @@
           </em>
         </p>
         <span class="meal__likes__price likes__price">
-          <button class="meal__button--edit edit__button button" (click)="onEdit()" *ngIf="userId">
+          <button class="meal__button--edit edit__button button" (click)="onEdit()"
+            *ngIf="localStorageService.isAuthenticated()">
             Edit
           </button>
-          <button class="meal__button--delete delete__button button" (click)="onDelete()" *ngIf="userId">
+          <button class="meal__button--delete delete__button button" (click)="onDelete()"
+            *ngIf="localStorageService.isAuthenticated()">
             Delete
           </button>
-          <button class="meal__button--buy buy__button button" (click)="onBuy()" *ngIf="userId">
+          <button class="meal__button--buy buy__button button" (click)="onBuy()"
+            *ngIf="localStorageService.isAuthenticated()">
             Buy
           </button>
-          <button class="meal__title--likes likes button" (click)="onLikeMeal()" *ngIf="userId">
+          <button class="meal__title--likes likes button" (click)="onLikeMeal()"
+            *ngIf="localStorageService.isAuthenticated()">
             {{mealLikes}} likes
           </button>
           <h2 class="meal__title--price price">
@@ -70,7 +74,8 @@
           </button>
         </li>
       </ul>
-      <form method="POST" class="review__form" #sendReview="ngForm" (ngSubmit)="onReview(sendReview)" *ngIf="userId">
+      <form method="POST" class="review__form" #sendReview="ngForm" (ngSubmit)="onReview(sendReview)"
+        *ngIf="localStorageService.isAuthenticated()">
         <textarea type="text" name="description" placeholder="Enter your review here"
           class="review__form--textarea textarea" ngModel></textarea>
         <button class="review__button--send button__send">
