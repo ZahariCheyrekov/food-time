@@ -511,6 +511,16 @@
 }
 
 @media only screen and (max-width: $smaller-devices-width) {
+  .header__article {
+    .order {
+      width: 100%;
+    }
+
+    .more {
+      display: none;
+    }
+  }
+
   .savings__list--item {
     font-size: 0.9rem;
 
