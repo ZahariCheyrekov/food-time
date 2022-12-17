@@ -114,6 +114,22 @@
     padding-bottom: 10px;
     border-bottom: 1px solid $gray-border-color;
   }
+
+  .button__delete {
+    margin: 10px 0 0 55px;
+    padding: 6px 10px;
+    font-size: 1rem;
+
+    background-color: $orange-color;
+    color: $white-color;
+
+    border-radius: 2px;
+    border: none;
+
+    &:hover {
+      background-color: $brown-color;
+    }
+  }
 }
 
 .review__form {
