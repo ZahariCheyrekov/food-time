@@ -122,4 +122,16 @@ router.get('/:userId/cart', async (req, res) => {
     }
 });
 
+router.delete('/:userId/cart/empty', async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        await authService.clearCart(userId);
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Something went wrong.' });
+    }
+});
+
 export default router;
