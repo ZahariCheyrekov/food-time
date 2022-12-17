@@ -430,7 +430,7 @@
   }
 }
 
-@media only screen and (max-width: $large-devices-width) {
+@media only screen and (max-width: $large-device-width) {
   .header {
     padding: 40px;
   }
@@ -489,7 +489,7 @@
   }
 }
 
-@media only screen and (max-width: $small-devices-width) {
+@media only screen and (max-width: $small-device-width) {
   .section__story {
     .article {
       padding: 12px;
@@ -510,7 +510,7 @@
   }
 }
 
-@media only screen and (max-width: $smaller-devices-width) {
+@media only screen and (max-width: $smaller-device-width) {
   .header__article {
     .order {
       width: 100%;
