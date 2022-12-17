@@ -4,6 +4,9 @@
 
 <main class="cart__main" *ngIf="!isLoading">
     <section class="cart__section">
+        <h2 *ngIf="cart.length == 0">
+            Your cart is empty :(
+        </h2>
         <ul class="cart__list list">
             <li class="cart__list--item list__item" *ngFor="let meal of meals; let i=index">
                 <img class="cart__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
