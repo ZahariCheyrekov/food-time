@@ -57,4 +57,8 @@ export class CartComponent {
       .removeMeal(cityId, mealId, this.userId)
       .subscribe(() => {});
   }
+
+  onBuyCartItems() {
+    this.userService.clearCart(this.userId).subscribe(() => {});
+  }
 }
