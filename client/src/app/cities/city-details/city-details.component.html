@@ -6,6 +6,9 @@
         {{city.city}}, {{city.country}}
       </h2>
     </article>
+    <a routerLink="/cities/{{city._id}}/meals/create" class="city__link--create__meal link__create">
+      Create Meal
+    </a>
     <ul class="meals__slist--items list__items">
       <li class="meals__list--item list__item" *ngFor="let meal of meals">
         <article class="meal__article--item meal">

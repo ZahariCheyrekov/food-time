@@ -12,7 +12,7 @@
 
 .city__article {
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 
   .img {
     position: relative;
@@ -32,5 +32,17 @@
     border-radius: 10px;
     color: $white-color;
     text-shadow: 6px 0px 14px $black-color;
+  }
+}
+
+.link__create {
+  background-color: $orange-color;
+  color: $white-color;
+
+  padding: 6px 30px;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    background-color: $brown-color;
   }
 }
