@@ -8,14 +8,14 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam et purus a odio finibus bibendum amet leo.
       </p>
-      <button class="header__section--button button order">
+      <a class="header__section--button button order" routerLink="/cities">
         Order Now
         <fa-icon [icon]="faShoppingBasket"></fa-icon>
-      </button>
-      <button class="header__section--button button more">
+      </a>
+      <a class="header__section--button button more" routerLink="/cities">
         Learn More
         <fa-icon [icon]="faAngleRight"></fa-icon>
-      </button>
+      </a>
     </article>
     <img class="header__img" src="../../assets/images/main-dish.png" alt="Food Bowl" />
   </section>
@@ -67,7 +67,7 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Etiam et purus a odio finibus bibendum amet leo.
       </p>
-      <a class="benefits__link link more" href="/#">
+      <a class="benefits__link link more" routerLink="/cities">
         Learn More
         <fa-icon [icon]="faAngleRight"></fa-icon>
       </a>
@@ -99,7 +99,7 @@
           Etiam sed dolor ac diam volutpat.
         </li>
       </ul>
-      <a class="benefits__link link more" href="/#">
+      <a class="benefits__link link more" routerLink="/cities">
         Learn More
         <fa-icon [icon]="faAngleRight"></fa-icon>
       </a>
@@ -119,7 +119,7 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et purus a odio
       finibus bibendum in sit amet leo. Mauris feugiat erat tellus.
     </p>
-    <a class="story__article--link link" href="https://www.youtube.com/">
+    <a class="story__article--link link" routerLink="https://www.youtube.com/">
       <fa-icon class="play__circle" [icon]="faPlayCircle"></fa-icon>
       Watch Our Story
     </a>
@@ -155,7 +155,7 @@
         </span>
       </section>
       <hr class="foods__hr hr">
-      <a href="/#" class="foods__order--link order__link">
+      <a routerLink="/cities" class="foods__order--link order__link">
         Order Now
         <fa-icon [icon]="faShoppingBasket"></fa-icon>
       </a>
@@ -177,7 +177,7 @@
         </span>
       </section>
       <hr class="foods__hr hr">
-      <a href="/#" class="foods__order--link order__link">
+      <a routerLink="/cities" class="foods__order--link order__link">
         Order Now
         <fa-icon [icon]="faShoppingBasket"></fa-icon>
       </a>
@@ -199,7 +199,7 @@
         </span>
       </section>
       <hr class="foods__hr hr">
-      <a href="/#" class="foods__order--link order__link">
+      <a routerLink="/cities" class="foods__order--link order__link">
         Order Now
         <fa-icon [icon]="faShoppingBasket"></fa-icon>
       </a>
@@ -227,7 +227,7 @@
     <fa-icon class="test__circle" [icon]="faCircle"></fa-icon>
   </span>
 </section>
-<section class="section__faq">
+<section class="section__faq" id="faq">
   <h2 class="faq__base--title base__title">
     Frequently Asked Questions
   </h2>
@@ -282,7 +282,7 @@
   <h2 class="section__baked--title title">
     Baked fresh daily by bakers with passion.
   </h2>
-  <a class="section__baked--link link" href="/#">
+  <a class="section__baked--link link" routerLink="/cities">
     Learn More
   </a>
 </section>
