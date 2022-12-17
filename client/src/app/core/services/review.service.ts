@@ -26,7 +26,12 @@ export class ReviewService {
   ) {
     return this.http.post(
       `${this.url}/cities/${cityId}/meals/${mealId}/review`,
-      { userId, name, picture, description }
+      {
+        userId,
+        name,
+        picture,
+        description,
+      }
     );
   }
 }

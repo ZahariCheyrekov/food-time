@@ -38,8 +38,12 @@
             Buy
           </button>
           <button class="meal__title--likes likes button" (click)="onLikeMeal()"
-            *ngIf="localStorageService.isAuthenticated()">
-            {{mealLikes}} likes
+            *ngIf="localStorageService.isAuthenticated() && likes == 1">
+            {{likes}} like
+          </button>
+          <button class="meal__title--likes likes button" (click)="onLikeMeal()"
+            *ngIf="localStorageService.isAuthenticated() && likes != 1">
+            {{likes}} likes
           </button>
           <h2 class="meal__title--price price">
             {{meal.price}} лв.
@@ -69,9 +73,6 @@
           <p class="review__list__paragraph--content paragraph__content content">
             {{review.description}}
           </p>
-          <button class="review__list__button--delete button__delete">
-            Delete Review
-          </button>
         </li>
       </ul>
       <form method="POST" class="review__form" #sendReview="ngForm" (ngSubmit)="onReview(sendReview)"

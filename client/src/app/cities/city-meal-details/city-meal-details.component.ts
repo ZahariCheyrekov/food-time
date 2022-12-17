@@ -7,6 +7,7 @@ import { IReview } from 'src/app/core/interfaces/IReview';
 import { MealService } from 'src/app/core/services/meal.service';
 import { ReviewService } from 'src/app/core/services/review.service';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-city-meal-details',
@@ -20,7 +21,8 @@ export class CityMealDetailsComponent {
   cityId: string = '';
   userId: string = '';
   reviews: IReview[] = [];
-  mealLikes = 0;
+  mealLikes: String[] = [];
+  likes = 0;
 
   constructor(
     private router: Router,
@@ -47,7 +49,8 @@ export class CityMealDetailsComponent {
   fetchMeal() {
     this.mealService.getMeal(this.cityId, this.mealId).subscribe((res: any) => {
       this.meal = res;
-      this.mealLikes = res.likes.length;
+      this.mealLikes = res.likes;
+      this.likes = res.likes.length;
     });
   }
 
@@ -77,6 +80,18 @@ export class CityMealDetailsComponent {
   }
 
   onLikeMeal() {
+    const userLikeIndex = this.mealLikes.findIndex(
+      (like) => like == this.userId
+    );
+
+    if (userLikeIndex != -1) {
+      this.mealLikes.splice(userLikeIndex, 1);
+    } else {
+      this.mealLikes.push(this.userId);
+    }
+
+    this.likes = this.mealLikes.length;
+
     this.mealService
       .likeMeal(this.cityId, this.mealId, this.userId)
       .subscribe(() => {});
@@ -86,6 +101,20 @@ export class CityMealDetailsComponent {
     const { description } = form.value;
     const name = this.localStorageService.getUsername();
     const picture = this.localStorageService.getUserPicture();
+
+    const review: IReview = {
+      description,
+      mealId: this.mealId,
+      reviewOwner: {
+        name,
+        picture,
+        postedBy: this.userId,
+      },
+      _id: String(Math.random() * Math.random()),
+    };
+
+    this.reviews.push(review);
+    form.reset();
 
     this.reviewService
       .createReview(
