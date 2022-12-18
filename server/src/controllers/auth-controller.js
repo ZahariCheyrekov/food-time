@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
         res.status(200).json({ user, token });
 
     } catch (error) {
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: error.message });
     }
 });
 
@@ -72,7 +72,7 @@ router.post('/register', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: error.message });
     }
 });
 
@@ -88,7 +88,7 @@ router.get('/:userId', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: error.message });
     }
 });
 
@@ -101,7 +101,7 @@ router.get('/:userId/meals', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: error.message });
     }
 });
 
@@ -118,7 +118,7 @@ router.get('/:userId/cart', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: error.message });
     }
 });
 
@@ -130,7 +130,7 @@ router.delete('/:userId/cart/empty', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: error.message });
     }
 });
 
