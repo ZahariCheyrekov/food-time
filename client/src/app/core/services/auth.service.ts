@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { BehaviorSubject, catchError, ObservableInput, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  catchError,
+  ObservableInput,
+  tap,
+  throwError,
+} from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { LocalStorageService } from './local-storage.service';
@@ -25,9 +31,13 @@ export class AuthService {
         password,
       })
       .pipe(
-        catchError(async (err) => console.log(err)),
+        catchError(async (err) => {
+          new Error(err);
+        }),
         tap((res) => {
-          this.localStorageService.saveUser(res);
+          if (res != undefined) {
+            this.localStorageService.saveUser(res);
+          }
         }),
         tap(() => {
           this.loggedIn.next(true);

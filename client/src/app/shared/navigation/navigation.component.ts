@@ -16,10 +16,8 @@ export class NavigationComponent implements OnInit {
   constructor(public localStorageService: LocalStorageService) {}
 
   ngOnInit() {
-    try {
+    if (this.localStorageService.isAuthenticated()) {
       this.userId = this.localStorageService.getUserId();
-    } catch (error: any) {
-      console.log(error.message);
     }
   }
 

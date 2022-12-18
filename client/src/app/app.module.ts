@@ -12,6 +12,7 @@ import { ProfileComponent } from './features/profile/profile.component';
 import { CartComponent } from './features/cart/cart.component';
 import { FeaturesModule } from './features/features.module';
 import { CitiesModule } from './cities/cities.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CitiesModule } from './cities/cities.module';
     FontAwesomeModule,
     FormsModule,
     HttpClientModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
