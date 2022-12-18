@@ -11,6 +11,7 @@ import {
 import { environment } from 'src/environments/environment';
 import { LocalStorageService } from './local-storage.service';
 import { IUser } from '../interfaces/IUser';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +22,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
+    private snackbar: MatSnackBar,
     private localStorageService: LocalStorageService
   ) {}
 
@@ -31,8 +33,15 @@ export class AuthService {
         password,
       })
       .pipe(
-        catchError(async (err) => {
-          new Error(err);
+        catchError((err) => {
+          this.snackbar.open(err.error.message, 'Close', {
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'left',
+            panelClass: ['mat-toolbar', 'mat-accent']
+          });
+
+          return throwError(err);
         }),
         tap((res) => {
           if (res != undefined) {
@@ -61,9 +70,13 @@ export class AuthService {
         picture,
       })
       .pipe(
-        catchError(async (err) => console.log(err)),
+        catchError(async (err) => {
+          new Error(err.error.message);
+        }),
         tap((res) => {
-          this.localStorageService.saveUser(res);
+          if (res != undefined) {
+            this.localStorageService.saveUser(res);
+          }
         }),
         tap(() => {
           this.loggedIn.next(true);
