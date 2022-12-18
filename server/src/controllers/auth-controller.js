@@ -16,13 +16,13 @@ router.post('/login', async (req, res) => {
         const existingUser = await authService.getUserByEmail(email);
 
         if (!existingUser) {
-            res.status(404).json({ message: 'User doesn\'t exist.' });
+            return res.status(404).json({ message: 'User doesn\'t exist.' });
         }
 
         const isPasswordValid = await bcrypt.compare(password, existingUser.password);
 
         if (!isPasswordValid) {
-            res.status(400).json({ message: 'Invalid credentials.' });
+            return res.status(400).json({ message: 'Invalid credentials.' });
         }
 
         const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, process.env.SECRET, { expiresIn: TOKEN_EXPIRATION_TIME });
@@ -48,11 +48,11 @@ router.post('/register', async (req, res) => {
         const existingUser = await authService.getUserByEmail(email);
 
         if (existingUser) {
-            res.status(400).json({ message: 'User already exists.' });
+            return res.status(400).json({ message: 'User already exists.' });
         }
 
         if (password !== repeatPassword) {
-            res.status(400).json({ message: 'Passwords don\'t match.' });
+            return res.status(400).json({ message: 'Passwords don\'t match.' });
         }
 
         const hashedPassword = await bcrypt.hash(password, SALT);
