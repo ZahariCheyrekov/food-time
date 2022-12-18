@@ -13,6 +13,7 @@ import { CartComponent } from './features/cart/cart.component';
 import { FeaturesModule } from './features/features.module';
 import { CitiesModule } from './cities/cities.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     FeaturesModule,
