@@ -36,9 +36,7 @@ export class AuthService {
         catchError((err) => {
           this.snackbar.open(err.error.message, 'Close', {
             duration: 3000,
-            verticalPosition: 'top',
-            horizontalPosition: 'left',
-            panelClass: ['mat-toolbar', 'mat-accent']
+            panelClass: ['mat-toolbar', 'mat-accent'],
           });
 
           return throwError(err);
@@ -50,7 +48,13 @@ export class AuthService {
         }),
         tap(() => {
           this.loggedIn.next(true);
-        })
+        }),
+        tap(() =>
+          this.snackbar.open('Login was successful', 'Close', {
+            duration: 3000,
+            panelClass: ['mat-toolbar', 'mat-accent'],
+          })
+        )
       );
   }
 
