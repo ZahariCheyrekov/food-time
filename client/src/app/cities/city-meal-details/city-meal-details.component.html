@@ -26,11 +26,11 @@
         </p>
         <span class="meal__likes__price likes__price">
           <button class="meal__button--edit edit__button button" (click)="onEdit()"
-            *ngIf="localStorageService.isAuthenticated()">
+            *ngIf="localStorageService.isAuthenticated() && isAuthor">
             Edit
           </button>
           <button class="meal__button--delete delete__button button" (click)="onDelete()"
-            *ngIf="localStorageService.isAuthenticated()">
+            *ngIf="localStorageService.isAuthenticated() && isAuthor">
             Delete
           </button>
           <button class="meal__button--buy buy__button button" (click)="onBuy()"

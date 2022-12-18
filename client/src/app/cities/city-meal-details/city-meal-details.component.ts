@@ -22,6 +22,7 @@ export class CityMealDetailsComponent {
   userId: string = '';
   reviews: IReview[] = [];
   mealLikes: String[] = [];
+  isAuthor = false;
   likes = 0;
 
   constructor(
@@ -51,6 +52,7 @@ export class CityMealDetailsComponent {
       this.meal = res;
       this.mealLikes = res.likes;
       this.likes = res.likes.length;
+      this.isAuthor = res.ownerId == this.userId;
     });
   }
 
