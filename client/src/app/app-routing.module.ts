@@ -6,6 +6,8 @@ import { AboutComponent } from './features/pages/about/about.component';
 import { ProfileComponent } from './features/profile/profile.component';
 import { CartComponent } from './features/cart/cart.component';
 import { NotFoundComponent } from './features/pages/not-found/not-found.component';
+import { AuthGuard } from './core/guards/auth.guard';
+import { NotAuthGuard } from './core/guards/not-auth.guard';
 
 const routes: Routes = [
   {
@@ -20,6 +22,7 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    canLoad: [NotAuthGuard],
   },
   {
     path: 'cities',
@@ -29,10 +32,12 @@ const routes: Routes = [
   {
     path: 'profile/:userId',
     component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'profile/:userId/cart',
     component: CartComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: '**',

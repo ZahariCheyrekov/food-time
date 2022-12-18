@@ -7,6 +7,7 @@ import { CityCreateComponent } from './city-create/city-create.component';
 import { CityCreateMealComponent } from './city-create-meal/city-create-meal.component';
 import { CityMealDetailsComponent } from './city-meal-details/city-meal-details.component';
 import { CityMealEditComponent } from './city-meal-edit/city-meal-edit.component';
+import { AuthGuard } from '../core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       {
         path: 'create',
         component: CityCreateComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: ':id/meals',
@@ -27,6 +29,7 @@ const routes: Routes = [
       {
         path: ':id/meals/create',
         component: CityCreateMealComponent,
+        canActivate: [AuthGuard],
       },
       {
         path: ':id/meals/:mealId',
@@ -35,6 +38,7 @@ const routes: Routes = [
       {
         path: ':id/meals/:mealId/edit',
         component: CityMealEditComponent,
+        canActivate: [AuthGuard],
       },
     ],
   },
