@@ -26,20 +26,21 @@
       </a>
     </li>
     <li class="header__list--item list__item item">
-      <a class="list__item--link link" routerLink="/auth/login">
+      <a class="list__item--link link" routerLink="/auth/login" *ngIf="!localStorageService.isAuthenticated()">
         Sign In
       </a>
     </li>
     <li class="header__list--item list__item item" *ngIf="localStorageService.isAuthenticated()">
-      <a class="list__item--link link" routerLink="/profile/{{userId}}">
+      <a class="list__item--link link" routerLink="/profile/{{localStorageService.getUserId()}}">
         My Profile
       </a>
     </li>
-    <li class="header__list--item list__item item logout" *ngIf="localStorageService.isAuthenticated()" (click)="onLogout()">
+    <li class="header__list--item list__item item logout" *ngIf="localStorageService.isAuthenticated()"
+      (click)="onLogout()">
       Logout
     </li>
     <li class="header__list--item list__item item" *ngIf="localStorageService.isAuthenticated()">
-      <a class="list__item--link link cart" routerLink="/profile/{{userId}}/cart">
+      <a class="list__item--link link cart" routerLink="/profile/{{localStorageService.getUserId()}}/cart">
         <fa-icon [icon]="faCartPlus"></fa-icon>
       </a>
     </li>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -13,7 +14,10 @@ export class NavigationComponent implements OnInit {
   userId = '';
   faCartPlus = faCartPlus;
 
-  constructor(public localStorageService: LocalStorageService) {}
+  constructor(
+    public localStorageService: LocalStorageService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     if (this.localStorageService.isAuthenticated()) {
@@ -23,5 +27,6 @@ export class NavigationComponent implements OnInit {
 
   onLogout() {
     this.localStorageService.removeUser();
+    this.router.navigate(['/']);
   }
 }
