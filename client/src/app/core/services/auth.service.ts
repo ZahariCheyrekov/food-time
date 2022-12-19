@@ -74,8 +74,13 @@ export class AuthService {
         picture,
       })
       .pipe(
-        catchError(async (err) => {
-          new Error(err.error.message);
+        catchError((err) => {
+          this.snackbar.open(err.error.message, 'Close', {
+            duration: 3000,
+            panelClass: ['mat-toolbar', 'mat-accent'],
+          });
+
+          return throwError(err);
         }),
         tap((res) => {
           if (res != undefined) {
@@ -83,7 +88,10 @@ export class AuthService {
           }
         }),
         tap(() => {
-          this.loggedIn.next(true);
+          this.snackbar.open('Register was successful', 'Close', {
+            duration: 3000,
+            panelClass: ['mat-toolbar', 'mat-accent'],
+          });
         })
       );
   }
