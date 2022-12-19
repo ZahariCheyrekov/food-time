@@ -1,12 +1,13 @@
-<form class="register__form" method="POST" #signUp="ngForm" (ngSubmit)="onSubmit(signUp)">
+<form [formGroup]="registerForm" class="register__form" method="POST" (ngSubmit)="onSubmit()">
   <legend class="form__legend legend">
     Sign Up
   </legend>
-  <input type="text" name="firstName" class="form__input input" placeholder="John" ngModel>
-  <input type="text" name="lastName" class="form__input input" placeholder="Doe" ngModel>
-  <input type="text" name="email" class="form__input input" placeholder="johndoe@gmail.com" ngModel>
-  <input type="password" name="password" class="form__input input password" placeholder="• • • • • • • •" ngModel>
-  <input type="password" name="repeatPassword" class="form__input input password" placeholder="• • • • • • • •" ngModel>
+  <input type="text" formControlName="firstName" class="form__input input" placeholder="John" />
+  <input type="text" formControlName="lastName" class="form__input input" placeholder="Doe" />
+  <input type="text" formControlName="email" class="form__input input" placeholder="johndoe@gmail.com" />
+  <input type="password" formControlName="password" class="form__input input password" placeholder="• • • • • • • •" />
+  <input type="password" formControlName="repeatPassword" class="form__input input password"
+    placeholder="• • • • • • • •" />
   <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
     <ngx-dropzone-label>Drop profile picture here</ngx-dropzone-label>
     <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
