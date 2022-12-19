@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { IMeal } from 'src/app/core/interfaces/IMeal';
@@ -16,6 +21,20 @@ export class CityMealEditComponent implements OnInit {
   mealId: string = '';
   cityId: string = '';
   formGroup: FormGroup;
+
+  mealEditForm: FormGroup = new FormGroup({
+    name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+    ingredients: new FormControl(null, [Validators.required]),
+    price: new FormControl(null, [Validators.required]),
+    description: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(10),
+    ]),
+    preparationTime: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(2),
+    ]),
+  });
 
   constructor(
     private mealService: MealService,

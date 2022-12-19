@@ -6,13 +6,18 @@
   <legend class=" form__legend legend">
     Edit Meal
   </legend>
-  <input type="text" name="name" class="form__input input" formControlName="name" />
-  <textarea type="text" name="ingredients" class="form__input input" formControlName="ingredients"></textarea>
-  <input type="number" name="price" class="form__input input" formControlName="price" />
-  <textarea type="text" name="description" class="form__input input" formControlName="description">
+  <div class="error"
+    *ngIf="(mealEditForm.get('name')?.touched || mealEditForm.get('name')?.dirty) && mealEditForm.get('name')?.hasError('required')">
+    Name is required
+  </div>
+  <input type="text" formControlName="name" class="form__input input" formControlName="name" />
+  <textarea type="text" formControlName="ingredients" class="form__input input"
+    formControlName="ingredients"></textarea>
+  <input type="number" formControlName="price" class="form__input input" formControlName="price" />
+  <textarea type="text" formControlName="description" class="form__input input" formControlName="description">
   </textarea>
-  <input type="text" name="preparationTime" class="form__input input" formControlName="preparationTime" />
-  <input type="text" name="picture" class="form__input input" formControlName="picture" />
+  <input type="text" formControlName="preparationTime" class="form__input input" formControlName="preparationTime" />
+  <input type="text" formControlName="picture" class="form__input input" formControlName="picture" />
   <button class=" form__button auth__button">
     Edit Meal
   </button>
