@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
@@ -15,10 +16,19 @@ export class CityCreateComponent {
   files: File[] = [];
   url: any;
 
+  cityForm: FormGroup = new FormGroup({
+    city: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+    country: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(2),
+    ]),
+  });
+
   constructor(
     private uploadService: UploadService,
     private cityService: CityService,
-    private router: Router
+    private router: Router,
+    private snackbar: MatSnackBar
   ) {}
 
   onSelect(event: any) {
@@ -33,6 +43,10 @@ export class CityCreateComponent {
 
   async onSubmit(form: NgForm) {
     if (!this.files[0]) {
+      this.snackbar.open('City picture is required', 'Close', {
+        duration: 3000,
+        panelClass: ['mat-toolbar', 'mat-accent'],
+      });
       return;
     }
 
@@ -53,8 +67,9 @@ export class CityCreateComponent {
 
     this.cityService
       .createCity({ city, country, picture: this.url })
-      .subscribe(() => {
-        this.router.navigate(['/cities']);
+      .subscribe({
+        error: (e) => console.error(e),
+        complete: () => this.router.navigate(['/cities']),
       });
   }
 }
