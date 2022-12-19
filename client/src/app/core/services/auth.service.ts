@@ -39,7 +39,7 @@ export class AuthService {
             panelClass: ['mat-toolbar', 'mat-accent'],
           });
 
-          return throwError(err);
+          throw new Error(err.error.message);
         }),
         tap((res) => {
           if (res != undefined) {
@@ -80,7 +80,7 @@ export class AuthService {
             panelClass: ['mat-toolbar', 'mat-accent'],
           });
 
-          return throwError(err);
+          throw new Error(err.error.message);
         }),
         tap((res) => {
           if (res != undefined) {
