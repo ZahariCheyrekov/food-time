@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
@@ -15,6 +15,27 @@ export class RegisterComponent implements OnInit {
   url: any;
   files: File[] = [];
   isLoading = false;
+
+  registerForm = new FormGroup({
+    firstName: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(2),
+    ]),
+    lastName: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(2),
+    ]),
+    email: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+      Validators.email,
+    ]),
+    password: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+    repeatPassword: new FormControl(null, [Validators.required]),
+  });
 
   constructor(
     private authService: AuthService,
@@ -32,7 +53,7 @@ export class RegisterComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-  async onSubmit(form: NgForm) {
+  async onSubmit() {
     if (!this.files[0]) {
       return;
     }
@@ -49,10 +70,10 @@ export class RegisterComponent implements OnInit {
       }
     );
 
-    const name = `${form.value.firstName} ${form.value.lastName}`;
-    const email = form.value.email;
-    const password = form.value.password;
-    const repeatPassword = form.value.repeatPassword;
+    const name = `${this.registerForm.value.firstName}`;
+    const email = `${this.registerForm.value.email}`;
+    const password = `${this.registerForm.value.password}`;
+    const repeatPassword = `${this.registerForm.value.repeatPassword}`;
 
     this.authService
       .register(name, email, password, repeatPassword, this.url)
