@@ -2,10 +2,30 @@
   <legend class="form__legend legend">
     Sign Up
   </legend>
+  <div class="error"
+    *ngIf="(registerForm.get('firstName')?.touched || registerForm.get('firstName')?.dirty) && registerForm.get('firstName')?.hasError('required')">
+    First name is required
+  </div>
   <input type="text" formControlName="firstName" class="form__input input" placeholder="John" />
+  <div class="error"
+    *ngIf="(registerForm.get('lastName')?.touched || registerForm.get('lastName')?.dirty) && registerForm.get('lastName')?.hasError('required')">
+    Last name is required
+  </div>
   <input type="text" formControlName="lastName" class="form__input input" placeholder="Doe" />
+  <div class="error"
+    *ngIf="(registerForm.get('email')?.touched || registerForm.get('email')?.dirty) && registerForm.get('email')?.hasError('required')">
+    Email is required
+  </div>
   <input type="text" formControlName="email" class="form__input input" placeholder="johndoe@gmail.com" />
+  <div class="error"
+    *ngIf="(registerForm.get('password')?.touched || registerForm.get('password')?.dirty) && registerForm.get('password')?.hasError('required')">
+    Password is required
+  </div>
   <input type="password" formControlName="password" class="form__input input password" placeholder="• • • • • • • •" />
+  <div class="error"
+    *ngIf="(registerForm.get('repeatPassword')?.touched || registerForm.get('repeatPassword')?.dirty) && registerForm.get('repeatPassword')?.hasError('required')">
+    Repeat password is required
+  </div>
   <input type="password" formControlName="repeatPassword" class="form__input input password"
     placeholder="• • • • • • • •" />
   <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
