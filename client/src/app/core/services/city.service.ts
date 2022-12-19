@@ -35,6 +35,17 @@ export class CityService {
   }
 
   createMeal(data: Object, cityId: string | null) {
-    return this.http.post(`${this.url}/cities/${cityId}/meals/create`, data);
+    return this.http
+      .post(`${this.url}/cities/${cityId}/meals/create`, data)
+      .pipe(
+        catchError((err) => {
+          this.snackbar.open(err.error.message, 'Close', {
+            duration: 3000,
+            panelClass: ['mat-toolbar', 'mat-accent'],
+          });
+
+          throw new Error(err.error.message);
+        })
+      );
   }
 }
