@@ -72,7 +72,7 @@ router.post('/register', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: error.message });
+        res.status(400).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
