@@ -7,7 +7,7 @@ import { IReview } from 'src/app/core/interfaces/IReview';
 import { MealService } from 'src/app/core/services/meal.service';
 import { ReviewService } from 'src/app/core/services/review.service';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
-import { lastValueFrom } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-city-meal-details',
@@ -30,7 +30,8 @@ export class CityMealDetailsComponent {
     private activatedRoute: ActivatedRoute,
     private mealService: MealService,
     private reviewService: ReviewService,
-    public localStorageService: LocalStorageService
+    public localStorageService: LocalStorageService,
+    private snackbar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -101,6 +102,14 @@ export class CityMealDetailsComponent {
 
   onReview(form: NgForm) {
     const { description } = form.value;
+    if (!description) {
+      this.snackbar.open('Review description is required', 'Close', {
+        duration: 3000,
+        panelClass: ['mat-toolbar', 'mat-accent'],
+      });
+      return;
+    }
+
     const name = this.localStorageService.getUsername();
     const picture = this.localStorageService.getUserPicture();
 
