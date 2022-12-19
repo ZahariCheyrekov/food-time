@@ -4,12 +4,12 @@
   </legend>
   <div class="error"
     *ngIf="(loginForm.get('email')?.touched || loginForm.get('email')?.dirty) && loginForm.get('email')?.hasError('required')">
-    Email is required!
+    Email is required
   </div>
   <input type="text" formControlName="email" class="form__input input" placeholder="johndoe@gmail.com" />
   <div class="error"
     *ngIf="(loginForm.get('password')?.touched || loginForm.get('password')?.dirty) && loginForm.get('password')?.hasError('required')">
-    Password must be at least 6 characters long!
+    Password must be at least 6 characters long
   </div>
   <input type="password" formControlName="password" class="form__input input password" placeholder="• • • • • • • •" />
   <button class="form__button auth__button">
