@@ -14,7 +14,7 @@ router.get('/:id/meals/:mealId/reviews', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -28,7 +28,7 @@ router.post('/:id/meals/:mealId/review', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 

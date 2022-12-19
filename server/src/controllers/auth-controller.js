@@ -37,7 +37,8 @@ router.post('/login', async (req, res) => {
         res.status(200).json({ user, token });
 
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        console.log(error);
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -72,7 +73,7 @@ router.post('/register', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(400).json({ message: Object.values(error.errors)[0].properties.message });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -88,7 +89,7 @@ router.get('/:userId', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -101,7 +102,7 @@ router.get('/:userId/meals', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -118,7 +119,7 @@ router.get('/:userId/cart', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -130,7 +131,7 @@ router.delete('/:userId/cart/empty', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 

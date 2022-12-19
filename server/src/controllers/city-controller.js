@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 

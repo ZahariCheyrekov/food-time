@@ -15,7 +15,7 @@ router.get('/:id/meals/:mealId', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -39,7 +39,7 @@ router.post('/:id/meals/create', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -67,7 +67,7 @@ router.post('/:id/meals/:mealId/edit', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -90,8 +90,8 @@ router.post('/:id/meals/:mealId/like', async (req, res) => {
         }
 
     } catch (error) {
-        console.log(error.message);
-        res.status(500).json({ message: 'Something went wrong.' });
+        console.log(error);
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -104,8 +104,8 @@ router.post('/:id/meals/:mealId/buy', async (req, res) => {
         res.status(200).json({ purchased: mealId, by: userId });
 
     } catch (error) {
-        console.log(error.message);
-        res.status(500).json({ message: 'Something went wrong.' });
+        console.log(error);
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -117,8 +117,8 @@ router.delete('/:id/meals/:mealId/remove/:userId', async (req, res) => {
         res.status(200).json({ removed: mealId, by: userId });
 
     } catch (error) {
-        console.log(error.message);
-        res.status(500).json({ message: 'Something went wrong.' });
+        console.log(error);
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
@@ -131,7 +131,7 @@ router.delete('/:id/meals/:mealId/delete', async (req, res) => {
 
     } catch (error) {
         console.log(error);
-        res.status(500).json({ message: 'Something went wrong.' });
+        res.status(500).json({ message: Object.values(error.errors)[0].properties.message });
     }
 });
 
