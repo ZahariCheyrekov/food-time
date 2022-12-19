@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { UploadService } from '../../core/services/upload.service';
 import { CityService } from '../../core/services/city.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-city-create-meal',
@@ -22,12 +23,27 @@ export class CityCreateMealComponent {
   arranged on a plate in restaurant practice. Like pizza Margherita, it
   features the colours of the Italian flag.`;
 
+  mealForm: FormGroup = new FormGroup({
+    name: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+    ingredients: new FormControl(null, [Validators.required]),
+    price: new FormControl(null, [Validators.required]),
+    description: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(10),
+    ]),
+    preparationTime: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(2),
+    ]),
+  });
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private localStorageService: LocalStorageService,
     private uploadService: UploadService,
     private cityService: CityService,
-    private router: Router
+    private router: Router,
+    private snackbar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -36,17 +52,19 @@ export class CityCreateMealComponent {
   }
 
   onSelect(event: any) {
-    console.log(event);
     this.files.push(...event.addedFiles);
   }
 
   onRemove(event: any) {
-    console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-  async onSubmit(form: NgForm) {
+  async onSubmit() {
     if (!this.files[0]) {
+      this.snackbar.open('Meal picture is required', 'Close', {
+        duration: 3000,
+        panelClass: ['mat-toolbar', 'mat-accent'],
+      });
       return;
     }
 
@@ -62,11 +80,11 @@ export class CityCreateMealComponent {
       }
     );
 
-    const name = form.value.name;
-    const ingredients = form.value.ingredients;
-    const price = form.value.price;
-    const description = form.value.description;
-    const preparationTime = form.value.preparationTime;
+    const name = this.mealForm.value.name;
+    const ingredients = this.mealForm.value.ingredients;
+    const price = this.mealForm.value.price;
+    const description = this.mealForm.value.description;
+    const preparationTime = this.mealForm.value.preparationTime;
 
     this.cityService
       .createMeal(
@@ -82,8 +100,9 @@ export class CityCreateMealComponent {
         },
         this.cityId
       )
-      .subscribe(() => {
-        this.router.navigate([`/cities/${this.cityId}/meals`]);
+      .subscribe({
+        error: (e) => console.error(e),
+        complete: () => this.router.navigate([`/cities/${this.cityId}/meals`]),
       });
   }
 }
