@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
@@ -40,7 +41,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private uploadService: UploadService,
-    private router: Router
+    private router: Router,
+    private snackbar: MatSnackBar
   ) {}
 
   ngOnInit(): void {}
@@ -55,6 +57,10 @@ export class RegisterComponent implements OnInit {
 
   async onSubmit() {
     if (!this.files[0]) {
+      this.snackbar.open('Profile picture is required', 'Close', {
+        duration: 3000,
+        panelClass: ['mat-toolbar', 'mat-accent'],
+      });
       return;
     }
 
@@ -77,8 +83,9 @@ export class RegisterComponent implements OnInit {
 
     this.authService
       .register(name, email, password, repeatPassword, this.url)
-      .subscribe((res) => console.log(res));
-
-    this.router.navigate(['/cities']);
+      .subscribe({
+        error: (e) => console.error(e),
+        complete: () => this.router.navigate(['/cities']),
+      });
   }
 }
