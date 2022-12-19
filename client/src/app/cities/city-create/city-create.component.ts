@@ -41,7 +41,7 @@ export class CityCreateComponent {
     this.files.splice(this.files.indexOf(event), 1);
   }
 
-  async onSubmit(form: NgForm) {
+  async onSubmit() {
     if (!this.files[0]) {
       this.snackbar.open('City picture is required', 'Close', {
         duration: 3000,
@@ -62,8 +62,8 @@ export class CityCreateComponent {
       }
     );
 
-    const city = form.value.city;
-    const country = form.value.country;
+    const city = this.cityForm.value.city;
+    const country = this.cityForm.value.country;
 
     this.cityService
       .createCity({ city, country, picture: this.url })
