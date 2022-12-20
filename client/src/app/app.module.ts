@@ -14,15 +14,12 @@ import { FeaturesModule } from './features/features.module';
 import { CitiesModule } from './cities/cities.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ProfileComponent,
-    CartComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, ProfileComponent, CartComponent],
   imports: [
+    RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
