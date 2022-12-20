@@ -52,6 +52,10 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ message: 'User already exists.' });
         }
 
+        if (password.length < 6) {
+            return res.status(400).json({ message: 'Password should be at least 6 characters long' });
+        }
+
         if (password !== repeatPassword) {
             return res.status(400).json({ message: 'Passwords don\'t match.' });
         }
