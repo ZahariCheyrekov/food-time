@@ -1,97 +1,100 @@
-<nav class="header__navigation nav {{isActive && 'active'}}">
-  <h2 class="header__title title">
-    <a routerLink="/" class="title__link">
-      Food<span class="title__orange">Time</span>
-    </a>
-  </h2>
-  <ul class="header__list list">
-    <li class="header__list--item list__item item">
-      <a class="list__item--link link" routerLink="/">
-        Home
+<section class="header__section--nav">
+  <nav class="header__navigation nav {{isActive && 'active'}}">
+    <h2 class="header__title title">
+      <a routerLink="/" class="title__link">
+        Food<span class="title__orange">Time</span>
       </a>
-    </li>
-    <li class="header__list--item list__item item">
-      <a class="list__item--link link" routerLink="/about">
-        About Us
-      </a>
-    </li>
-    <li class="header__list--item list__item item">
-      <a class="list__item--link link" routerLink="/cities">
-        Cities
-      </a>
-    </li>
-    <li class="header__list--item list__item item">
-      <a class="list__item--link link" routerLink="/cities/create" *ngIf="localStorageService.isAuthenticated()">
-        Create City
-      </a>
-    </li>
-    <li class="header__list--item list__item item">
-      <a class="list__item--link link" routerLink="/auth/login" *ngIf="!localStorageService.isAuthenticated()">
-        Sign In
-      </a>
-    </li>
-    <li class="header__list--item list__item item" *ngIf="localStorageService.isAuthenticated()">
-      <a class="list__item--link link" routerLink="/profile/{{localStorageService.getUserId()}}">
-        My Profile
-      </a>
-    </li>
-    <li class="header__list--item list__item item logout" *ngIf="localStorageService.isAuthenticated()"
-      (click)="onLogout()">
-      Logout
-    </li>
-    <li class="header__list--item list__item item" *ngIf="localStorageService.isAuthenticated()">
-      <a class="list__item--link link cart" routerLink="/profile/{{localStorageService.getUserId()}}/cart">
-        <fa-icon [icon]="faCartPlus"></fa-icon>
-      </a>
-    </li>
-    <li class="header__list--item item__phone" *ngIf="!localStorageService.isAuthenticated()">
-      1800 789 123
-    </li>
-  </ul>
-  <div class="header__div--menu menu {{isActive && 'active'}}" (click)="toggleMenu()">
-    ━━
-  </div>
-  <ul *ngIf="isActive" class="header__list--menu">
-    <li class="header__list--menu__item menu__item">
-      <a class="list__item--link link" routerLink="/">
-        Home
-      </a>
-    </li>
-    <li class="header__list--menu__item menu__item">
-      <a class="list__item--link link" routerLink="/about">
-        About Us
-      </a>
-    </li>
-    <li class="header__list--menu__item menu__item">
-      <a class="list__item--link link" routerLink="/cities">
-        Cities
-      </a>
-    </li>
-    <li class="header__list--menu__item menu__item" *ngIf="localStorageService.isAuthenticated()">
-      <a class=" list__item--link link" routerLink="/cities/create">
-        Create City
-      </a>
-    </li>
-    <li class=" header__list--menu__item menu__item" *ngIf="!localStorageService.isAuthenticated()">
-      <a class="list__item--link link" routerLink="/cities/create">
-        Sign In
-      </a>
-    </li>
-    <li class="header__list--menu__item menu__item" *ngIf="localStorageService.isAuthenticated()">
-      <a class="list__item--link link" routerLink="/profile/{{localStorageService.getUserId()}}">
-        My Profile
-      </a>
-    </li>
-    <li class="header__list--menu__item menu__item" *ngIf="localStorageService.isAuthenticated()">
-      <a class="list__item--link link" routerLink="/profile/{{localStorageService.getUserId()}}/cart">
-        Cart
-      </a>
-    </li>
-    <li class="header__list--menu__item menu__item" *ngIf="localStorageService.isAuthenticated()" (click)="onLogout()">
-      Logout
-    </li>
-    <li class="header__list--menu__item menu__item" *ngIf="!localStorageService.isAuthenticated()">
-      1800 789 123
-    </li>
-  </ul>
-</nav>
+    </h2>
+    <ul class="header__list list">
+      <li class="header__list--item list__item item">
+        <a class="list__item--link link" routerLink="/">
+          Home
+        </a>
+      </li>
+      <li class="header__list--item list__item item">
+        <a class="list__item--link link" routerLink="/about">
+          About Us
+        </a>
+      </li>
+      <li class="header__list--item list__item item">
+        <a class="list__item--link link" routerLink="/cities">
+          Cities
+        </a>
+      </li>
+      <li class="header__list--item list__item item">
+        <a class="list__item--link link" routerLink="/cities/create" *ngIf="localStorageService.isAuthenticated()">
+          Create City
+        </a>
+      </li>
+      <li class="header__list--item list__item item">
+        <a class="list__item--link link" routerLink="/auth/login" *ngIf="!localStorageService.isAuthenticated()">
+          Sign In
+        </a>
+      </li>
+      <li class="header__list--item list__item item" *ngIf="localStorageService.isAuthenticated()">
+        <a class="list__item--link link" routerLink="/profile/{{localStorageService.getUserId()}}">
+          My Profile
+        </a>
+      </li>
+      <li class="header__list--item list__item item logout" *ngIf="localStorageService.isAuthenticated()"
+        (click)="onLogout()">
+        Logout
+      </li>
+      <li class="header__list--item list__item item" *ngIf="localStorageService.isAuthenticated()">
+        <a class="list__item--link link cart" routerLink="/profile/{{localStorageService.getUserId()}}/cart">
+          <fa-icon [icon]="faCartPlus"></fa-icon>
+        </a>
+      </li>
+      <li class="header__list--item item__phone" *ngIf="!localStorageService.isAuthenticated()">
+        1800 789 123
+      </li>
+    </ul>
+    <div class="header__div--menu menu {{isActive && 'active'}}" (click)="toggleMenu()">
+      ━━
+    </div>
+    <ul *ngIf="isActive" class="header__list--menu" (click)="toggleMenu()">
+      <li class="header__list--menu__item menu__item">
+        <a class="list__item--link link" routerLink="/">
+          Home
+        </a>
+      </li>
+      <li class="header__list--menu__item menu__item">
+        <a class="list__item--link link" routerLink="/about">
+          About Us
+        </a>
+      </li>
+      <li class="header__list--menu__item menu__item">
+        <a class="list__item--link link" routerLink="/cities">
+          Cities
+        </a>
+      </li>
+      <li class="header__list--menu__item menu__item" *ngIf="localStorageService.isAuthenticated()">
+        <a class=" list__item--link link" routerLink="/cities/create">
+          Create City
+        </a>
+      </li>
+      <li class=" header__list--menu__item menu__item" *ngIf="!localStorageService.isAuthenticated()">
+        <a class="list__item--link link" routerLink="/cities/create">
+          Sign In
+        </a>
+      </li>
+      <li class="header__list--menu__item menu__item" *ngIf="localStorageService.isAuthenticated()">
+        <a class="list__item--link link" routerLink="/profile/{{localStorageService.getUserId()}}">
+          My Profile
+        </a>
+      </li>
+      <li class="header__list--menu__item menu__item" *ngIf="localStorageService.isAuthenticated()">
+        <a class="list__item--link link" routerLink="/profile/{{localStorageService.getUserId()}}/cart">
+          Cart
+        </a>
+      </li>
+      <li class=" header__list--menu__item menu__item" *ngIf="localStorageService.isAuthenticated()"
+        (click)="onLogout()">
+        Logout
+      </li>
+      <li class="header__list--menu__item menu__item" *ngIf="!localStorageService.isAuthenticated()">
+        1800 789 123
+      </li>
+    </ul>
+  </nav>
+</section>
