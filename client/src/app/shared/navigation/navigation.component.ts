@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
-import { AuthService } from 'src/app/core/services/auth.service';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
 @Component({
@@ -13,6 +12,7 @@ import { LocalStorageService } from 'src/app/core/services/local-storage.service
 export class NavigationComponent implements OnInit {
   userId = '';
   faCartPlus = faCartPlus;
+  isActive = false;
 
   constructor(
     public localStorageService: LocalStorageService,
@@ -28,5 +28,9 @@ export class NavigationComponent implements OnInit {
   onLogout() {
     this.localStorageService.removeUser();
     this.router.navigate(['/']);
+  }
+
+  toggleMenu() {
+    this.isActive = !this.isActive;
   }
 }
