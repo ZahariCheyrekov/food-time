@@ -1,13 +1,12 @@
 @import "../../../assets/scss/variables.scss";
 
 .meal__main {
-  margin: 40px;
+  padding: 40px;
 }
 
 .meal__main--wrapper {
   max-width: $primary-width;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 76px auto 0;
 }
 
 .meal__section {

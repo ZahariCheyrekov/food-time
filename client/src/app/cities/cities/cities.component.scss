@@ -1,12 +1,12 @@
 @import "../../../assets/scss/variables.scss";
 
 .main__cities {
-  margin: 60px;
+  padding: 60px;
 }
 
 .cities__section {
   max-width: $primary-width;
-  margin: 0 auto;
+  margin: 76px auto 0;
   padding: 20px;
 }
 
@@ -100,10 +100,11 @@
 
 @media only screen and (max-width: 900px) {
   .main__cities {
-    margin: 60px 40px;
+    padding: 60px 40px;
   }
 
   .cities__section {
+    margin-top: 76px;
     padding: 0;
   }
 
