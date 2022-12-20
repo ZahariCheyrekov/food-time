@@ -25,6 +25,20 @@ export class NavigationComponent implements OnInit {
     }
   }
 
+  disableScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollLeft =
+      window.pageXOffset || document.documentElement.scrollLeft;
+
+    (window as any).onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    };
+  }
+
+  enableScroll() {
+    window.onscroll = function () {};
+  }
+
   onLogout() {
     this.localStorageService.removeUser();
     this.router.navigate(['/']);
@@ -32,5 +46,6 @@ export class NavigationComponent implements OnInit {
 
   toggleMenu() {
     this.isActive = !this.isActive;
+    this.isActive ? this.disableScroll() : this.enableScroll();
   }
 }
