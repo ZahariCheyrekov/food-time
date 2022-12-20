@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const userSchema = mongoose.Schema({
     name: {
         type: String,
-        minLength: [5, 'Name should be at least 5 characters long'],
+        minLength: [2, 'Name should be at least 2 characters long'],
         required: [true, 'Name is required']
     },
     email: {
@@ -21,6 +21,11 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         minLength: [6, 'Password must be at least 6 characters long'],
+        validate: (password) => {
+            if (password.length < 6) {
+                throw new Error('Password must be at least 6 characters long');
+            }
+        },
         required: [true, 'Password is required']
     },
     picture: {
