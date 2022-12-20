@@ -1,43 +1,46 @@
-<form [formGroup]="mealForm" class="create__meal--form" method="POST" (ngSubmit)="onSubmit()">
-  <legend class=" form__legend legend">
-    Create Meal
-  </legend>
-  <div class="error"
-    *ngIf="(mealForm.get('name')?.touched || mealForm.get('name')?.dirty) && mealForm.get('name')?.hasError('required')">
-    Name is required
-  </div>
-  <input type="text" formControlName="name" class="form__input input" placeholder="Caprese Salad" ngModel />
-  <div class="error"
-    *ngIf="(mealForm.get('ingredients')?.touched || mealForm.get('ingredients')?.dirty) && mealForm.get('ingredients')?.hasError('required')">
-    Ingredients are required
-  </div>
-  <textarea type="text" formControlName="ingredients" class="form__input input"
-    placeholder="Mozzarella, basil, olive oil, peper, sea salt" ngModel></textarea>
-  <div class="error"
-    *ngIf="(mealForm.get('price')?.touched || mealForm.get('price')?.dirty) && mealForm.get('price')?.hasError('required')">
-    Price is required
-  </div>
-  <input type="number" formControlName="price" class="form__input input" placeholder="30" ngModel />
-  <div class="error"
-    *ngIf="(mealForm.get('description')?.touched || mealForm.get('description')?.dirty) && mealForm.get('description')?.hasError('required')">
-    Descritpion is required
-  </div>
-  <textarea type="text" formControlName="description" class="form__input input" ngModel
-    placeholder="{{dummyDescription}}">
+<section class="main__section--wrapper">
+  <form [formGroup]="mealForm" class="create__meal--form" method="POST" (ngSubmit)="onSubmit()">
+    <legend class=" form__legend legend">
+      Create Meal
+    </legend>
+    <div class="error"
+      *ngIf="(mealForm.get('name')?.touched || mealForm.get('name')?.dirty) && mealForm.get('name')?.hasError('required')">
+      Name is required
+    </div>
+    <input type="text" formControlName="name" class="form__input input" placeholder="Caprese Salad" ngModel />
+    <div class="error"
+      *ngIf="(mealForm.get('ingredients')?.touched || mealForm.get('ingredients')?.dirty) && mealForm.get('ingredients')?.hasError('required')">
+      Ingredients are required
+    </div>
+    <textarea type="text" formControlName="ingredients" class="form__input input"
+      placeholder="Mozzarella, basil, olive oil, peper, sea salt" ngModel></textarea>
+    <div class="error"
+      *ngIf="(mealForm.get('price')?.touched || mealForm.get('price')?.dirty) && mealForm.get('price')?.hasError('required')">
+      Price is required
+    </div>
+    <input type="number" formControlName="price" class="form__input input" placeholder="30" ngModel />
+    <div class="error"
+      *ngIf="(mealForm.get('description')?.touched || mealForm.get('description')?.dirty) && mealForm.get('description')?.hasError('required')">
+      Descritpion is required
+    </div>
+    <textarea type="text" formControlName="description" class="form__input input" ngModel
+      placeholder="{{dummyDescription}}">
   </textarea>
-  <div class="error"
-    *ngIf="(mealForm.get('preparationTime')?.touched || mealForm.get('preparationTime')?.dirty) && mealForm.get('preparationTime')?.hasError('required')">
-    Preparation time is required
-  </div>
-  <input type="text" formControlName="preparationTime" class="form__input input" placeholder="10-15 minutes" ngModel />
-  <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
-    <ngx-dropzone-label>Drop meal file here</ngx-dropzone-label>
-    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
-      (removed)="onRemove(f)">
-      <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-    </ngx-dropzone-image-preview>
-  </ngx-dropzone>
-  <button class="form__button auth__button">
-    Create Meal
-  </button>
-</form>
+    <div class="error"
+      *ngIf="(mealForm.get('preparationTime')?.touched || mealForm.get('preparationTime')?.dirty) && mealForm.get('preparationTime')?.hasError('required')">
+      Preparation time is required
+    </div>
+    <input type="text" formControlName="preparationTime" class="form__input input" placeholder="10-15 minutes"
+      ngModel />
+    <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
+      <ngx-dropzone-label>Drop meal file here</ngx-dropzone-label>
+      <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+        [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-image-preview>
+    </ngx-dropzone>
+    <button class="form__button auth__button">
+      Create Meal
+    </button>
+  </form>
+</section>

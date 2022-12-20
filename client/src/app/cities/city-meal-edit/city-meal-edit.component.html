@@ -2,23 +2,25 @@
   <app-spinner></app-spinner>
 </div>
 
-<form class="edit__meal--form" method="POST" [formGroup]="formGroup" (ngSubmit)="onEditMeal()" *ngIf="!isLoading">
-  <legend class=" form__legend legend">
-    Edit Meal
-  </legend>
-  <div class="error"
-    *ngIf="(mealEditForm.get('name')?.touched || mealEditForm.get('name')?.dirty) && mealEditForm.get('name')?.hasError('required')">
-    Name is required
-  </div>
-  <input type="text" formControlName="name" class="form__input input" formControlName="name" />
-  <textarea type="text" formControlName="ingredients" class="form__input input"
-    formControlName="ingredients"></textarea>
-  <input type="number" formControlName="price" class="form__input input" formControlName="price" />
-  <textarea type="text" formControlName="description" class="form__input input" formControlName="description">
+<section class="main__section--wrapper">
+  <form class="edit__meal--form" method="POST" [formGroup]="formGroup" (ngSubmit)="onEditMeal()" *ngIf="!isLoading">
+    <legend class=" form__legend legend">
+      Edit Meal
+    </legend>
+    <div class="error"
+      *ngIf="(mealEditForm.get('name')?.touched || mealEditForm.get('name')?.dirty) && mealEditForm.get('name')?.hasError('required')">
+      Name is required
+    </div>
+    <input type="text" formControlName="name" class="form__input input" formControlName="name" />
+    <textarea type="text" formControlName="ingredients" class="form__input input"
+      formControlName="ingredients"></textarea>
+    <input type="number" formControlName="price" class="form__input input" formControlName="price" />
+    <textarea type="text" formControlName="description" class="form__input input" formControlName="description">
   </textarea>
-  <input type="text" formControlName="preparationTime" class="form__input input" formControlName="preparationTime" />
-  <input type="text" formControlName="picture" class="form__input input" formControlName="picture" />
-  <button class=" form__button auth__button">
-    Edit Meal
-  </button>
-</form>
+    <input type="text" formControlName="preparationTime" class="form__input input" formControlName="preparationTime" />
+    <input type="text" formControlName="picture" class="form__input input" formControlName="picture" />
+    <button class=" form__button auth__button">
+      Edit Meal
+    </button>
+  </form>
+</section>

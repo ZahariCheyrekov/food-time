@@ -1,25 +1,27 @@
-<form [formGroup]="cityForm" class="city__create--form" method="POST" (ngSubmit)="onSubmit()">
-  <legend class="form__legend legend">
-    Create City
-  </legend>
-  <div class="error"
-    *ngIf="(cityForm.get('city')?.touched || cityForm.get('city')?.dirty) && cityForm.get('city')?.hasError('required')">
-    City is required
-  </div>
-  <input type="text" formControlName="city" class="form__input input" placeholder="Sofia" ngModel>
-  <div class="error"
-    *ngIf="(cityForm.get('country')?.touched || cityForm.get('country')?.dirty) && cityForm.get('country')?.hasError('required')">
-    Country is required
-  </div>
-  <input type="text" formControlName="country" class="form__input input" placeholder="Bulgaria" ngModel>
-  <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
-    <ngx-dropzone-label>Drop file here</ngx-dropzone-label>
-    <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
-      (removed)="onRemove(f)">
-      <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-    </ngx-dropzone-image-preview>
-  </ngx-dropzone>
-  <button class="form__button auth__button">
-    Create
-  </button>
-</form>
+<section class="main__section--wrapper">
+  <form [formGroup]="cityForm" class="city__create--form" method="POST" (ngSubmit)="onSubmit()">
+    <legend class="form__legend legend">
+      Create City
+    </legend>
+    <div class="error"
+      *ngIf="(cityForm.get('city')?.touched || cityForm.get('city')?.dirty) && cityForm.get('city')?.hasError('required')">
+      City is required
+    </div>
+    <input type="text" formControlName="city" class="form__input input" placeholder="Sofia" ngModel>
+    <div class="error"
+      *ngIf="(cityForm.get('country')?.touched || cityForm.get('country')?.dirty) && cityForm.get('country')?.hasError('required')">
+      Country is required
+    </div>
+    <input type="text" formControlName="country" class="form__input input" placeholder="Bulgaria" ngModel>
+    <ngx-dropzone class="ngx__dropzone--wrapper" (change)="onSelect($event)">
+      <ngx-dropzone-label>Drop file here</ngx-dropzone-label>
+      <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"
+        [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-image-preview>
+    </ngx-dropzone>
+    <button class="form__button auth__button">
+      Create
+    </button>
+  </form>
+</section>

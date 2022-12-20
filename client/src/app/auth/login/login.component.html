@@ -1,24 +1,27 @@
-<form [formGroup]="loginForm" class="login__form form" method="POST" (click)="onSubmit()">
-  <legend class=" form__legend legend">
-    Sign In
-  </legend>
-  <div class="error"
-    *ngIf="(loginForm.get('email')?.touched || loginForm.get('email')?.dirty) && loginForm.get('email')?.hasError('required')">
-    Email is required
-  </div>
-  <input type="text" formControlName="email" class="form__input input" placeholder="johndoe@gmail.com" />
-  <div class="error"
-    *ngIf="(loginForm.get('password')?.touched || loginForm.get('password')?.dirty) && loginForm.get('password')?.hasError('required')">
-    Password must be at least 6 characters long
-  </div>
-  <input type="password" formControlName="password" class="form__input input password" placeholder="• • • • • • • •" />
-  <button class="form__button auth__button">
-    Sign In
-  </button>
-  <p class="account__paragraph">
-    Don't have an account?
-    <a routerLink="/auth/register" class="account__link--action link__action">
-      Sign Up
-    </a>
-  </p>
-</form>
+<section class="main__section--wrapper">
+  <form [formGroup]="loginForm" class="login__form form" method="POST" (click)="onSubmit()">
+    <legend class=" form__legend legend">
+      Sign In
+    </legend>
+    <div class="error"
+      *ngIf="(loginForm.get('email')?.touched || loginForm.get('email')?.dirty) && loginForm.get('email')?.hasError('required')">
+      Email is required
+    </div>
+    <input type="text" formControlName="email" class="form__input input" placeholder="johndoe@gmail.com" />
+    <div class="error"
+      *ngIf="(loginForm.get('password')?.touched || loginForm.get('password')?.dirty) && loginForm.get('password')?.hasError('required')">
+      Password must be at least 6 characters long
+    </div>
+    <input type="password" formControlName="password" class="form__input input password"
+      placeholder="• • • • • • • •" />
+    <button class="form__button auth__button">
+      Sign In
+    </button>
+    <p class="account__paragraph">
+      Don't have an account?
+      <a routerLink="/auth/register" class="account__link--action link__action">
+        Sign Up
+      </a>
+    </p>
+  </form>
+</section>
