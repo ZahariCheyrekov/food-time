@@ -1,93 +1,92 @@
 <div *ngIf="isLoading">
-    <app-spinner></app-spinner>
+  <app-spinner></app-spinner>
 </div>
 
 <main class="profile__main" *ngIf="!isLoading">
-    <section class="profile__section">
-        <article class="profile__article--user article__user">
-            <img class="profile__img img" src="{{user.picture}}" alt="{{user.name}}" />
-            <summary class="profile__summary summary">
-                <h2 class="profile__title--name name">
-                    {{user.name}}
-                </h2>
-                <h4 class="profile__title--email email">
-                    {{user.email}}
-                </h4>
-                <a routerLink="/profile/{{user._id}}/cart" class="cart__link">
-                    My Cart
-                </a>
+  <section class="profile__section">
+    <article class="profile__article--user article__user">
+      <img class="profile__img img" src="{{user.picture}}" alt="{{user.name}}" />
+      <summary class="profile__summary summary">
+        <h2 class="profile__title--name name">
+          {{user.name}}
+        </h2>
+        <h4 class="profile__title--email email">
+          {{user.email}}
+        </h4>
+        <a routerLink="/profile/{{user._id}}/cart" class="cart__link">
+          My Cart
+        </a>
+      </summary>
+    </article>
+    <section class="profile__section--meals section__meals">
+      <h2 class="profile__title--created__meals created__meals--title">
+        Created Meals:
+      </h2>
+      <ul class="meals__slist--items list__items">
+        <li class="meals__list--item list__item" *ngFor="let meal of meals">
+          <article class="meal__article--item meal">
+            <h3 class="meal__name name">
+              {{meal.name}}
+            </h3>
+            <p class="meal__paragraph--ingredients ingredients">
+              <strong>Ingredients:</strong> {{meal.ingredients}}
+            </p>
+            <time class="meal__time--prep prep">
+              <strong>Preparation time:</strong> {{meal.preparationTime}}
+            </time>
+            <summary class="meal__paragraph--description description">
+              <strong>Description:</strong> {{meal.description}}
             </summary>
-        </article>
-        <section class="profile__section--meals section__meals">
-            <h2 class="profile__title--created__meals created__meals--title">
-                Created Meals:
-            </h2>
-            <ul class="meals__slist--items list__items">
-                <li class="meals__list--item list__item" *ngFor="let meal of meals">
-                    <article class="meal__article--item meal">
-                        <h3 class="meal__name name">
-                            {{meal.name}}
-                        </h3>
-                        <p class="meal__paragraph--ingredients ingredients">
-                            <strong>Ingredients:</strong> {{meal.ingredients}}
-                        </p>
-                        <time class="meal__time--prep prep">
-                            <strong>Preparation time:</strong> {{meal.preparationTime}}
-                        </time>
-                        <summary class="meal__paragraph--description description">
-                            <strong>Description:</strong> {{meal.description}}
-                        </summary>
-                        <p class="meal__paragraph--price price">
-                            <strong>
-                                {{meal.price}} лв.
-                            </strong>
-                        </p>
-                        <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}"
-                            class="meal__link--details link__details">
-                            Details
-                        </a>
-                        <button class="meal__button--add add" (click)="onBuy(meal._id, meal.cityId)">
-                            +
-                        </button>
-                    </article>
-                    <img class=" meal__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
-                </li>
-            </ul>
-        </section>
-        <section class="profile__section--meals section__meals--liked">
-            <h2 class="profile__title--liked__meals liked__meals--title">
-                Liked Meals:
-            </h2>
-            <ul class="meals__slist--items list__items">
-                <li class="meals__list--item list__item" *ngFor="let meal of likedMeals">
-                    <article class="meal__article--item meal">
-                        <h3 class="meal__name name">
-                            {{meal.name}}
-                        </h3>
-                        <p class="meal__paragraph--ingredients ingredients">
-                            <strong>Ingredients:</strong> {{meal.ingredients}}
-                        </p>
-                        <time class="meal__time--prep prep">
-                            <strong>Preparation time:</strong> {{meal.preparationTime}}
-                        </time>
-                        <summary class="meal__paragraph--description description">
-                            <strong>Description:</strong> {{meal.description}}
-                        </summary>
-                        <p class="meal__paragraph--price price">
-                            <strong>
-                                {{meal.price}} лв.
-                            </strong>
-                        </p>
-                        <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}">
-                            Details
-                        </a>
-                        <button class="meal__button--add add" (click)="onBuy(meal._id, meal.cityId)">
-                            +
-                        </button>
-                    </article>
-                    <img class="meal__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
-                </li>
-            </ul>
-        </section>
+            <p class="meal__paragraph--price price">
+              <strong>
+                {{meal.price}} лв.
+              </strong>
+            </p>
+            <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}" class="meal__link--details link__details">
+              Details
+            </a>
+            <button class="meal__button--add add" (click)="onBuy(meal._id, meal.cityId)">
+              +
+            </button>
+          </article>
+          <img class=" meal__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
+        </li>
+      </ul>
     </section>
+    <section class="profile__section--meals section__meals--liked">
+      <h2 class="profile__title--liked__meals liked__meals--title">
+        Liked Meals:
+      </h2>
+      <ul class="meals__slist--items list__items">
+        <li class="meals__list--item list__item" *ngFor="let meal of likedMeals">
+          <article class="meal__article--item meal">
+            <h3 class="meal__name name">
+              {{meal.name}}
+            </h3>
+            <p class="meal__paragraph--ingredients ingredients">
+              <strong>Ingredients:</strong> {{meal.ingredients}}
+            </p>
+            <time class="meal__time--prep prep">
+              <strong>Preparation time:</strong> {{meal.preparationTime}}
+            </time>
+            <summary class="meal__paragraph--description description">
+              <strong>Description:</strong> {{meal.description}}
+            </summary>
+            <p class="meal__paragraph--price price">
+              <strong>
+                {{meal.price}} лв.
+              </strong>
+            </p>
+            <a routerLink="/cities/{{meal.cityId}}/meals/{{meal._id}}" class="meal__link--details link__details">
+              Details
+            </a>
+            <button class="meal__button--add add" (click)="onBuy(meal._id, meal.cityId)">
+              +
+            </button>
+          </article>
+          <img class="meal__img img" src="{{meal.picture}}" alt="{{meal.name}}" />
+        </li>
+      </ul>
+    </section>
+  </section>
 </main>
