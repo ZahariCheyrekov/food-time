@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 
   max-width: $primary-width;
   margin: 0 auto;
@@ -23,7 +24,7 @@
       color: $orange-color;
       font-weight: 500;
     }
-    
+
     .logout {
       cursor: pointer;
     }
@@ -44,4 +45,84 @@
 
   background-color: $orange-color;
   color: $white-color;
+}
+
+.menu {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .header__navigation {
+    .list {
+      display: none;
+    }
+  }
+
+  .menu {
+    display: block;
+    position: relative;
+    width: 40px;
+
+    font-size: 1.3rem;
+    font-weight: bolder;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: "━━";
+      position: absolute;
+
+      top: -10px;
+      left: 0;
+    }
+
+    &::before {
+      top: 10px;
+    }
+  }
+
+  .menu.active {
+    transform: rotate(45deg);
+
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      top: 0;
+      transform: rotate(-90deg);
+    }
+  }
+
+
+  .header__navigation.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    top: 76px;
+    opacity: 0.6;
+    z-index: 5;
+    height: 100vh;
+  }
+
+  .header__list--menu {
+    position: absolute;
+    top: 76px;
+    right: 0;
+
+    width: 65%;
+    height: 100vh;
+
+    font-size: 1.4rem;
+    padding: 20px;
+    z-index: 10;
+
+    background-color: $white-color;
+
+    .menu__item{
+      padding: 15px 0;
+    }
+  }
 }
