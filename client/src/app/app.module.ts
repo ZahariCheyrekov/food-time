@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './features/profile/profile.component';
 import { CartComponent } from './features/cart/cart.component';
 import { FeaturesModule } from './features/features.module';
-import { CitiesModule } from './cities/cities.module';
+import { CitiesModule } from './features/cities/cities.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';

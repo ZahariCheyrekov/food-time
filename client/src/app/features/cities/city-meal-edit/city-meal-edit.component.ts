@@ -13,7 +13,7 @@ import { MealService } from 'src/app/core/services/meal.service';
 @Component({
   selector: 'app-city-meal-edit',
   templateUrl: './city-meal-edit.component.html',
-  styleUrls: ['../../../assets/scss/form.scss'],
+  styleUrls: ['../../../../assets/scss/form.scss'],
 })
 export class CityMealEditComponent implements OnInit {
   isLoading = true;

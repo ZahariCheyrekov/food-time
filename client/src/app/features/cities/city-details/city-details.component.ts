@@ -12,7 +12,7 @@ import { MealService } from 'src/app/core/services/meal.service';
   templateUrl: './city-details.component.html',
   styleUrls: [
     './city-details.component.scss',
-    '../../../assets/scss/meal-list.scss',
+    '../../../../assets/scss/meal-list.scss',
   ],
 })
 export class CityDetailsComponent implements OnInit {

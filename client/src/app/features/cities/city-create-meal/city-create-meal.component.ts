@@ -4,14 +4,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
-import { UploadService } from '../../core/services/upload.service';
-import { CityService } from '../../core/services/city.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UploadService } from 'src/app/core/services/upload.service';
+import { CityService } from 'src/app/core/services/city.service';
 
 @Component({
   selector: 'app-city-create-meal',
   templateUrl: './city-create-meal.component.html',
-  styleUrls: ['../../../assets/scss/form.scss'],
+  styleUrls: ['../../../../assets/scss/form.scss'],
 })
 export class CityCreateMealComponent {
   url: any;

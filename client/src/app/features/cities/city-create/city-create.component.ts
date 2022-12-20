@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 
-import { CityService } from '../../core/services/city.service';
-import { UploadService } from '../../core/services/upload.service';
+import { CityService } from 'src/app/core/services/city.service';
+import { UploadService } from 'src/app/core/services/upload.service';
 
 @Component({
   selector: 'app-city-create',
@@ -32,12 +32,10 @@ export class CityCreateComponent {
   ) {}
 
   onSelect(event: any) {
-    console.log(event);
     this.files.push(...event.addedFiles);
   }
 
   onRemove(event: any) {
-    console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
 
@@ -68,7 +66,7 @@ export class CityCreateComponent {
     this.cityService
       .createCity({ city, country, picture: this.url })
       .subscribe({
-        error: (e) => console.error(e),
+        error: (e: Error) => console.error(e),
         complete: () => this.router.navigate(['/cities']),
       });
   }

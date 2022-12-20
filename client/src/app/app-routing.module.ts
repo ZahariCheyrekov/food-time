@@ -27,7 +27,7 @@ const routes: Routes = [
   {
     path: 'cities',
     loadChildren: () =>
-      import('./cities/cities.module').then((m) => m.CitiesModule),
+      import('./features/cities/cities.module').then((m) => m.CitiesModule),
   },
   {
     path: 'profile/:userId',

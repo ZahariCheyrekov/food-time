@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICity } from 'src/app/core/interfaces/ICity';
 
-import { CityService } from '../../core/services/city.service';
+import { CityService } from 'src/app/core/services/city.service';
 
 @Component({
   selector: 'app-cities',

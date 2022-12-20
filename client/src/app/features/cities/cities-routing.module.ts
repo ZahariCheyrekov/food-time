@@ -7,7 +7,7 @@ import { CityCreateComponent } from './city-create/city-create.component';
 import { CityCreateMealComponent } from './city-create-meal/city-create-meal.component';
 import { CityMealDetailsComponent } from './city-meal-details/city-meal-details.component';
 import { CityMealEditComponent } from './city-meal-edit/city-meal-edit.component';
-import { AuthGuard } from '../core/guards/auth.guard';
+import { AuthGuard } from 'src/app/core/guards/auth.guard';
 
 const routes: Routes = [
   {
