@@ -143,7 +143,23 @@ FoodTime is a web application ordering platform that allows users to buy fresh a
     - routes - contains various application routes
     - services - responsible for accessing MongoDB schemas and manipulating data 
 
+# <p id="tools">Tools</p>
 
+  - <a href="https://angular.io/">Angular</a>
+  - <a href="https://fontawesome.com/">Font Awesome</a>
+  - <a href="https://www.figma.com/">Figma</a>
+  - <a href="https://sass-lang.com/">Scss</a>
+  - <a href="https://cloudinary.com/">Cloudinary</a>
+  - <a href="https://firebase.google.com/">Firebase</a>
+  - <a href="https://app.cyclic.sh/">Cyclic</a>
+  - <a href="https://nodejs.org/en/">Node</a>
+  - <a href="https://expressjs.com/">Express</a>
+  - <a href="https://www.npmjs.com/package/nodemon">nodemon</a>
+  - <a href="https://www.mongodb.com/">MongoDB</a>
+  - <a href="https://mongoosejs.com/">Mongoose</a>
+  - <a href="https://jwt.io/">jwt</a>
+  - <a href="https://www.npmjs.com/package/bcrypt">bcrypt</a>
+  - <a href="https://www.npmjs.com/package/dotenv">dotenv</a>
 
 
 
