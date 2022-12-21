@@ -136,7 +136,12 @@ FoodTime is a web application ordering platform that allows users to buy fresh a
       - styles - stores scss files that are used globally by one or more components/modules
       
   - Server
-
+    - config - folder for files used to configure the application
+    - constants - all of the project constant variables
+    - controllers - used to handle request data from the client and make calls to the database models with the help of services 
+    - models - stores MongoDB schema models
+    - routes - contains various application routes
+    - services - responsible for accessing MongoDB schemas and manipulating data 
 
 
 
