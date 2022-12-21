@@ -171,12 +171,33 @@ The amazing design was provided by <a href="https://www.figma.com/">Figma</a> an
   - <a href="https://www.npmjs.com/package/bcrypt">bcrypt</a>
   - <a href="https://www.npmjs.com/package/dotenv">dotenv</a>
 
+# <p id="application-pictures">Application Pictures</p>
 
+## Desktop
 
+![food-time-home](https://user-images.githubusercontent.com/95768526/208990176-52edd164-c242-450d-a98e-5eff55ee56ce.png)
 
+![food-time-cities](https://user-images.githubusercontent.com/95768526/208990197-bd3b12bf-52d9-4498-addb-00bf6c1da662.png)
 
+![food-time-city-details](https://user-images.githubusercontent.com/95768526/208990207-75973248-9ced-4f41-89fb-cfd97b8e51eb.png)
 
+![food-time-profile](https://user-images.githubusercontent.com/95768526/208990220-2f1f5df9-0c81-4bd0-88dd-3f5551f96275.png)
 
+![food-time-cart](https://user-images.githubusercontent.com/95768526/208990225-86b4cf29-1167-463a-8c7d-0c57c19387eb.png)
 
+![food-time-signup](https://user-images.githubusercontent.com/95768526/208990232-6d91a998-6440-4ea3-bbde-5ed6292fec19.png)
 
+## Mobile
+
+![food-time-mobile-home](https://user-images.githubusercontent.com/95768526/208990350-edb7b5a0-66a7-4525-82dc-c0d071e9146a.png)
+
+![food-time-mobile-cities](https://user-images.githubusercontent.com/95768526/208990363-c34bb551-8ca0-434e-a59f-19db490cb971.png)
+
+![food-time-mobile-city-details](https://user-images.githubusercontent.com/95768526/208990370-be260ed8-9a7d-4155-8124-05d30aee6677.png)
+
+![food-time-mobile-profile](https://user-images.githubusercontent.com/95768526/208990386-851761d1-49d6-4f44-87f1-972b4d972740.png)
+
+![food-time-mobile-cart](https://user-images.githubusercontent.com/95768526/208990397-fcb56ee8-f2eb-46cd-a381-a2ffa48a1926.png)
+
+![food-time-mobile-signup](https://user-images.githubusercontent.com/95768526/208990417-326150fd-d4b7-4385-ad35-26000af1d2bb.png)
 
