@@ -1,12 +1,16 @@
 @import "../../../../assets/scss/variables.scss";
 
+.main__error {
+  padding: 20px;
+}
+
 .not__found {
   text-align: center;
   color: $black-color;
 
   margin: 100px 0 0;
   min-height: 100vh;
-  padding: 20px 30px;
+  padding: 20px;
 
   .status {
     font-size: 5.2rem;
