@@ -131,10 +131,9 @@ FoodTime is a web application ordering platform that allows users to buy fresh a
         - footer - the footer part of the applicaiton
         - navigation - the navigation of the applicaiton
         - spinner - spinner component that is displayed when the data is not yet loaded
-  
-      
-      
-      
+     - assets
+      - images - stores images associated to the application  
+      - styles - stores scss files that are used globally by one or more components/modules
       
   - Server
 
