@@ -100,4 +100,41 @@ FoodTime is a web application ordering platform that allows users to buy fresh a
   - start meal blog
   - explore other people blogs
 
- 
+# <p id="project-structure">Project Structure</p>
+  - Client
+    - auth
+      - login - login component for user authentication
+      - register - register component for user authentication
+    - core
+      - guards
+        - auth guard - navigates users to the login component if they are not authenticated 
+        - not auth guard - navigates users to the home component if they try to access login or register routes
+      - interfaces
+        - folder that stores all of the application interfaces
+      - services 
+        - auth - responsible for making login or register request to the server
+        - city - responsible for accessing City model and manipulating the data
+        - local storage - responsible for storing user data and tokens in the browser application tab
+        - meal - responsible for accessing Meal schema model and CRUD operations related to meals
+        - review - responsible for accessing Review schema model and creating reviews on meal
+        - upload - responsible for uploading image files to the Cloudinary and returning the corresponding data
+        - user - responsible for User model and CRUD operations related to user and data of it
+      
+      
+      
+      
+      
+  - Server
+
+
+
+
+
+
+
+
+
+
+
+
+
