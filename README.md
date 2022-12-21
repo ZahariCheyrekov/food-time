@@ -4,6 +4,7 @@ You can visit the project from here: https://food-time-4e006.web.app/
 
 # Table of Contents
   - <a href="#about">About this Project</a>
+  - <a href="#design">Design</a>
   - <a href="#how-to-run">How to run the app on your computer</a>
   - <a href="#features">Features</a>
   - <a href="#future-features">Future Features</a>
@@ -14,6 +15,15 @@ You can visit the project from here: https://food-time-4e006.web.app/
 # <p id="about">About this project</p>
 
 FoodTime is a web application ordering platform that allows users to buy fresh and healthy food from anywhere in the world. It offers a full range of delivery solutions built by restaurant people, for restaurant people.
+
+# <p id="design">Design</p>
+
+The amazing design was provided by <a href="https://www.figma.com/">Figma</a> and <a href="https://linktr.ee/ChiranjitH">Chiranjit Hazarika</a> specificly.
+
+ - Here you can find more about the design: <a href="https://www.figma.com/file/Nb4jczqGEqOFW5LMZn2ncc/FooDX-(Community)?node-id=0%3A1&t=haNVuJhbtr49Lvtn-0">FoodTime Design</a>
+
+ - You can contact Chiranjit Hazarika from here: <a href="https://linktr.ee/ChiranjitH">Chiranjit Hazarika Liktree</a>
+
 
 # <p id="how-to-run">How to run the app on your computer</p>
 
