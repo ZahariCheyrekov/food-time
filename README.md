@@ -119,7 +119,19 @@ FoodTime is a web application ordering platform that allows users to buy fresh a
         - review - responsible for accessing Review schema model and creating reviews on meal
         - upload - responsible for uploading image files to the Cloudinary and returning the corresponding data
         - user - responsible for User model and CRUD operations related to user and data of it
-      
+      - features 
+        - cart - it handles logic related to user meals in the cart
+        - cities - responsible for each city and functionality about restaurants in the current city
+        - pages
+          - home
+          - about
+          - not found
+        - profile - handles logic and display data of the logged user and created/liked meals
+       - shared
+        - footer - the footer part of the applicaiton
+        - navigation - the navigation of the applicaiton
+        - spinner - spinner component that is displayed when the data is not yet loaded
+  
       
       
       
