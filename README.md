@@ -68,3 +68,36 @@ FoodTime is a web application ordering platform that allows users to buy fresh a
     - view created meals
     - view liked meals
 
+# <p id="future-features">Future Features</p>
+
+- <strong>Connections</strong>
+  - Followers
+    - follow user
+    - unfollow user
+    - block user
+    - unblock user
+    
+  - Following
+    - see who follows you
+    - remove user from followers
+    - block user 
+    - unblock user
+
+- <strong>Chat</strong>
+  - send message to user or restaurant
+  
+- <strong>Discussions</strong>
+  - start discussion
+  - invite users to discussion
+  - join discussion
+  
+- <strong>Giveaway</strong>
+  - create meal giveaway
+  - enter meal giveaway
+  - invite to giveaway
+
+- <strong>Blog</strong>
+  - start meal blog
+  - explore other people blogs
+
+ 
